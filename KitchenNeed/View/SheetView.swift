@@ -16,7 +16,7 @@ struct SheetView: View {
             Group {
                 HStack {
                     Spacer()
-                    TextField("Nmae" ,text: $text)
+                    TextField("Name" ,text: $text)
                     .font(.headline)
                     Button{
                         longer.toggle()
