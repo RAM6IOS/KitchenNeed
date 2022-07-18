@@ -13,6 +13,9 @@
 		2D3709012884ABFE0044EF45 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D3709002884ABFE0044EF45 /* Preview Assets.xcassets */; };
 		2D37090B2884AC620044EF45 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D37090A2884AC620044EF45 /* Home.swift */; };
 		2D37090D2884AC7B0044EF45 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D37090C2884AC7B0044EF45 /* Profile.swift */; };
+		2DA767692885644700264BE7 /* PartialSheet in Frameworks */ = {isa = PBXBuildFile; productRef = 2DA767682885644700264BE7 /* PartialSheet */; };
+		2DA7676B2885AE2700264BE7 /* ButtonSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA7676A2885AE2700264BE7 /* ButtonSheet.swift */; };
+		2DA7676D2885AE8F00264BE7 /* SheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA7676C2885AE8F00264BE7 /* SheetView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +26,8 @@
 		2D3709002884ABFE0044EF45 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2D37090A2884AC620044EF45 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		2D37090C2884AC7B0044EF45 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		2DA7676A2885AE2700264BE7 /* ButtonSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonSheet.swift; sourceTree = "<group>"; };
+		2DA7676C2885AE8F00264BE7 /* SheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -30,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2DA767692885644700264BE7 /* PartialSheet in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,6 +85,8 @@
 				2D3708FB2884ABFA0044EF45 /* ContentView.swift */,
 				2D37090A2884AC620044EF45 /* Home.swift */,
 				2D37090C2884AC7B0044EF45 /* Profile.swift */,
+				2DA7676A2885AE2700264BE7 /* ButtonSheet.swift */,
+				2DA7676C2885AE8F00264BE7 /* SheetView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -113,6 +121,9 @@
 			dependencies = (
 			);
 			name = KitchenNeed;
+			packageProductDependencies = (
+				2DA767682885644700264BE7 /* PartialSheet */,
+			);
 			productName = KitchenNeed;
 			productReference = 2D3708F62884ABF90044EF45 /* KitchenNeed.app */;
 			productType = "com.apple.product-type.application";
@@ -141,6 +152,9 @@
 				Base,
 			);
 			mainGroup = 2D3708ED2884ABF90044EF45;
+			packageReferences = (
+				2DA767672885644700264BE7 /* XCRemoteSwiftPackageReference "PartialSheet" */,
+			);
 			productRefGroup = 2D3708F72884ABF90044EF45 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -167,9 +181,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2DA7676B2885AE2700264BE7 /* ButtonSheet.swift in Sources */,
 				2D3708FC2884ABFA0044EF45 /* ContentView.swift in Sources */,
 				2D37090D2884AC7B0044EF45 /* Profile.swift in Sources */,
 				2D37090B2884AC620044EF45 /* Home.swift in Sources */,
+				2DA7676D2885AE8F00264BE7 /* SheetView.swift in Sources */,
 				2D3708FA2884ABFA0044EF45 /* KitchenNeedApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -373,6 +389,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		2DA767672885644700264BE7 /* XCRemoteSwiftPackageReference "PartialSheet" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AndreaMiotto/PartialSheet";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		2DA767682885644700264BE7 /* PartialSheet */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2DA767672885644700264BE7 /* XCRemoteSwiftPackageReference "PartialSheet" */;
+			productName = PartialSheet;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 2D3708EE2884ABF90044EF45 /* Project object */;
 }

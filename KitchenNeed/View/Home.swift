@@ -6,12 +6,21 @@
 //
 
 import SwiftUI
+import PartialSheet
+
 
 struct Home: View {
+    @State private var isSheetPresented = false
     var body: some View {
         NavigationView{
-            
+            VStack{
+            ButtonSheet()
+                VStack{
+                    Text("Home")
+                }
+            }
         }
+        .attachPartialSheetToRoot()
     }
 }
 
