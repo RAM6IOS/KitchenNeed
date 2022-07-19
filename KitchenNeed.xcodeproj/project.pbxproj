@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2D3709012884ABFE0044EF45 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D3709002884ABFE0044EF45 /* Preview Assets.xcassets */; };
 		2DA767692885644700264BE7 /* PartialSheet in Frameworks */ = {isa = PBXBuildFile; productRef = 2DA767682885644700264BE7 /* PartialSheet */; };
+		2DE2CFD2288707A800FBFE62 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE2CFD1288707A800FBFE62 /* ImagePicker.swift */; };
 		63CD665E2886D9D6003CDE86 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63CD665C2886D9D5003CDE86 /* Assets.xcassets */; };
 		63CD665F2886D9D6003CDE86 /* KitchenNeedApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CD665D2886D9D5003CDE86 /* KitchenNeedApp.swift */; };
 		63CD66622886DA68003CDE86 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CD66612886DA68003CDE86 /* Product.swift */; };
@@ -23,6 +24,7 @@
 /* Begin PBXFileReference section */
 		2D3708F62884ABF90044EF45 /* KitchenNeed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KitchenNeed.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D3709002884ABFE0044EF45 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		2DE2CFD1288707A800FBFE62 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		63CD665C2886D9D5003CDE86 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		63CD665D2886D9D5003CDE86 /* KitchenNeedApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KitchenNeedApp.swift; sourceTree = "<group>"; };
 		63CD66612886DA68003CDE86 /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
@@ -65,6 +67,7 @@
 		2D3708F82884ABF90044EF45 /* KitchenNeed */ = {
 			isa = PBXGroup;
 			children = (
+				2DE2CFD02887077600FBFE62 /* ViewModel */,
 				63CD66632886DA85003CDE86 /* Views */,
 				63CD66602886DA68003CDE86 /* Models */,
 				63CD665B2886D9D5003CDE86 /* App */,
@@ -79,6 +82,14 @@
 				2D3709002884ABFE0044EF45 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		2DE2CFD02887077600FBFE62 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				2DE2CFD1288707A800FBFE62 /* ImagePicker.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		63CD665B2886D9D5003CDE86 /* App */ = {
@@ -190,6 +201,7 @@
 				63CD666F2886DA85003CDE86 /* ContentView.swift in Sources */,
 				63CD666C2886DA85003CDE86 /* Profile.swift in Sources */,
 				63CD666E2886DA85003CDE86 /* SheetView.swift in Sources */,
+				2DE2CFD2288707A800FBFE62 /* ImagePicker.swift in Sources */,
 				63CD666A2886DA85003CDE86 /* ButtonSheet.swift in Sources */,
 				63CD66622886DA68003CDE86 /* Product.swift in Sources */,
 				63CD665F2886D9D6003CDE86 /* KitchenNeedApp.swift in Sources */,
@@ -325,7 +337,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"KitchenNeed/Preview Content\"";
-				DEVELOPMENT_TEAM = 6DWNZ84LB2;
+				DEVELOPMENT_TEAM = 2H8H3AS73K;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.food-and-drink";
@@ -333,7 +345,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -358,7 +370,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"KitchenNeed/Preview Content\"";
-				DEVELOPMENT_TEAM = 6DWNZ84LB2;
+				DEVELOPMENT_TEAM = 2H8H3AS73K;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.food-and-drink";
@@ -366,7 +378,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
