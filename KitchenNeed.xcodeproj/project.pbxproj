@@ -7,23 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2D3708FA2884ABFA0044EF45 /* KitchenNeedApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3708F92884ABFA0044EF45 /* KitchenNeedApp.swift */; };
-		2D3708FC2884ABFA0044EF45 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3708FB2884ABFA0044EF45 /* ContentView.swift */; };
-		2D3708FE2884ABFE0044EF45 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D3708FD2884ABFE0044EF45 /* Assets.xcassets */; };
 		2D3709012884ABFE0044EF45 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D3709002884ABFE0044EF45 /* Preview Assets.xcassets */; };
-		2D37090B2884AC620044EF45 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D37090A2884AC620044EF45 /* Home.swift */; };
-		2D37090D2884AC7B0044EF45 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D37090C2884AC7B0044EF45 /* Profile.swift */; };
 		2DA767692885644700264BE7 /* PartialSheet in Frameworks */ = {isa = PBXBuildFile; productRef = 2DA767682885644700264BE7 /* PartialSheet */; };
+		63CD665E2886D9D6003CDE86 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63CD665C2886D9D5003CDE86 /* Assets.xcassets */; };
+		63CD665F2886D9D6003CDE86 /* KitchenNeedApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CD665D2886D9D5003CDE86 /* KitchenNeedApp.swift */; };
+		63CD66622886DA68003CDE86 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CD66612886DA68003CDE86 /* Product.swift */; };
+		63CD666A2886DA85003CDE86 /* ButtonSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CD66642886DA85003CDE86 /* ButtonSheet.swift */; };
+		63CD666C2886DA85003CDE86 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CD66662886DA85003CDE86 /* Profile.swift */; };
+		63CD666E2886DA85003CDE86 /* SheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CD66682886DA85003CDE86 /* SheetView.swift */; };
+		63CD666F2886DA85003CDE86 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CD66692886DA85003CDE86 /* ContentView.swift */; };
+		63CD66712886DAEE003CDE86 /* ProductCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CD66702886DAED003CDE86 /* ProductCardView.swift */; };
+		63CD66732886DB15003CDE86 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CD66722886DB15003CDE86 /* Home.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2D3708F62884ABF90044EF45 /* KitchenNeed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KitchenNeed.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		2D3708F92884ABFA0044EF45 /* KitchenNeedApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KitchenNeedApp.swift; sourceTree = "<group>"; };
-		2D3708FB2884ABFA0044EF45 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		2D3708FD2884ABFE0044EF45 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2D3709002884ABFE0044EF45 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		2D37090A2884AC620044EF45 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
-		2D37090C2884AC7B0044EF45 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		63CD665C2886D9D5003CDE86 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		63CD665D2886D9D5003CDE86 /* KitchenNeedApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KitchenNeedApp.swift; sourceTree = "<group>"; };
+		63CD66612886DA68003CDE86 /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		63CD66642886DA85003CDE86 /* ButtonSheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonSheet.swift; sourceTree = "<group>"; };
+		63CD66662886DA85003CDE86 /* Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		63CD66682886DA85003CDE86 /* SheetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SheetView.swift; sourceTree = "<group>"; };
+		63CD66692886DA85003CDE86 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		63CD66702886DAED003CDE86 /* ProductCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductCardView.swift; sourceTree = "<group>"; };
+		63CD66722886DB15003CDE86 /* Home.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,11 +65,9 @@
 		2D3708F82884ABF90044EF45 /* KitchenNeed */ = {
 			isa = PBXGroup;
 			children = (
-				2D3709092884AC330044EF45 /* ViewModel */,
-				2D3709082884AC2B0044EF45 /* Model */,
-				2D3709072884AC230044EF45 /* View */,
-				2D3708F92884ABFA0044EF45 /* KitchenNeedApp.swift */,
-				2D3708FD2884ABFE0044EF45 /* Assets.xcassets */,
+				63CD66632886DA85003CDE86 /* Views */,
+				63CD66602886DA68003CDE86 /* Models */,
+				63CD665B2886D9D5003CDE86 /* App */,
 				2D3708FF2884ABFE0044EF45 /* Preview Content */,
 			);
 			path = KitchenNeed;
@@ -75,28 +81,34 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		2D3709072884AC230044EF45 /* View */ = {
+		63CD665B2886D9D5003CDE86 /* App */ = {
 			isa = PBXGroup;
 			children = (
-				2D3708FB2884ABFA0044EF45 /* ContentView.swift */,
-				2D37090A2884AC620044EF45 /* Home.swift */,
-				2D37090C2884AC7B0044EF45 /* Profile.swift */,
+				63CD665C2886D9D5003CDE86 /* Assets.xcassets */,
+				63CD665D2886D9D5003CDE86 /* KitchenNeedApp.swift */,
 			);
-			path = View;
+			path = App;
 			sourceTree = "<group>";
 		};
-		2D3709082884AC2B0044EF45 /* Model */ = {
+		63CD66602886DA68003CDE86 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				63CD66612886DA68003CDE86 /* Product.swift */,
 			);
-			path = Model;
+			path = Models;
 			sourceTree = "<group>";
 		};
-		2D3709092884AC330044EF45 /* ViewModel */ = {
+		63CD66632886DA85003CDE86 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				63CD66722886DB15003CDE86 /* Home.swift */,
+				63CD66702886DAED003CDE86 /* ProductCardView.swift */,
+				63CD66642886DA85003CDE86 /* ButtonSheet.swift */,
+				63CD66662886DA85003CDE86 /* Profile.swift */,
+				63CD66682886DA85003CDE86 /* SheetView.swift */,
+				63CD66692886DA85003CDE86 /* ContentView.swift */,
 			);
-			path = ViewModel;
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -163,8 +175,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63CD665E2886D9D6003CDE86 /* Assets.xcassets in Resources */,
 				2D3709012884ABFE0044EF45 /* Preview Assets.xcassets in Resources */,
-				2D3708FE2884ABFE0044EF45 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -175,10 +187,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2D3708FC2884ABFA0044EF45 /* ContentView.swift in Sources */,
-				2D37090D2884AC7B0044EF45 /* Profile.swift in Sources */,
-				2D37090B2884AC620044EF45 /* Home.swift in Sources */,
-				2D3708FA2884ABFA0044EF45 /* KitchenNeedApp.swift in Sources */,
+				63CD666F2886DA85003CDE86 /* ContentView.swift in Sources */,
+				63CD666C2886DA85003CDE86 /* Profile.swift in Sources */,
+				63CD666E2886DA85003CDE86 /* SheetView.swift in Sources */,
+				63CD666A2886DA85003CDE86 /* ButtonSheet.swift in Sources */,
+				63CD66622886DA68003CDE86 /* Product.swift in Sources */,
+				63CD665F2886D9D6003CDE86 /* KitchenNeedApp.swift in Sources */,
+				63CD66732886DB15003CDE86 /* Home.swift in Sources */,
+				63CD66712886DAEE003CDE86 /* ProductCardView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -309,14 +325,15 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"KitchenNeed/Preview Content\"";
-				DEVELOPMENT_TEAM = 2H8H3AS73K;
+				DEVELOPMENT_TEAM = 6DWNZ84LB2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.food-and-drink";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -324,6 +341,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = me.ramzi.KitchenNeed;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -338,14 +358,15 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"KitchenNeed/Preview Content\"";
-				DEVELOPMENT_TEAM = 2H8H3AS73K;
+				DEVELOPMENT_TEAM = 6DWNZ84LB2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.food-and-drink";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -353,6 +374,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = me.ramzi.KitchenNeed;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
