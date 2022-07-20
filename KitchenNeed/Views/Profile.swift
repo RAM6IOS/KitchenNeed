@@ -22,24 +22,38 @@ struct Profile: View {
         NavigationView{
             VStack{
                 ZStack{
-                    Image("default-avatar")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 200, height: 100 )
-                        .clipShape(Circle())
-                   
-                    Image(systemName: "square.and.pencil")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 17, height: 17)
-                        .foregroundColor(.black)
-                        .offset(y:40)
-                     
-                    image?
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 200, height: 100 )
-                        .clipShape(Circle())
+                    if (image != nil){
+                        image?
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 200, height: 100 )
+                            .clipShape(Circle())
+                            .shadow(radius: 40)
+                            
+                    } else {
+                        Image("default-avatar")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 200, height: 100 )
+                            .clipShape(Circle())
+                       
+                        Image(systemName: "square.and.pencil")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 17, height: 17)
+                            .foregroundColor(.black)
+                            .offset(y:40)
+                         
+                        image?
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 200, height: 100 )
+                            .clipShape(Circle())
+                            .border(.green)
+                            .shadow(radius: 40)
+                        
+                        
+                    }
                 }
                 .onTapGesture {
                        // select an image
@@ -56,7 +70,7 @@ struct Profile: View {
                         Text("wdj31104@yuoia.com")
                     }
                     Section("language"){
-                        Picker("Please choose a languag", selection: $selectedlanguage) {
+                        Picker("Please choose a language", selection: $selectedlanguage) {
                                 ForEach(language, id: \.self) {
                                             Text($0)
                                         }
