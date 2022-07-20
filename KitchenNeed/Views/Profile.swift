@@ -16,9 +16,10 @@ struct Profile: View {
     @State private var LastName: String = ""
     @State private var Email: String = ""
     var language = ["French", "Arabic", "English"]
-    @State private var selectedlanguage = "Arabic"
+    @State  var selectedlanguage = "Arabic"
    
     var body: some View {
+        NavigationView{
             VStack{
                 ZStack{
                     Image("default-avatar")
@@ -26,38 +27,41 @@ struct Profile: View {
                         .scaledToFit()
                         .frame(width: 200, height: 100 )
                         .clipShape(Circle())
+                   
                     Image(systemName: "square.and.pencil")
                         .resizable()
                         .scaledToFit()
-                        .frame(width: 14, height: 14)
-                        .foregroundColor(.white)
-                        .offset(y:30)
+                        .frame(width: 17, height: 17)
+                        .foregroundColor(.black)
+                        .offset(y:40)
+                     
                     image?
                         .resizable()
                         .scaledToFit()
+                        .frame(width: 200, height: 100 )
+                        .clipShape(Circle())
                 }
                 .onTapGesture {
                        // select an image
                     showingImagePicker = true
                 }
                   
-               Form{
-                    Section{
-                    TextField("FirstName" , text: $FirsName)
-                        .font(.system(size: 32 , weight: .bold))
-                    TextField("LastName" , text: $LastName)
-                        .font(.system(size: 32 , weight: .bold))
-                     
+                Form{
+                    Section("name"){
+                    TextField("Name" , text: $FirsName)
+                        .font(.system(size: 15 , weight: .bold))
+
                     }
                     Section(header:Text("Email")){
                         Text("wdj31104@yuoia.com")
                     }
                     Section("language"){
-                        Picker("language", selection: $selectedlanguage) {
-                            ForEach(language , id: \.self) {
-                            Text($0)
-                            }
-                        }
+                        Picker("Please choose a languag", selection: $selectedlanguage) {
+                                ForEach(language, id: \.self) {
+                                            Text($0)
+                                        }
+                                    }
+                       // .pickerStyle(WheelPickerStyle())
                     }
                 }
                 Button{
@@ -79,13 +83,14 @@ struct Profile: View {
                 ImagePicker(image: $inputImage)
         
             }
+           // .navigationTitle("Profile")
+            .navigationBarTitleDisplayMode(.inline)
+        }
     }
     func loadImage() {
         guard let inputImage = inputImage else { return }
-        
-        let beginImage = CIImage(image: inputImage)
+        image = Image(uiImage: inputImage)
     }
-    
 }
 
 struct Profile_Previews: PreviewProvider {
