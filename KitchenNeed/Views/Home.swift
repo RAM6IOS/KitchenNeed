@@ -11,14 +11,14 @@ import PartialSheet
 
 struct Home: View {
     @State private var isSheetPresented = false
-    
+    @State private var searchText: String = ""
     private var gridItemLayout = [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())]
     
     var body: some View {
         NavigationView{
             VStack(alignment:.leading) {
                 ScrollView {
-                    ButtonSheet()
+                    //ButtonSheet()
                     Spacer()
                         .padding(.bottom, 10)
                     HStack {
@@ -45,6 +45,53 @@ struct Home: View {
                 }
             }
             .padding(.horizontal, 5)
+            .navigationBarTitle("Home")
+            .toolbar {
+                ToolbarItem( placement: .navigationBarTrailing) {
+                    Button(action: {isSheetPresented.toggle()}) {
+                        Image(systemName: "plus.circle.fill")
+                            .font(.system(size: 20))
+                    }
+                }
+            }
+            .navigationBarTitleDisplayMode(.inline)
+            .sheet(isPresented: $isSheetPresented){
+                NavigationView{
+                VStack{
+                    HStack{
+                    ZStack {
+                        Rectangle()
+                                 .foregroundColor(Color(UIColor.systemGray6))
+                        HStack{
+                            Image(systemName: "magnifyingglass")
+                            TextField("Search ..", text: $searchText) { startedEditing in
+                                 if startedEditing {
+                                 }
+                             }
+                        }
+                        .padding(.leading, 13)
+                             
+                         }
+                          .frame(height: 40)
+                          .cornerRadius(13)
+                        Button{
+                        } label: {
+                            Text("Save")
+                        }
+                        .padding(.trailing, 10)
+                    }
+                    .padding()
+                    LazyVGrid(columns: gridItemLayout, spacing: 20) {
+                        ForEach((0...5), id: \.self) {_ in
+                            ProductCardView(product: Product.CarrotProduct, selected: true)
+                        }
+                    }
+                    .padding(.horizontal, 5)
+                    Spacer()
+                }
+                }
+               
+            }
         }
         .attachPartialSheetToRoot()
     }
@@ -55,3 +102,6 @@ struct Home_Previews: PreviewProvider {
         Home()
     }
 }
+
+
+
