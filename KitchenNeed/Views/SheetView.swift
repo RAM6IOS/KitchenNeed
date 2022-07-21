@@ -10,15 +10,32 @@ import SwiftUI
 struct SheetView: View {
     @State private var isPresented = false
     @State private  var isSheetPresented  = true
-    @State private var text: String = ""
+    @State private var searchText: String = ""
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
             VStack {
-                TextField("Search for fruits", text: $text)
-                    .padding(.leading, 10)
-                    .frame(height: 40)
-                    .background(Color(UIColor.systemGray6))
-                    .cornerRadius(6)
+                HStack{
+                ZStack {
+                    Rectangle()
+                             .foregroundColor(Color(UIColor.systemGray6))
+                    HStack{
+                        Image(systemName: "magnifyingglass")
+                        TextField("Search ..", text: $searchText)
+                        
+                    }
+                    .padding(.leading, 13)
+                         
+                     }
+                      .frame(height: 40)
+                      .cornerRadius(13)
+                      
+                    Button{
+                        
+                    } label: {
+                        Text("Save")
+                    }
+                    .padding(.trailing, 10)
+                }
                 Spacer()
             }
             .frame(height: 300)
