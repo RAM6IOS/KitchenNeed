@@ -8,46 +8,53 @@
 import SwiftUI
 
 struct SheetView: View {
-    @State private var isPresented = false
-    @State private  var isSheetPresented  = true
-    @State private var searchText: String = ""
+    @State private var name = ""
+    @State private var price = ""
+    @State private var  details = ""
+    let types = ["vegetables🥬", "meat🥩", "fruit🍎", "Bread🥖", "juice🧃", "Soft drinks🍾", "baked sweets🥐" , "sweets🍭","Legume🥜" , "Vegetable Oil🥃" , "Milk🥛" ,"Cheese🧀" , "Dairy products","spices" ,"Legume🥜" , "Vegetable Oil🥃" , "Milk🥛" ,"Cheese🧀" , "Dairy products"]
+    @State private var type = ""
     var body: some View {
-        VStack(alignment: .leading, spacing: 0) {
-            VStack {
-                HStack{
-                ZStack {
-                    Rectangle()
-                             .foregroundColor(Color(UIColor.systemGray6))
-                    HStack{
-                        Image(systemName: "magnifyingglass")
-                        TextField("Search ..", text: $searchText)
-                        
+        NavigationView{
+            VStack{
+                List{
+                    Section("Types"){
+                Picker("types", selection: $type) {
+                                ForEach(types, id: \.self) {
+                                    Text($0)
+                                }
+                            }
                     }
-                    .padding(.leading, 13)
-                         
-                     }
-                      .frame(height: 40)
-                      .cornerRadius(13)
-                      
-                    Button{
-                        
-                    } label: {
-                        Text("Save")
+                    Section{
+                TextField("Name" , text: $name)
                     }
-                    .padding(.trailing, 10)
+                    Section{
+                TextField("price" , text:$price)
+                    }
+                    Section("Details"){
+                TextEditor( text: $details)
+                    .foregroundColor(Color.gray)
+                    .font(.custom("HelveticaNeue", size: 13))
+                    .lineSpacing(5)
+                    .frame(width: 300, height: 250)
+                    }
+                
                 }
-                Spacer()
+                Button{
+                    
+                } label: {
+                    Text("Save")
+                        .bold()
+                        .font(.title3)
+                        .frame(width: 250, height: 40)
+                        .foregroundColor(.white)
+                }
+                .background(Color.green)
+                .cornerRadius(10)
             }
-            .frame(height: 300)
-
-            .sheet(isPresented: $isPresented){
-               
-            }
-           
+            .navigationTitle("Add Product")
         }
-        .padding(.horizontal, 10)
-        .partialSheet(isPresented: $isSheetPresented,
-                      content: SheetView.init)
+
+        
     }
 }
 
