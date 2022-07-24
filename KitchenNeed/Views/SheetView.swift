@@ -3,13 +3,13 @@
 //  KitchenNeed
 //
 //  Created by Bouchedoub Rmazi on 18/7/2022.
-//KitchenNeedModel
+//
 
 import SwiftUI
 
 struct SheetView: View {
     @State private var name = ""
-    @State private var size = ""
+    @State private var quantity = ""
     @State private var  details = ""
     let types = ["vegetable", "meat", "fruits", "bread" , "milk" ,"spices" ,"canned-food" ,"cleaning-materials"]
     @State private var type = ""
@@ -34,7 +34,7 @@ struct SheetView: View {
                 TextField("Name" , text: $name)
                     }
                     Section{
-                TextField("price" , text:$size)
+                TextField("price" , text:$quantity)
                     }
                     Section("Details"){
                 TextEditor( text: $details)

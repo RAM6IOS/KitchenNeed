@@ -8,7 +8,7 @@
 import SwiftUI
 import PartialSheet
 
-
+@available(iOS 15.0, *)
 struct Home: View {
     @State private var isSheetPresented = false
     @State private var searchText: String = ""
@@ -27,7 +27,7 @@ struct Home: View {
                     }
                     LazyVGrid(columns: gridItemLayout, spacing: 20) {
                         ForEach((0...5), id: \.self) {_ in
-                            ProductCardView(product: Product.CarrotProduct, selected: true)
+                            ProductCardView(product: Products.CarrotProduct, selected: true)
                         }
                     }
                     .padding(.horizontal, 5)
@@ -38,7 +38,7 @@ struct Home: View {
                     }
                     LazyVGrid(columns: gridItemLayout, spacing: 20) {
                         ForEach((0...11), id: \.self) {_ in
-                            ProductCardView(product: Product.CarrotProduct)
+                            ProductCardView(product: Products.CarrotProduct)
                         }
                     }
                 }
@@ -61,7 +61,7 @@ struct Home: View {
         .attachPartialSheetToRoot()
     }
 }
-
+@available(iOS 15.0, *)
 struct Home_Previews: PreviewProvider {
     static var previews: some View {
         Home()
