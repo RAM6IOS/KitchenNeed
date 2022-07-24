@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ProductCardView: View {
-    var product: Product
+    var product: Products
     var selected : Bool = false
     
     var body: some View {
@@ -35,6 +35,6 @@ struct ProductCardView: View {
 
 struct ProductCardView_Previews: PreviewProvider {
     static var previews: some View {
-        ProductCardView(product: Product.CarrotProduct)
+        ProductCardView(product: Products.CarrotProduct)
     }
 }

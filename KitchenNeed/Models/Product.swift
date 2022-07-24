@@ -7,12 +7,12 @@
 
 import Foundation
 
-struct Product {
+struct Products {
     var name: String
     var details: [String]?
     var icon: String?
 }
 
-extension Product {
-    static let CarrotProduct = Product(name: "Carrot", details: ["1kg"], icon: "carrot")
+extension Products {
+    static let CarrotProduct = Products(name: "Carrot", details: ["1kg"], icon: "carrot")
 }
