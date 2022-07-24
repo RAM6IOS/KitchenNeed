@@ -3,15 +3,15 @@
 //  KitchenNeed
 //
 //  Created by Bouchedoub Rmazi on 18/7/2022.
-//
+//KitchenNeedModel
 
 import SwiftUI
 
 struct SheetView: View {
     @State private var name = ""
-    @State private var price = ""
+    @State private var size = ""
     @State private var  details = ""
-    let types = ["vegetables🥬", "meat🥩", "fruit🍎", "Bread🥖", "juice🧃", "Soft drinks🍾", "baked sweets🥐" , "sweets🍭","Legume🥜" , "Vegetable Oil🥃" , "Milk🥛" ,"Cheese🧀" , "Dairy products","spices" ,"Legume🥜" , "Vegetable Oil🥃" , "Milk🥛" ,"Cheese🧀" , "Dairy products"]
+    let types = ["vegetable", "meat", "fruits", "bread" , "milk" ,"spices" ,"canned-food" ,"cleaning-materials"]
     @State private var type = ""
     var body: some View {
         NavigationView{
@@ -19,8 +19,14 @@ struct SheetView: View {
                 List{
                     Section("Types"){
                 Picker("types", selection: $type) {
-                                ForEach(types, id: \.self) {
-                                    Text($0)
+                                ForEach(types, id: \.self) { typ in
+                                    HStack( spacing: 10){
+                                    Image(typ)
+                                            .resizable()
+                                            .scaledToFit()
+                                            .frame(width: 70, height: 70)
+                                    Text(typ)
+                                    }
                                 }
                             }
                     }
@@ -28,7 +34,7 @@ struct SheetView: View {
                 TextField("Name" , text: $name)
                     }
                     Section{
-                TextField("price" , text:$price)
+                TextField("price" , text:$size)
                     }
                     Section("Details"){
                 TextEditor( text: $details)
