@@ -10,6 +10,7 @@
 		2D3709012884ABFE0044EF45 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D3709002884ABFE0044EF45 /* Preview Assets.xcassets */; };
 		2DA767692885644700264BE7 /* PartialSheet in Frameworks */ = {isa = PBXBuildFile; productRef = 2DA767682885644700264BE7 /* PartialSheet */; };
 		2DCB273B288DAE3600335695 /* KitchenNeedModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2DCB2739288DAE3600335695 /* KitchenNeedModel.xcdatamodeld */; };
+		2DCB273D288DB15800335695 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DCB273C288DB15800335695 /* DataController.swift */; };
 		2DE2CFD2288707A800FBFE62 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE2CFD1288707A800FBFE62 /* ImagePicker.swift */; };
 		63CD665E2886D9D6003CDE86 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63CD665C2886D9D5003CDE86 /* Assets.xcassets */; };
 		63CD665F2886D9D6003CDE86 /* KitchenNeedApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CD665D2886D9D5003CDE86 /* KitchenNeedApp.swift */; };
@@ -26,6 +27,7 @@
 		2D3708F62884ABF90044EF45 /* KitchenNeed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KitchenNeed.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D3709002884ABFE0044EF45 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2DCB273A288DAE3600335695 /* KitchenNeedModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = KitchenNeedModel.xcdatamodel; sourceTree = "<group>"; };
+		2DCB273C288DB15800335695 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		2DE2CFD1288707A800FBFE62 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		63CD665C2886D9D5003CDE86 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		63CD665D2886D9D5003CDE86 /* KitchenNeedApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KitchenNeedApp.swift; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				2DE2CFD1288707A800FBFE62 /* ImagePicker.swift */,
+				2DCB273C288DB15800335695 /* DataController.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -206,6 +209,7 @@
 				63CD666E2886DA85003CDE86 /* SheetView.swift in Sources */,
 				2DE2CFD2288707A800FBFE62 /* ImagePicker.swift in Sources */,
 				63CD666A2886DA85003CDE86 /* ButtonSheet.swift in Sources */,
+				2DCB273D288DB15800335695 /* DataController.swift in Sources */,
 				63CD66622886DA68003CDE86 /* Product.swift in Sources */,
 				2DCB273B288DAE3600335695 /* KitchenNeedModel.xcdatamodeld in Sources */,
 				63CD665F2886D9D6003CDE86 /* KitchenNeedApp.swift in Sources */,
