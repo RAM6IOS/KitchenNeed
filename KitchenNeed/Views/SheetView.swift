@@ -3,51 +3,64 @@
 //  KitchenNeed
 //
 //  Created by Bouchedoub Rmazi on 18/7/2022.
-//
+//KitchenNeedModel
 
 import SwiftUI
 
 struct SheetView: View {
-    @State private var isPresented = false
-    @State private  var isSheetPresented  = true
-    @State private var searchText: String = ""
+    @State private var name = ""
+    @State private var size = ""
+    @State private var  details = ""
+    let types = ["vegetable", "meat", "fruits", "bread" , "milk" ,"spices" ,"canned-food" ,"cleaning-materials"]
+    @State private var type = ""
     var body: some View {
-        VStack(alignment: .leading, spacing: 0) {
-            VStack {
-                HStack{
-                ZStack {
-                    Rectangle()
-                             .foregroundColor(Color(UIColor.systemGray6))
-                    HStack{
-                        Image(systemName: "magnifyingglass")
-                        TextField("Search ..", text: $searchText)
-                        
+        NavigationView{
+            VStack{
+                List{
+                    Section("Types"){
+                Picker("types", selection: $type) {
+                                ForEach(types, id: \.self) { typ in
+                                    HStack( spacing: 10){
+                                    Image(typ)
+                                            .resizable()
+                                            .scaledToFit()
+                                            .frame(width: 70, height: 70)
+                                    Text(typ)
+                                    }
+                                }
+                            }
                     }
-                    .padding(.leading, 13)
-                         
-                     }
-                      .frame(height: 40)
-                      .cornerRadius(13)
-                      
-                    Button{
-                        
-                    } label: {
-                        Text("Save")
+                    Section{
+                TextField("Name" , text: $name)
                     }
-                    .padding(.trailing, 10)
+                    Section{
+                TextField("price" , text:$size)
+                    }
+                    Section("Details"){
+                TextEditor( text: $details)
+                    .foregroundColor(Color.gray)
+                    .font(.custom("HelveticaNeue", size: 13))
+                    .lineSpacing(5)
+                    .frame(width: 300, height: 250)
+                    }
+                
                 }
-                Spacer()
+                Button{
+                    
+                } label: {
+                    Text("Save")
+                        .bold()
+                        .font(.title3)
+                        .frame(width: 250, height: 40)
+                        .foregroundColor(.white)
+                }
+                .background(Color.green)
+                .cornerRadius(10)
             }
-            .frame(height: 300)
-
-            .sheet(isPresented: $isPresented){
-               
-            }
-           
+            .navigationTitle("Add Product")
         }
-        .padding(.horizontal, 10)
-        .partialSheet(isPresented: $isSheetPresented,
-                      content: SheetView.init)
+
+        
     }
 }
 

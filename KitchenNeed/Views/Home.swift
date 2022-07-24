@@ -13,7 +13,6 @@ struct Home: View {
     @State private var isSheetPresented = false
     @State private var searchText: String = ""
     private var gridItemLayout = [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())]
-    
     var body: some View {
         NavigationView{
             VStack(alignment:.leading) {
@@ -56,41 +55,7 @@ struct Home: View {
             }
             .navigationBarTitleDisplayMode(.inline)
             .sheet(isPresented: $isSheetPresented){
-                NavigationView{
-                VStack{
-                    HStack{
-                    ZStack {
-                        Rectangle()
-                                 .foregroundColor(Color(UIColor.systemGray6))
-                        HStack{
-                            Image(systemName: "magnifyingglass")
-                            TextField("Search ..", text: $searchText) { startedEditing in
-                                 if startedEditing {
-                                 }
-                             }
-                        }
-                        .padding(.leading, 13)
-                             
-                         }
-                          .frame(height: 40)
-                          .cornerRadius(13)
-                        Button{
-                        } label: {
-                            Text("Save")
-                        }
-                        .padding(.trailing, 10)
-                    }
-                    .padding()
-                    LazyVGrid(columns: gridItemLayout, spacing: 20) {
-                        ForEach((0...5), id: \.self) {_ in
-                            ProductCardView(product: Product.CarrotProduct, selected: true)
-                        }
-                    }
-                    .padding(.horizontal, 5)
-                    Spacer()
-                }
-                }
-               
+                SheetView()
             }
         }
         .attachPartialSheetToRoot()
