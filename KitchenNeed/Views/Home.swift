@@ -8,11 +8,15 @@
 import SwiftUI
 import PartialSheet
 
-@available(iOS 15.0, *)
+
 struct Home: View {
     @State private var isSheetPresented = false
     @State private var searchText: String = ""
-    private var gridItemLayout = [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())]
+    private var gridItemLayout = [GridItem(.flexible()), GridItem(.flexible())]
+    @FetchRequest(sortDescriptors: [
+        SortDescriptor(\.name)
+    ]) var product: FetchedResults<Product>
+    @Environment(\.managedObjectContext) var moc
     var body: some View {
         NavigationView{
             VStack(alignment:.leading) {
@@ -25,10 +29,13 @@ struct Home: View {
                             .font(.title2)
                         Spacer()
                     }
+                   
                     LazyVGrid(columns: gridItemLayout, spacing: 20) {
-                        ForEach((0...5), id: \.self) {_ in
-                            ProductCardView(product: Products.CarrotProduct, selected: true)
+                    
+                        ForEach(product) { produc in
+                            ProductCardView(product: Products.CarrotProduct, selected: true , products: produc)
                         }
+                    
                     }
                     .padding(.horizontal, 5)
                     HStack {
@@ -61,7 +68,7 @@ struct Home: View {
         .attachPartialSheetToRoot()
     }
 }
-@available(iOS 15.0, *)
+
 struct Home_Previews: PreviewProvider {
     static var previews: some View {
         Home()

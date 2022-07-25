@@ -10,26 +10,26 @@ import SwiftUI
 struct ProductCardView: View {
     var product: Products
     var selected : Bool = false
+    var products: Product?
     
     var body: some View {
         VStack {
-            Image(systemName: product.icon ?? "rabbit")
-                .font(.system(size: 25))
-                .padding(.bottom, 8)
-            Text(product.name)
+            Image(products?.type ?? "typ")
+                .resizable()
+                .scaledToFit()
+                .frame(width: 70, height: 70)
+            Text(products?.name ?? "name")
                 .font(.system(size: 14))
                 .fontWeight(.bold)
-            ForEach(product.details ?? [],  id: \.self) { detail in
-                    Text(detail)
-                        .font(.caption2)
-                }
+            Text(products?.quantity ?? "quantity")
         }
         .padding()
         .font(.system(size: 30))
         .frame(minWidth: 0, maxWidth: .infinity, minHeight: 60)
-        .background(Color(selected ? UIColor.systemGray : UIColor.systemGray4))
+        .background(Color(selected ? UIColor.white : UIColor.systemGray4))
         .cornerRadius(10)
-        .foregroundColor(.white)
+        .shadow(radius: 10)
+        .foregroundColor(.black)
     }
 }
 
