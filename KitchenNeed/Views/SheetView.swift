@@ -13,6 +13,7 @@ struct SheetView: View {
     @State private var  details = ""
     let types = ["vegetable", "meat", "fruits", "bread" , "milk" ,"spices" ,"canned-food" ,"cleaning-materials"]
     @State private var type = ""
+    @Environment(\.managedObjectContext) var moc
     var body: some View {
         NavigationView{
             VStack{
@@ -46,6 +47,13 @@ struct SheetView: View {
                 
                 }
                 Button{
+                    
+                    let newProduct = Product(context: moc)
+                    newProduct.type = type
+                    newProduct.name = name
+                    newProduct.quantity = quantity
+                    newProduct.details = details
+                    try? moc.save()
                     
                 } label: {
                     Text("Save")
