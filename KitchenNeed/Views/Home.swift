@@ -12,7 +12,7 @@ import PartialSheet
 struct Home: View {
     @State private var isSheetPresented = false
     @State private var searchText: String = ""
-    private var gridItemLayout = [GridItem(.flexible()), GridItem(.flexible())]
+    private var gridItemLayout = [GridItem(.flexible()), GridItem(.flexible()),GridItem(.flexible())]
     @FetchRequest(sortDescriptors: [
         SortDescriptor(\.name)
     ]) var product: FetchedResults<Product>
