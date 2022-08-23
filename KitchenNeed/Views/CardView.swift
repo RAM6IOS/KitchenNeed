@@ -13,11 +13,11 @@ struct CardView: View {
         VStack{
             HStack{
                 VStack{
-                Image("cleaning-materials")
+                Image("vegetable")
                     .resizable()
                     .scaledToFill()
                     .padding()
-                    .frame(width: 130, height: 150)
+                    .frame(width: 140, height: 150)
                     .background(Color.white)
                     .cornerRadius(5)
                     .shadow(radius: 10)
@@ -27,18 +27,21 @@ struct CardView: View {
                 VStack{
                     Text("Name")
                         .font(.title3)
-                    LazyVGrid(columns: gridItemLayout, spacing: 1) {
+                    LazyVGrid(columns: gridItemLayout) {
                         Text("Tag1")
-                            .padding()
+                            .padding(.horizontal,10)
+                            .padding(.vertical,5)
                             .background(.gray)
                             .cornerRadius(5)
                             
                         Text("Tag2")
-                            .padding()
+                            .padding(.horizontal,10)
+                            .padding(.vertical,5)
                             .background(.gray)
                             .cornerRadius(5)
                         Text("Tag3")
-                            .padding()
+                            .padding(.horizontal,10)
+                            .padding(.vertical,5)
                             .background(.gray)
                             .cornerRadius(5)
                     }
@@ -48,7 +51,7 @@ struct CardView: View {
             }
         }
         .background(Color.white)
-        .cornerRadius(5)
+        .cornerRadius(10)
         .shadow(radius: 5)
     }
 }
