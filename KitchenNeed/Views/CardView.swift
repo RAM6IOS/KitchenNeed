@@ -9,13 +9,18 @@ import SwiftUI
 
 struct CardView: View {
      var gridItemLayout = [GridItem(.flexible()), GridItem(.flexible()),GridItem(.flexible())]
-    var products: Product?
+   
+    @FetchRequest(sortDescriptors: [
+        SortDescriptor(\.name)
+    ]) var product: FetchedResults<Product>
     var body: some View {
-      
+        List {
+            Section(header: Text("Shopping List")){
+                ForEach(product) { products in
         VStack{
             HStack{
                 VStack{
-                Image(products?.type ?? "typ")
+                Image(products.type ?? "typ")
                     .resizable()
                     .scaledToFill()
                     .padding()
@@ -25,9 +30,9 @@ struct CardView: View {
                     .shadow(radius: 10)
                   
                 }
-                Spacer()
+               
                 VStack{
-                    Text(products?.name ?? "name")
+                    Text(products.name ?? "name")
                         .font(.title3)
                     
                     LazyVGrid(columns: gridItemLayout) {
@@ -49,16 +54,26 @@ struct CardView: View {
                             .cornerRadius(5)
                     }
                      
-                    Text(products?.quantity ?? "quantity")
+                    VStack{
+                    Text(products.quantity ?? "quantity")
                     
                     Text("Name Fr")
+                            
+                    }
+                       
                      
                 }
+               
             }
         }
+        
         .background(Color.white)
         .cornerRadius(10)
         .shadow(radius: 5)
+                }
+            }
+        }
+        .listStyle(.grouped)
         }
     
 }
