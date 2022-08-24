@@ -21,33 +21,20 @@ struct Home: View {
         NavigationView{
             VStack(alignment:.leading) {
                 ScrollView {
-                    //ButtonSheet()
-                    Spacer()
-                        .padding(.bottom, 10)
+                   
                     HStack {
                         Text("Shopping List")
                             .font(.title2)
                         Spacer()
                     }
                    
-                    LazyVGrid(columns: gridItemLayout, spacing: 20) {
                     
-                        ForEach(product) { produc in
-                            ProductCardView(product: Products.CarrotProduct, selected: true , products: produc)
-                        }
-                    
-                    }
-                    .padding(.horizontal, 5)
                     HStack {
                         Text("Recent")
                             .font(.title2)
                         Spacer()
                     }
-                    LazyVGrid(columns: gridItemLayout, spacing: 20) {
-                        ForEach((0...11), id: \.self) {_ in
-                            ProductCardView(product: Products.CarrotProduct)
-                        }
-                    }
+                   
                 }
             }
             .padding(.horizontal, 5)
