@@ -19,25 +19,21 @@ struct Home: View {
     @Environment(\.managedObjectContext) var moc
     var body: some View {
         NavigationView{
-            VStack(alignment:.leading) {
-                ScrollView {
-                   
-                    HStack {
-                        Text("Shopping List")
-                            .font(.title2)
-                        Spacer()
-                    }
-                   
+         
+             List {
+                   Section(header: Text("Shopping List")){
+                        ForEach(product) { products in
+                           CardView( products: products)
+                        }
                     
-                    HStack {
-                        Text("Recent")
-                            .font(.title2)
-                        Spacer()
-                    }
-                   
+                   }
+                    
+
+                    
                 }
-            }
-            .padding(.horizontal, 5)
+             .listStyle(.grouped)
+            
+           
             .navigationBarTitle("Home")
             .toolbar {
                 ToolbarItem( placement: .navigationBarTrailing) {
@@ -52,7 +48,6 @@ struct Home: View {
                 SheetView()
             }
         }
-        .attachPartialSheetToRoot()
     }
 }
 
