@@ -14,6 +14,10 @@ struct ContentView: View {
                  .tabItem {
                     Label("Home", systemImage: "house.fill")
                 }
+            GroupView()
+                .tabItem {
+                   Label("Group", systemImage: "person.3")
+               }
             Profile()
                 .tabItem {
                         Label("Profile", systemImage: "person.fill")
