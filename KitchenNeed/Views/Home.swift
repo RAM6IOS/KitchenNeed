@@ -19,21 +19,7 @@ struct Home: View {
     @Environment(\.managedObjectContext) var moc
     var body: some View {
         NavigationView{
-         
-             List {
-                   Section(header: Text("Shopping List")){
-                        ForEach(product) { products in
-                           CardView( products: products)
-                        }
-                    
-                   }
-                    
-
-                    
-                }
-             .listStyle(.grouped)
-            
-           
+           CardView()
             .navigationBarTitle("Home")
             .toolbar {
                 ToolbarItem( placement: .navigationBarTrailing) {
