@@ -8,16 +8,18 @@
 import SwiftUI
 
 struct CardView: View {
-    private var gridItemLayout = [GridItem(.flexible()), GridItem(.flexible()),GridItem(.flexible())]
+     var gridItemLayout = [GridItem(.flexible()), GridItem(.flexible()),GridItem(.flexible())]
+    var products: Product?
     var body: some View {
+      
         VStack{
             HStack{
                 VStack{
-                Image("vegetable")
+                Image(products?.type ?? "typ")
                     .resizable()
                     .scaledToFill()
                     .padding()
-                    .frame(width: 140, height: 150)
+                    .frame(width: 100, height: 100)
                     .background(Color.white)
                     .cornerRadius(5)
                     .shadow(radius: 10)
@@ -25,8 +27,9 @@ struct CardView: View {
                 }
                 Spacer()
                 VStack{
-                    Text("Name")
+                    Text(products?.name ?? "name")
                         .font(.title3)
+                    
                     LazyVGrid(columns: gridItemLayout) {
                         Text("Tag1")
                             .padding(.horizontal,10)
@@ -45,15 +48,19 @@ struct CardView: View {
                             .background(.gray)
                             .cornerRadius(5)
                     }
-                    Text("Custmor ")
+                     
+                    Text(products?.quantity ?? "quantity")
+                    
                     Text("Name Fr")
+                     
                 }
             }
         }
         .background(Color.white)
         .cornerRadius(10)
         .shadow(radius: 5)
-    }
+        }
+    
 }
 
 struct CardView_Previews: PreviewProvider {
