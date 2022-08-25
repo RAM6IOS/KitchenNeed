@@ -23,13 +23,14 @@ struct CardView: View {
                 Image(products.type ?? "typ")
                     .resizable()
                     .scaledToFill()
+                    .frame(width: 80, height: 100)
                     .padding()
-                    .frame(width: 100, height: 100)
-                    .background(Color.white)
-                    .cornerRadius(5)
-                    .shadow(radius: 10)
+                   
                   
                 }
+                .background(Color.white)
+                .cornerRadius(5)
+                .shadow(radius: 10)
                
                 VStack{
                     Text(products.name ?? "name")
@@ -66,7 +67,14 @@ struct CardView: View {
                
             }
         }
-        
+        .swipeActions {
+            Button {
+                
+            } label: {
+                Label("Mark Uncontacted", systemImage: "person.crop.circle.badge.xmark")
+            }
+            .tint(.blue)
+        }
         .background(Color.white)
         .cornerRadius(10)
         .shadow(radius: 5)
