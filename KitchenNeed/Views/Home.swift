@@ -17,6 +17,7 @@ struct Home: View {
         SortDescriptor(\.name)
     ]) var product: FetchedResults<Product>
     @Environment(\.managedObjectContext) var moc
+    @StateObject var prospects = Prospects()
     var body: some View {
         NavigationView{
             CardView( filter: .contacted)
@@ -33,6 +34,7 @@ struct Home: View {
             .sheet(isPresented: $isSheetPresented){
                 SheetView()
             }
+            .environmentObject(prospects)
         }
     }
 }

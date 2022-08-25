@@ -17,6 +17,7 @@ struct CardView: View {
         case  contacted, uncontacted
     }
     let filter: FilterType
+    @EnvironmentObject var prospects: Prospects
     var body: some View {
         List {
             Section(header: Text("Shopping List")){
