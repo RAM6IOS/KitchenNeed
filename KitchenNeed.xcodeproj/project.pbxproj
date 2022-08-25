@@ -10,6 +10,7 @@
 		2D2544D428B4DFD400C40D18 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2544D328B4DFD400C40D18 /* CardView.swift */; };
 		2D2544D628B53C3F00C40D18 /*  GroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2544D528B53C3F00C40D18 /*  GroupView.swift */; };
 		2D3709012884ABFE0044EF45 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D3709002884ABFE0044EF45 /* Preview Assets.xcassets */; };
+		2D4542E928B7863C0030DF73 /* Prospect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4542E828B7863C0030DF73 /* Prospect.swift */; };
 		2D48C792288FF8D400981FAE /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D48C791288FF8D400981FAE /* Color.swift */; };
 		2DA767692885644700264BE7 /* PartialSheet in Frameworks */ = {isa = PBXBuildFile; productRef = 2DA767682885644700264BE7 /* PartialSheet */; };
 		2DCB273B288DAE3600335695 /* KitchenNeedModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2DCB2739288DAE3600335695 /* KitchenNeedModel.xcdatamodeld */; };
@@ -31,6 +32,7 @@
 		2D2544D528B53C3F00C40D18 /*  GroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " GroupView.swift"; sourceTree = "<group>"; };
 		2D3708F62884ABF90044EF45 /* KitchenNeed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KitchenNeed.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D3709002884ABFE0044EF45 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		2D4542E828B7863C0030DF73 /* Prospect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prospect.swift; sourceTree = "<group>"; };
 		2D48C791288FF8D400981FAE /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		2DCB273A288DAE3600335695 /* KitchenNeedModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = KitchenNeedModel.xcdatamodel; sourceTree = "<group>"; };
 		2DCB273C288DB15800335695 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 			children = (
 				63CD66612886DA68003CDE86 /* Product.swift */,
 				2DCB2739288DAE3600335695 /* KitchenNeedModel.xcdatamodeld */,
+				2D4542E828B7863C0030DF73 /* Prospect.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -222,6 +225,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				63CD666F2886DA85003CDE86 /* ContentView.swift in Sources */,
+				2D4542E928B7863C0030DF73 /* Prospect.swift in Sources */,
 				63CD666C2886DA85003CDE86 /* Profile.swift in Sources */,
 				63CD666E2886DA85003CDE86 /* SheetView.swift in Sources */,
 				2D2544D628B53C3F00C40D18 /*  GroupView.swift in Sources */,
