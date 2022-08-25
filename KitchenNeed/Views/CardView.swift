@@ -13,6 +13,10 @@ struct CardView: View {
     @FetchRequest(sortDescriptors: [
         SortDescriptor(\.name)
     ]) var product: FetchedResults<Product>
+    enum FilterType {
+        case  contacted, uncontacted
+    }
+    let filter: FilterType
     var body: some View {
         List {
             Section(header: Text("Shopping List")){
@@ -88,7 +92,7 @@ struct CardView: View {
 
 struct CardView_Previews: PreviewProvider {
     static var previews: some View {
-        CardView()
+        CardView( filter: .contacted)
 .previewInterfaceOrientation(.portrait)
     }
 }

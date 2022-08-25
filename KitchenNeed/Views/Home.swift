@@ -19,7 +19,7 @@ struct Home: View {
     @Environment(\.managedObjectContext) var moc
     var body: some View {
         NavigationView{
-           CardView()
+            CardView( filter: .contacted)
             .navigationBarTitle("Home")
             .toolbar {
                 ToolbarItem( placement: .navigationBarTrailing) {
