@@ -23,17 +23,16 @@ struct Home: View {
     var body: some View {
         NavigationView{
             VStack{
-             List{
-            Section(header: Text("Shopping List")){
+                List{
+                    Section(header: Text("Shopping List")){
             CardView( filter: .contacted)
-                    .swipeActions {
-                        
                     }
-            }
+                    
                 }
+                        
                 
             }
-            .environmentObject(prospects)
+            
             .navigationBarTitle("Home")
             
             .toolbar {
@@ -52,6 +51,7 @@ struct Home: View {
                  SheetView()
                     .environmentObject(prospects)
             }
+            .environmentObject(prospects)
         }
     }
 }

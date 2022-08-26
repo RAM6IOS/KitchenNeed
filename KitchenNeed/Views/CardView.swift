@@ -21,7 +21,7 @@ struct CardView: View {
     @State private var isPresented = false
     @State private var name = ""
     var body: some View {
-        VStack{
+         
             ForEach(filteredProspects) { products in
                     
         VStack{
@@ -71,31 +71,37 @@ struct CardView: View {
             }
             
         }
-        .swipeActions {
+        .swipeActions{
             if products.isContacted {
-                Button {
-                    products.isContacted.toggle()
-                } label: {
-                    Label("Mark Uncontacted", systemImage: "person.crop.circle.badge.xmark")
+                    Button {
+                        prospects.toggle(products)
+                    } label: {
+                        Label("Mark Uncontacted", systemImage: "person.crop.circle.badge.xmark")
+                    }
+                    .tint(.blue)
+                } else {
+                    Button {
+                        prospects.toggle(products)
+                    } label: {
+                        Label("Mark Contacted", systemImage: "person.crop.circle.fill.badge.checkmark")
+                    }
+                    .tint(.green)
                 }
-                .tint(.blue)
-            } else {
-                Button {
-                    products.isContacted.toggle()
-                } label: {
-                    Label("Mark Contacted", systemImage: "person.crop.circle.fill.badge.checkmark")
-                }
-                .tint(.green)
-            }
         }
-       // .background(Color.white)
-        //.cornerRadius(10)
-        //.shadow(radius: 5)
+        .background(Color.white)
+        .cornerRadius(10)
+        .shadow(radius: 5)
         
 
                 }
 
-        }
+        
+           
+            
+        
+        
+        
+        
         }
             var filteredProspects: [Prospect] {
                 switch filter {
