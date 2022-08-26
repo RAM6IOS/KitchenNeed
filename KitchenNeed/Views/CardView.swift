@@ -33,18 +33,14 @@ struct CardView: View {
                     .scaledToFill()
                     .frame(width: 80, height: 100)
                     .padding()
-                   
-                  
                 }
                 .background(Color.white)
                 .cornerRadius(5)
                 .shadow(radius: 10)
-               
-                
                 VStack{
+                    
                     Text(products.name)
                         .font(.title3)
-                    
                     LazyVGrid(columns: gridItemLayout) {
                         Text("Tag1")
                             .padding(.horizontal,10)
@@ -64,6 +60,7 @@ struct CardView: View {
                             .cornerRadius(5)
                     }
                      
+                     
                     VStack{
                     Text("quantity")
                     
@@ -71,18 +68,34 @@ struct CardView: View {
                             
                     }
                 }
-                 
+            }
+            
+        }
+        .swipeActions {
+            if products.isContacted {
+                Button {
+                    products.isContacted.toggle()
+                } label: {
+                    Label("Mark Uncontacted", systemImage: "person.crop.circle.badge.xmark")
+                }
+                .tint(.blue)
+            } else {
+                Button {
+                    products.isContacted.toggle()
+                } label: {
+                    Label("Mark Contacted", systemImage: "person.crop.circle.fill.badge.checkmark")
+                }
+                .tint(.green)
             }
         }
-        .background(Color.white)
-        .cornerRadius(10)
-        .shadow(radius: 5)
+       // .background(Color.white)
+        //.cornerRadius(10)
+        //.shadow(radius: 5)
+        
+
                 }
-       
-        
+
         }
-        
-    
         }
             var filteredProspects: [Prospect] {
                 switch filter {

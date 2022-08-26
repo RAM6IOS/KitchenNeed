@@ -23,12 +23,15 @@ struct Home: View {
     var body: some View {
         NavigationView{
             VStack{
-                List {
+             List{
             Section(header: Text("Shopping List")){
             CardView( filter: .contacted)
+                    .swipeActions {
+                        
+                    }
             }
                 }
-                .listStyle(.grouped)
+                
             }
             .environmentObject(prospects)
             .navigationBarTitle("Home")
@@ -48,14 +51,7 @@ struct Home: View {
             .sheet(isPresented: $isSheetPresented){
                  SheetView()
                     .environmentObject(prospects)
-                    
-                   
             }
-             
-            
-             
-             
-            
         }
     }
 }
