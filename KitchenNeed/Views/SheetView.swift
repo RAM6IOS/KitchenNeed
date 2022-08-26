@@ -14,10 +14,13 @@ struct SheetView: View {
     let types = ["vegetable", "meat", "fruits", "bread" , "milk" ,"spices" ,"canned-food" ,"cleaning-materials"]
     @State private var type = ""
     @Environment(\.managedObjectContext) var moc
+    @EnvironmentObject var prospects: Prospects
     var body: some View {
         NavigationView{
             VStack{
                 List{
+                    TextField("name" ,text: $name)
+                    /*
                     Section("Types"){
                 Picker("types", selection: $type) {
                                 ForEach(types, id: \.self) { typ in
@@ -46,14 +49,20 @@ struct SheetView: View {
                     }
                 
                 }
+                     */
                 Button{
-                    
+                    /*
                     let newProduct = Product(context: moc)
                     newProduct.type = type
                     newProduct.name = name
                     newProduct.quantity = quantity
                     newProduct.details = details
                     try? moc.save()
+                     */
+                    let prospect = Prospect()
+                    prospect.name = name
+                    prospects.people.append(prospect)
+                    name = ""
                     
                 } label: {
                     Text("Save")
@@ -66,14 +75,17 @@ struct SheetView: View {
                 .cornerRadius(10)
             }
             .navigationTitle("Add Product")
+            
         }
 
         
+    }
     }
 }
 
 struct SheetView_Previews: PreviewProvider {
     static var previews: some View {
         SheetView()
+           
     }
 }

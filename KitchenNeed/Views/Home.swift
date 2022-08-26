@@ -18,10 +18,21 @@ struct Home: View {
     ]) var product: FetchedResults<Product>
     @Environment(\.managedObjectContext) var moc
     @StateObject var prospects = Prospects()
+    //@EnvironmentObject var prospects: Prospects
+    @State var isPresented = false
     var body: some View {
         NavigationView{
+            VStack{
+                List {
+            Section(header: Text("Shopping List")){
             CardView( filter: .contacted)
+            }
+                }
+                .listStyle(.grouped)
+            }
+            .environmentObject(prospects)
             .navigationBarTitle("Home")
+            
             .toolbar {
                 ToolbarItem( placement: .navigationBarTrailing) {
                     Button(action: {isSheetPresented.toggle()}) {
@@ -30,18 +41,30 @@ struct Home: View {
                     }
                 }
             }
+             
+             
             .navigationBarTitleDisplayMode(.inline)
+            
             .sheet(isPresented: $isSheetPresented){
-                SheetView()
+                 SheetView()
+                    .environmentObject(prospects)
+                    
+                   
             }
-            .environmentObject(prospects)
+             
+            
+             
+             
+            
         }
     }
 }
 
+
 struct Home_Previews: PreviewProvider {
     static var previews: some View {
         Home()
+           // .environmentObject(Prospects())
     }
 }
 
