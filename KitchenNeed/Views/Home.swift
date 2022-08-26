@@ -27,6 +27,9 @@ struct Home: View {
                     Section(header: Text("Shopping List")){
             CardView( filter: .contacted)
                     }
+                    Section(header: Text("Shopping List")){
+                        CardView( filter: .uncontacted)
+                    }
                     
                 }
                         
