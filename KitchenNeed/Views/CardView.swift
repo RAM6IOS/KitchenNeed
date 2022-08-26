@@ -18,14 +18,17 @@ struct CardView: View {
     }
     let filter: FilterType
     @EnvironmentObject var prospects: Prospects
+    @State private var isPresented = false
+    @State private var name = ""
     var body: some View {
-        List {
-            Section(header: Text("Shopping List")){
-                ForEach(product) { products in
+        VStack{
+            ForEach(filteredProspects) { products in
+                    
         VStack{
             HStack{
+                
                 VStack{
-                Image(products.type ?? "typ")
+                Image("typ")
                     .resizable()
                     .scaledToFill()
                     .frame(width: 80, height: 100)
@@ -37,8 +40,9 @@ struct CardView: View {
                 .cornerRadius(5)
                 .shadow(radius: 10)
                
+                
                 VStack{
-                    Text(products.name ?? "name")
+                    Text(products.name)
                         .font(.title3)
                     
                     LazyVGrid(columns: gridItemLayout) {
@@ -61,39 +65,39 @@ struct CardView: View {
                     }
                      
                     VStack{
-                    Text(products.quantity ?? "quantity")
+                    Text("quantity")
                     
                     Text("Name Fr")
                             
                     }
-                       
-                     
                 }
-               
+                 
             }
-        }
-        .swipeActions {
-            Button {
-                
-            } label: {
-                Label("Mark Uncontacted", systemImage: "person.crop.circle.badge.xmark")
-            }
-            .tint(.blue)
         }
         .background(Color.white)
         .cornerRadius(10)
         .shadow(radius: 5)
                 }
-            }
+       
+        
         }
-        .listStyle(.grouped)
-        }
+        
     
+        }
+            var filteredProspects: [Prospect] {
+                switch filter {
+                
+                case .contacted:
+                    return prospects.people.filter { !$0.isContacted }
+                case .uncontacted:
+                    return prospects.people.filter { $0.isContacted }
+                }
+            }
+   
 }
-
 struct CardView_Previews: PreviewProvider {
     static var previews: some View {
         CardView( filter: .contacted)
-.previewInterfaceOrientation(.portrait)
+             .previewInterfaceOrientation(.portrait)
     }
 }
