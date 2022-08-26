@@ -74,6 +74,7 @@ struct CardView: View {
         .swipeActions{
             if products.isContacted {
                     Button {
+                        
                         prospects.toggle(products)
                     } label: {
                         Label("Mark Uncontacted", systemImage: "person.crop.circle.badge.xmark")
@@ -81,6 +82,7 @@ struct CardView: View {
                     .tint(.blue)
                 } else {
                     Button {
+                        
                         prospects.toggle(products)
                     } label: {
                         Label("Mark Contacted", systemImage: "person.crop.circle.fill.badge.checkmark")
