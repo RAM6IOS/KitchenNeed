@@ -26,9 +26,7 @@ struct Home: View {
              List{
             Section(header: Text("Shopping List")){
             CardView( filter: .contacted)
-                    .swipeActions {
-                        
-                    }
+                    
             }
                 }
                 
