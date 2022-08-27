@@ -21,7 +21,7 @@ struct CardView: View {
     @State private var isPresented = false
     @State private var name = ""
     var body: some View {
-        VStack{
+       
             ForEach(filteredProspects) { products in
                     
         VStack{
@@ -95,7 +95,7 @@ struct CardView: View {
 
                 }
 
-        }
+        
         }
             var filteredProspects: [Prospect] {
                 switch filter {
