@@ -28,7 +28,12 @@ struct Home: View {
             CardView( filter: .contacted)
                     
             }
+          Section(header: Text(" Finish Shopping ")){
+              CardView( filter: .uncontacted)
+                         
+                 }
                 }
+             .listStyle(.grouped)
                 
             }
             .environmentObject(prospects)
