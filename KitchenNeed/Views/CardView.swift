@@ -28,15 +28,13 @@ struct CardView: View {
             HStack{
                 
                 VStack{
-                Image("typ")
+                Image("default-avatar")
                     .resizable()
                     .scaledToFill()
                     .frame(width: 80, height: 100)
                     .padding()
                 }
-                .background(Color.white)
-                .cornerRadius(5)
-                .shadow(radius: 10)
+                
                 VStack{
                     
                     Text(products.name)
