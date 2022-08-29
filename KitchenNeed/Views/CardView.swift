@@ -19,6 +19,7 @@ struct CardView: View {
     let filter: FilterType
     @EnvironmentObject var prospects: Prospects
     @State private var isPresented = false
+    @State private var isPresented2 = false
     @State private var name = ""
     var body: some View {
        
@@ -26,7 +27,6 @@ struct CardView: View {
                     
         VStack{
             HStack{
-                
                 VStack{
                 Image("default-avatar")
                     .resizable()
@@ -69,10 +69,30 @@ struct CardView: View {
             }
             
         }
+        
+        .onTapGesture {
+            if products.isContacted {
+               
+                    prospects.toggle(products)
+                   
+                
+                
+            } else {
+                    prospects.toggle(products)
+                
+                
+            }
+                }
+        .onLongPressGesture(minimumDuration:0.2, maximumDistance:10 ){
+            isPresented2.toggle()
+            
+        }
+        /*
         .swipeActions {
             if products.isContacted {
                 Button {
                     prospects.toggle(products)
+                    isPresented2.toggle()
                 } label: {
                     Label("Mark Uncontacted", systemImage: "person.crop.circle.badge.xmark")
                 }
@@ -80,11 +100,18 @@ struct CardView: View {
             } else {
                 Button {
                     prospects.toggle(products)
+                    
                 } label: {
                     Label("Mark Contacted", systemImage: "person.crop.circle.fill.badge.checkmark")
                 }
                 .tint(.green)
             }
+            
+        }
+            */
+        .sheet(isPresented: $isPresented2 ){
+            Text(" @State private var isPresented = false")
+            
         }
        // .background(Color.white)
         //.cornerRadius(10)
