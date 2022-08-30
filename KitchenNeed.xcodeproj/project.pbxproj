@@ -17,6 +17,7 @@
 		2DCB273D288DB15800335695 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DCB273C288DB15800335695 /* DataController.swift */; };
 		2DE2CFD2288707A800FBFE62 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE2CFD1288707A800FBFE62 /* ImagePicker.swift */; };
 		2DFD509F28BE88F700CE8FD2 /* Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DFD509E28BE88F700CE8FD2 /* Onboarding.swift */; };
+		2DFD50A328BEA44500CE8FD2 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2DFD50A228BEA44500CE8FD2 /* Launch Screen.storyboard */; };
 		63CD665E2886D9D6003CDE86 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63CD665C2886D9D5003CDE86 /* Assets.xcassets */; };
 		63CD665F2886D9D6003CDE86 /* KitchenNeedApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CD665D2886D9D5003CDE86 /* KitchenNeedApp.swift */; };
 		63CD66622886DA68003CDE86 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CD66612886DA68003CDE86 /* Product.swift */; };
@@ -39,6 +40,7 @@
 		2DCB273C288DB15800335695 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		2DE2CFD1288707A800FBFE62 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		2DFD509E28BE88F700CE8FD2 /* Onboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding.swift; sourceTree = "<group>"; };
+		2DFD50A228BEA44500CE8FD2 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		63CD665C2886D9D5003CDE86 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		63CD665D2886D9D5003CDE86 /* KitchenNeedApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KitchenNeedApp.swift; sourceTree = "<group>"; };
 		63CD66612886DA68003CDE86 /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 				2D2544D328B4DFD400C40D18 /* CardView.swift */,
 				2D2544D528B53C3F00C40D18 /*  GroupView.swift */,
 				2DFD509E28BE88F700CE8FD2 /* Onboarding.swift */,
+				2DFD50A228BEA44500CE8FD2 /* Launch Screen.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -215,6 +218,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2DFD50A328BEA44500CE8FD2 /* Launch Screen.storyboard in Resources */,
 				63CD665E2886D9D6003CDE86 /* Assets.xcassets in Resources */,
 				2D3709012884ABFE0044EF45 /* Preview Assets.xcassets in Resources */,
 			);
