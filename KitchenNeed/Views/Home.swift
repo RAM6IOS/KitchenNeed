@@ -11,6 +11,7 @@ import PartialSheet
 
 struct Home: View {
     @State private var isSheetPresented = false
+    @State private var ShowOnboarding = true
     @State private var searchText: String = ""
     private var gridItemLayout = [GridItem(.flexible()), GridItem(.flexible()),GridItem(.flexible())]
     @FetchRequest(sortDescriptors: [
@@ -55,6 +56,10 @@ struct Home: View {
                  SheetView()
                     .environmentObject(prospects)
             }
+            .fullScreenCover(isPresented:$ShowOnboarding, content: {
+                Onboarding(ShowOnboarding: $ShowOnboarding)
+                
+            })
         }
     }
 }
