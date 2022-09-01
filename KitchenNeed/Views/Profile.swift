@@ -93,13 +93,13 @@ struct Profile: View {
                 Button{
                     
                 } label: {
-                    Text("Logout")
+                    Text("Edit")
                         .bold()
                         .font(.title3)
-                        .frame(width: 250, height: 40)
+                        .frame(width: 350, height: 40)
                         .foregroundColor(.white)
                 }
-                .background(Color.red)
+                .background(Color.green)
                 .cornerRadius(10)
                 Spacer()
                 
