@@ -12,12 +12,10 @@ struct Profile: View {
     @State private var image: Image?
     @State private var inputImage: UIImage?
     @State private var showingImagePicker = false
-    @State private var FirsName: String = ""
-    @State private var LastName: String = ""
-    @State private var Email: String = ""
+    @State private var FirsName: String = "Name"
+    @State private var Email: String = "wdj31104@yuoia.com"
     var language = ["French", "Arabic", "English"]
     @State  var selectedlanguage = "Arabic"
-   
     var body: some View {
         NavigationView{
             VStack{
@@ -33,29 +31,24 @@ struct Profile: View {
                                 )
                             .clipShape(Circle())
                             .shadow(radius: 40)
-                            
                         Image(systemName: "square.and.pencil")
                             .resizable()
                             .scaledToFit()
                             .frame(width: 17, height: 17)
                             .foregroundColor(.black)
                             .offset(x:35,y:40)
-                            
-                            
                     } else {
                         Image("default-avatar")
                             .resizable()
                             .scaledToFit()
                             .frame(width: 200, height: 100 )
                             .clipShape(Circle())
-                       
                         Image(systemName: "square.and.pencil")
                             .resizable()
                             .scaledToFit()
                             .frame(width: 17, height: 17)
                             .foregroundColor(.black)
                             .offset(y:40)
-                         
                         image?
                             .resizable()
                             .scaledToFit()
@@ -63,23 +56,18 @@ struct Profile: View {
                             .clipShape(Circle())
                             .border(.green)
                             .shadow(radius: 40)
-                        
-                        
                     }
                 }
                 .onTapGesture {
-                       // select an image
                     showingImagePicker = true
                 }
-                  
                 Form{
                     Section("name"){
                     TextField("Name" , text: $FirsName)
                         .font(.system(size: 15 , weight: .bold))
-
                     }
                     Section(header:Text("Email")){
-                        Text("wdj31104@yuoia.com")
+                        TextField("email" , text: $Email)
                     }
                     Section("language"){
                         Picker("Please choose a language", selection: $selectedlanguage) {
@@ -87,7 +75,6 @@ struct Profile: View {
                                             Text($0)
                                         }
                                     }
-                       // .pickerStyle(WheelPickerStyle())
                     }
                 }
                 Button{
@@ -109,7 +96,6 @@ struct Profile: View {
                 ImagePicker(image: $inputImage)
         
             }
-           // .navigationTitle("Profile")
             .navigationBarTitleDisplayMode(.inline)
         }
     }
