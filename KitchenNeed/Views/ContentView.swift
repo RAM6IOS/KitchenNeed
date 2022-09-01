@@ -12,7 +12,8 @@ struct ContentView: View {
         TabView {
             Home()
                  .tabItem {
-                    Label("Home", systemImage: "house.fill")
+                     Label("List", systemImage: "list.bullet.rectangle.portrait.fill")
+                     
                 }
             GroupView()
                 .tabItem {
