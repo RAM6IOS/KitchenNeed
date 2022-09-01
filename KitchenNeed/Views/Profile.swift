@@ -27,8 +27,20 @@ struct Profile: View {
                             .resizable()
                             .scaledToFit()
                             .frame(width: 200, height: 100 )
+                            .overlay(
+                                    Circle()
+                                        .stroke(.white, lineWidth: 7)
+                                )
                             .clipShape(Circle())
                             .shadow(radius: 40)
+                            
+                        Image(systemName: "square.and.pencil")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 17, height: 17)
+                            .foregroundColor(.black)
+                            .offset(x:35,y:40)
+                            
                             
                     } else {
                         Image("default-avatar")
