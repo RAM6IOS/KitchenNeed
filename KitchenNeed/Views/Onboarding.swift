@@ -14,9 +14,9 @@ struct Onboarding: View {
         GeometryReader(content: { geometry in
         VStack{
         TabView(selection: $currentPage){
-            IntroView()
+            IntroView(name: "Create and save your shopping list", image:"groceries" )
                 .tag(0)
-            IntroView()
+            IntroView(name: "Analyze your purchase & spending patterns", image: "grocery")
                 .tag(1)
     SignupView(ShowOnboarding: $ShowOnboarding)
                 .tag(2)
