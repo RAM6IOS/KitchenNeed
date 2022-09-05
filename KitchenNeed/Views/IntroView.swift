@@ -8,13 +8,23 @@
 import SwiftUI
 
 struct IntroView: View {
+    @State var name : String
+    @State var image: String
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack{
+            Text(name)
+                .font(
+                        .system(size: 20)
+                        .weight(.heavy)
+                        
+                    )
+                .padding(.vertical , 20)
+            Image(image)
+                .resizable()
+                .scaledToFit()
+                .frame(width: 250, height: 250 )
+        }
     }
 }
 
-struct IntroView_Previews: PreviewProvider {
-    static var previews: some View {
-        IntroView()
-    }
-}
+
