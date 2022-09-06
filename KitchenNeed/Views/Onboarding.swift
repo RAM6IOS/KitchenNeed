@@ -26,34 +26,39 @@ struct Onboarding: View {
             HStack{
                 if currentPage > 0 {
                     Button{
+                        withAnimation{
                         currentPage -= 1
+                        }
                     } label: {
-                        Text("back")
+                        Image(systemName: "arrow.left")
+                            .padding()
                             .foregroundColor(.white)
-                            .frame(width: 150, height: 50)
+                            .font(.system(size: 25))
                             .background(Color.green)
-                            .cornerRadius(10)
+                            .clipShape(Circle())
                     }
                     
                 }
+                Spacer()
                 if   currentPage <= 1{
                 Button{
+                    withAnimation{
                     if currentPage != 2 {
                         currentPage += 1
                     }
-                } label: {
-                    HStack{
-                        Text( "Next")
-                            
-                     Image(systemName: "arrow.right")
                     }
+                } label: {
+                     Image(systemName: "arrow.right")
+                    .padding()
                     .foregroundColor(.white)
-                    .frame(width: 150, height: 50)
+                    .font(.system(size: 25))
                     .background(Color.green)
-                    .cornerRadius(10)
+                    .clipShape(Circle())
                 }
                 }
             }
+            .padding(.horizontal)
+            .padding(.horizontal)
             Spacer()
     }
         })
