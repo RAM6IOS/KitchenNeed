@@ -3,12 +3,8 @@
 //  KitchenNeed
 //
 //  Created by Bouchedoub Rmazi on 17/7/2022.
-//
-
 import SwiftUI
 import PartialSheet
-
-
 struct Home: View {
     @State private var isSheetPresented = false
   @State var ShowOnboarding = true
@@ -20,26 +16,49 @@ struct Home: View {
     @Environment(\.managedObjectContext) var moc
     @StateObject var prospects = Prospects()
     //@EnvironmentObject var prospects: Prospects
+    @State private var shownList = false
+    
     @State var isPresented = false
     var body: some View {
         NavigationView{
+            ScrollView{
             VStack{
-             List{
-            Section(header: Text("Shopping List")){
-            CardView( filter: .contacted)
-                    
-            }
-          Section(header: Text(" Finish Shopping ")){
-              CardView( filter: .uncontacted)
-                         
-                 }
+            VStack{
+               
+                HStack{
+                    Text("Shopping List:")
+                        .font(.headline)
+                        .padding(.horizontal , 14)
+                        .padding(.vertical , 10)
+                        .background(.white)
+                        .cornerRadius(30)
+                        .shadow(radius: 5)
+                    Spacer()
                 }
-             .listStyle(.grouped)
-                
+                .padding(.horizontal , 20)
+           CardView( filter: .contacted)
+                Spacer()
+            }
+        Spacer()
+            .frame(height: 200)
+                VStack{
+                    Spacer()
+                    HStack{
+                        Text("Shopping Finch:")
+                            .font(.headline)
+                            .padding(.horizontal , 14)
+                            .padding(.vertical , 10)
+                            .background(.white)
+                            .cornerRadius(30)
+                            .shadow(radius: 5)
+                        Spacer()
+                    }
+                    .padding(.horizontal , 20)
+             CardView( filter: .uncontacted)
+                }
             }
             .environmentObject(prospects)
             .navigationBarTitle("Home")
-            
             .toolbar {
                 ToolbarItem( placement: .navigationBarTrailing) {
                     Button(action: {isSheetPresented.toggle()}) {
@@ -48,29 +67,21 @@ struct Home: View {
                     }
                 }
             }
-             
-             
             .navigationBarTitleDisplayMode(.inline)
-            
             .sheet(isPresented: $isSheetPresented){
                  SheetView()
                     .environmentObject(prospects)
             }
             .fullScreenCover(isPresented:$ShowOnboarding, content: {
                 Onboarding(ShowOnboarding: $ShowOnboarding)
-                
             })
+            }
+        }
         }
     }
-}
-
-
 struct Home_Previews: PreviewProvider {
     static var previews: some View {
         Home()
            // .environmentObject(Prospects())
     }
 }
-
-
-
