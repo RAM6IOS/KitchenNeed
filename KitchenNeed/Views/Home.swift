@@ -21,41 +21,17 @@ struct Home: View {
     @State var isPresented = false
     var body: some View {
         NavigationView{
-            ScrollView{
             VStack{
-            VStack{
-               
-                HStack{
-                    Text("Shopping List:")
-                        .font(.headline)
-                        .padding(.horizontal , 14)
-                        .padding(.vertical , 10)
-                        .background(.white)
-                        .cornerRadius(30)
-                        .shadow(radius: 5)
-                    Spacer()
-                }
-                .padding(.horizontal , 20)
+                List{
+                    Section("njreq"){
            CardView( filter: .contacted)
-                Spacer()
-            }
-        Spacer()
-            .frame(height: 200)
-                VStack{
-                    Spacer()
-                    HStack{
-                        Text("Shopping Finch:")
-                            .font(.headline)
-                            .padding(.horizontal , 14)
-                            .padding(.vertical , 10)
-                            .background(.white)
-                            .cornerRadius(30)
-                            .shadow(radius: 5)
-                        Spacer()
                     }
-                    .padding(.horizontal , 20)
-             CardView( filter: .uncontacted)
+
+                    Section("bhjnrec"){
+                        CardView( filter: .uncontacted)
+                    }
                 }
+                .listStyle(GroupedListStyle())
             }
             .environmentObject(prospects)
             .navigationBarTitle("Home")
@@ -76,7 +52,7 @@ struct Home: View {
                 Onboarding(ShowOnboarding: $ShowOnboarding)
             })
             }
-        }
+        
         }
     }
 struct Home_Previews: PreviewProvider {
