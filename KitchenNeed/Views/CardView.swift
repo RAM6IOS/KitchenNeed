@@ -29,8 +29,7 @@ struct CardView: View {
                 VStack{
                     Text(products.name)
                         .font(.system(size: 20, weight: .heavy, design: .default))
-
-                        .foregroundColor(products.isContacted ? Color.white : Color.black)
+                        .foregroundColor( Color.black)
                     VStack{
                         HStack{
                     Text(" Quantity:1 kg")
@@ -48,13 +47,10 @@ struct CardView: View {
                         Text("Tag3")
                             .background(.white)
                     }
-                   
                 }
-                
             }
                 .foregroundColor(Color(.label))
-                .background(products.isContacted ? Color.green : Color.white)
-                .blur(radius: products.isContacted ? 4 : 0)
+                .background( Color.white)
                 .contentShape(Rectangle())
         .onTapGesture {
             if products.isContacted {
