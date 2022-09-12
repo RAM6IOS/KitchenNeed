@@ -18,57 +18,46 @@ struct CardView: View {
     @State private var name = ""
     var body: some View {
             ForEach(filteredProspects) { products in
-        VStack{
             HStack{
                 VStack{
-                Image("default-avatar")
+                Image("fruits")
                     .resizable()
                     .scaledToFill()
-                    .frame(width: 100, height: 100)
+                    .frame(width: 80, height: 80)
                     .cornerRadius(12)
                 }
                 VStack{
                     Text(products.name)
-                        .font(.title3)
+                        .font(.system(size: 20, weight: .heavy, design: .default))
+
                         .foregroundColor(products.isContacted ? Color.white : Color.black)
-                    LazyVGrid(columns: gridItemLayout) {
-                        Text("Tag1")
-                            .padding(.horizontal,10)
-                            .padding(.vertical,5)
-                            .background(.white)
-                            .cornerRadius(5)
-                            .shadow(radius: 5)
-                        Text("Tag2")
-                            .padding(.horizontal,10)
-                            .padding(.vertical,5)
-                            .background(.white)
-                            .cornerRadius(5)
-                            .shadow(radius: 5)
-                        Text("Tag3")
-                            .padding(.horizontal,10)
-                            .padding(.vertical,5)
-                            .background(.white)
-                            .cornerRadius(5)
-                            .shadow(radius: 5)
-                    }
                     VStack{
-                    Text("quantity")
+                        HStack{
+                    Text(" Quantity:1 kg")
                             .foregroundColor(Color.black)
-                    Text("Name Fr")
-                            .foregroundColor(products.isContacted ? Color.white : Color.black)
+                            Spacer()
+                    Text("Name Fr: name")
+                            .foregroundColor(Color.black)
+                        }
                     }
+                    LazyVGrid(columns: gridItemLayout ,spacing: 10) {
+                        Text("Tag1")
+                            .background(.white)
+                        Text("Tag2")
+                            .background(.white)
+                        Text("Tag3")
+                            .background(.white)
+                    }
+                   
                 }
+                
             }
-        }
                 .foregroundColor(Color(.label))
-                .padding()
                 .background(products.isContacted ? Color.green : Color.white)
-                .cornerRadius(20)
-                .shadow(radius: 5)
-                .padding()
+                .blur(radius: products.isContacted ? 4 : 0)
+                .contentShape(Rectangle())
         .onTapGesture {
             if products.isContacted {
-               
                     prospects.toggle(products)
             } else {
                     prospects.toggle(products)
@@ -85,7 +74,6 @@ struct CardView: View {
         }
             var filteredProspects: [Prospect] {
                 switch filter {
-                
                 case .contacted:
                     return prospects.people.filter { !$0.isContacted }
                 case .uncontacted:
