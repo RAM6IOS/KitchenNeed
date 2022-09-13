@@ -16,7 +16,6 @@ struct IntroView: View {
                 .font(
                         .system(size: 20)
                         .weight(.heavy)
-                        
                     )
                 .padding(.vertical , 20)
             Image(image)

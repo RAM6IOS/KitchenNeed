@@ -9,6 +9,7 @@ import SwiftUI
 import CoreMIDI
 struct Onboarding: View {
     @Binding  var ShowOnboarding :Bool
+    @State private var showingPicker = false
     @State var currentPage = 0
     var body: some View {
         GeometryReader(content: { geometry in
@@ -18,11 +19,27 @@ struct Onboarding: View {
                 .tag(0)
             IntroView(name: "Analyze your purchase & spending patterns", image: "grocery")
                 .tag(1)
-    SignupView(ShowOnboarding: $ShowOnboarding)
+            GetStarted(ShowOnboarding: $ShowOnboarding)
                 .tag(2)
         }
           .tabViewStyle(PageTabViewStyle())
           .indexViewStyle(.page(backgroundDisplayMode: .always))
+            if currentPage == 2 {
+                VStack{
+                    Button{
+                        ShowOnboarding.toggle()
+                    } label:
+                     {
+                        Text("Get Started")
+                            .bold()
+                            .font(.title3)
+                            .frame(width: 350, height: 50)
+                            .foregroundColor(.white)
+                            .background(Color.green)
+                            .cornerRadius(30)
+                        }
+                }
+            }
             HStack{
                 if currentPage > 0 {
                     Button{
@@ -37,7 +54,6 @@ struct Onboarding: View {
                             .background(Color.green)
                             .clipShape(Circle())
                     }
-                    
                 }
                 Spacer()
                 if   currentPage <= 1{
@@ -61,12 +77,17 @@ struct Onboarding: View {
             .padding(.horizontal)
             Spacer()
     }
+        .sheet(isPresented: $showingPicker ){
+            SignupView(ShowOnboarding: $ShowOnboarding)
+        }
         })
     }
 }
 
 struct Onboarding_Previews: PreviewProvider {
     static var previews: some View {
+        NavigationView{
         Onboarding(ShowOnboarding: .constant(true))
+        }
     }
 }
