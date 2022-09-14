@@ -27,7 +27,9 @@ struct Onboarding: View {
             if currentPage == 2 {
                 VStack{
                     Button{
+                        withAnimation{
                         ShowOnboarding.toggle()
+                        }
                     } label:
                      {
                         Text("Get Started")

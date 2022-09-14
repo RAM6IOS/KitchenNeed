@@ -14,6 +14,7 @@
 		2D42354328C1285500600266 /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D42354228C1285500600266 /* SignupView.swift */; };
 		2D4542E928B7863C0030DF73 /* Prospect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4542E828B7863C0030DF73 /* Prospect.swift */; };
 		2D48C792288FF8D400981FAE /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D48C791288FF8D400981FAE /* Color.swift */; };
+		2D49ACC628D20851002A8045 /* LogIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D49ACC528D20851002A8045 /* LogIn.swift */; };
 		2D6D466228D0B12900557B0A /* GetStarted.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6D466128D0B12900557B0A /* GetStarted.swift */; };
 		2DA767692885644700264BE7 /* PartialSheet in Frameworks */ = {isa = PBXBuildFile; productRef = 2DA767682885644700264BE7 /* PartialSheet */; };
 		2DCB273B288DAE3600335695 /* KitchenNeedModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2DCB2739288DAE3600335695 /* KitchenNeedModel.xcdatamodeld */; };
@@ -41,6 +42,7 @@
 		2D42354228C1285500600266 /* SignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
 		2D4542E828B7863C0030DF73 /* Prospect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prospect.swift; sourceTree = "<group>"; };
 		2D48C791288FF8D400981FAE /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		2D49ACC528D20851002A8045 /* LogIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogIn.swift; sourceTree = "<group>"; };
 		2D6D466128D0B12900557B0A /* GetStarted.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetStarted.swift; sourceTree = "<group>"; };
 		2DCB273A288DAE3600335695 /* KitchenNeedModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = KitchenNeedModel.xcdatamodel; sourceTree = "<group>"; };
 		2DCB273C288DB15800335695 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
@@ -159,6 +161,7 @@
 				2D42354228C1285500600266 /* SignupView.swift */,
 				2D371F2828C26F6600FEA74C /* IntroView.swift */,
 				2D6D466128D0B12900557B0A /* GetStarted.swift */,
+				2D49ACC528D20851002A8045 /* LogIn.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -255,6 +258,7 @@
 				63CD66622886DA68003CDE86 /* Product.swift in Sources */,
 				2DCB273B288DAE3600335695 /* KitchenNeedModel.xcdatamodeld in Sources */,
 				63CD665F2886D9D6003CDE86 /* KitchenNeedApp.swift in Sources */,
+				2D49ACC628D20851002A8045 /* LogIn.swift in Sources */,
 				63CD66732886DB15003CDE86 /* Home.swift in Sources */,
 				2D2544D428B4DFD400C40D18 /* CardView.swift in Sources */,
 				2DFD509F28BE88F700CE8FD2 /* Onboarding.swift in Sources */,

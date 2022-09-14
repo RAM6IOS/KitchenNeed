@@ -17,7 +17,11 @@ struct SignupView: View {
     @State  var selectedlanguage = "Arabic"
     @Binding  var ShowOnboarding :Bool
     @Binding var ShowHome : Bool
+    @State var showLgn = false
     var body: some View {
+        if showLgn == true {
+            LogIn(ShowHome: $ShowHome)
+        } else {
             VStack{
                 Spacer()
                 ZStack{
@@ -79,6 +83,7 @@ struct SignupView: View {
                                       }
                                     }
                     }
+                }
                     Button{
                         withAnimation{
                         ShowHome.toggle()
@@ -91,11 +96,21 @@ struct SignupView: View {
                             .frame(width: 330, height: 50)
                             .foregroundColor(.white)
                             .background(Color.green)
-                            .cornerRadius(10)
+                            .cornerRadius(25)
                     }
-                    .padding(.leading, -10)
-                    
-                }
+                    Button{
+                        withAnimation{
+                        showLgn.toggle()
+                        }
+                    } label: {
+                        Text("I ALREADY HAVE AN ACCOUNT")
+                            .bold()
+                            .font(.title3)
+                            .frame(width: 330, height: 50)
+                            .foregroundColor(.white)
+                            .background(Color.green)
+                            .cornerRadius(25)
+                    }
                 }
                 }
             .onChange(of: inputImage) { _ in loadImage() }
@@ -103,6 +118,7 @@ struct SignupView: View {
                 ImagePicker(image: $inputImage)
                 
             }
+        }
     }
     func loadImage() {
         guard let inputImage = inputImage else { return }
