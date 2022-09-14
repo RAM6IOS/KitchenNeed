@@ -77,9 +77,6 @@ struct Onboarding: View {
             .padding(.horizontal)
             Spacer()
     }
-        .sheet(isPresented: $showingPicker ){
-            SignupView(ShowOnboarding: $ShowOnboarding)
-        }
         })
     }
 }

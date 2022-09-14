@@ -16,8 +16,10 @@ struct SignupView: View {
     var language = ["French", "Arabic", "English"]
     @State  var selectedlanguage = "Arabic"
     @Binding  var ShowOnboarding :Bool
+    @Binding var ShowHome : Bool
     var body: some View {
             VStack{
+                Spacer()
                 ZStack{
                     if (image != nil){
                         image?
@@ -62,7 +64,7 @@ struct SignupView: View {
                 }
                 VStack{
                     
-               List{
+               Form{
                     Section("name"){
                     TextField("Name" , text: $FirsName)
                         .font(.system(size: 15 , weight: .bold))
@@ -74,12 +76,13 @@ struct SignupView: View {
                         Picker("Please choose a language", selection: $selectedlanguage) {
                                 ForEach(language, id: \.self) {
                                             Text($0)
-                                        }
+                                      }
                                     }
                     }
-                 
                     Button{
-                       // ShowOnboarding.toggle()
+                        withAnimation{
+                        ShowHome.toggle()
+                        }
                        print("reds")
                     } label: {
                         Text("Sign up")
@@ -109,6 +112,6 @@ struct SignupView: View {
 
 struct SignupView_Previews: PreviewProvider {
     static var previews: some View {
-        SignupView( ShowOnboarding: .constant(true))
+        SignupView( ShowOnboarding: .constant(true), ShowHome: .constant(true))
     }
 }

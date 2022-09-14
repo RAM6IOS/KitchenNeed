@@ -8,6 +8,7 @@ import PartialSheet
 struct Home: View {
     @State private var isSheetPresented = false
   @State var ShowOnboarding = true
+    @State var ShowHome = true
     @State private var searchText: String = ""
     private var gridItemLayout = [GridItem(.flexible()), GridItem(.flexible()),GridItem(.flexible())]
     @FetchRequest(sortDescriptors: [
@@ -17,11 +18,13 @@ struct Home: View {
     @StateObject var prospects = Prospects()
     //@EnvironmentObject var prospects: Prospects
     @State private var shownList = false
-    
     @State var isPresented = false
     var body: some View {
         NavigationView{
             VStack{
+                if ShowHome == true{
+                    SignupView(ShowOnboarding: $ShowOnboarding, ShowHome: $ShowHome)
+                } else {
                 List{
                     Section("njreq"){
            CardView( filter: .contacted)
@@ -32,14 +35,18 @@ struct Home: View {
                     }
                 }
                 .listStyle(GroupedListStyle())
+                }
             }
             .environmentObject(prospects)
-            .navigationBarTitle("Home")
+            .navigationBarTitle(ShowHome == true ? "" :"Home")
             .toolbar {
+                
                 ToolbarItem( placement: .navigationBarTrailing) {
+                    if ShowHome  == false {
                     Button(action: {isSheetPresented.toggle()}) {
                         Image(systemName: "plus.circle.fill")
                             .font(.system(size: 20))
+                    }
                     }
                 }
             }
