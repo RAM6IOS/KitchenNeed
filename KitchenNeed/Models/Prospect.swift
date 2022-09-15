@@ -17,7 +17,7 @@ class Prospect: Identifiable, Codable {
 @MainActor class Prospects: ObservableObject {
     @Published var people: [Prospect]
 
-    init() {
+   init() {
         self.people = []
     }
     func toggle(_ prospect: Prospect) {

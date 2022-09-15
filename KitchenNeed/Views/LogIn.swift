@@ -9,18 +9,22 @@ struct LogIn: View {
     @Binding var ShowHome : Bool
     var body: some View {
         VStack{
+            Spacer()
             Text("Welcome back")
                 .font(.title3)
+            VStack{
             Form{
-                 Section("name"){
-                 TextField("Name" , text: $FirsName)
-                     .font(.system(size: 15 , weight: .bold))
-                 }
+                 
                  Section(header:Text("Email")){
                      TextField("email" , text: $Email)
                  }
+                Section(header:Text("Email")){
+                TextField("Name" , text: $FirsName)
+                    
+                }
              }
-            Spacer()
+            }
+           
             Button{
                 withAnimation{
                    ShowHome.toggle()

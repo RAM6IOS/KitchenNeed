@@ -15,12 +15,14 @@ struct SignupView: View {
     @State private var Email: String = "wdj31104@yuoia.com"
     var language = ["French", "Arabic", "English"]
     @State  var selectedlanguage = "Arabic"
-    @Binding  var ShowOnboarding :Bool
     @Binding var ShowHome : Bool
     @State var showLgn = false
     var body: some View {
+        VStack{
         if showLgn == true {
+            VStack{
             LogIn(ShowHome: $ShowHome)
+            }
         } else {
             VStack{
                 Spacer()
@@ -119,15 +121,15 @@ struct SignupView: View {
                 
             }
         }
+        }
     }
     func loadImage() {
         guard let inputImage = inputImage else { return }
         image = Image(uiImage: inputImage)
     }
 }
-
 struct SignupView_Previews: PreviewProvider {
     static var previews: some View {
-        SignupView( ShowOnboarding: .constant(true), ShowHome: .constant(true))
+        SignupView(  ShowHome: .constant(true))
     }
 }
