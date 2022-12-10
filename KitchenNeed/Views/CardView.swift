@@ -56,13 +56,6 @@ struct CardView: View {
                 .background(products.isContacted ? Color.green : Color.white)
                 .blur(radius: products.isContacted ? 4 : 0)
                 .contentShape(Rectangle())
-        .onTapGesture {
-            if products.isContacted {
-                    prospects.toggle(products)
-            } else {
-                    prospects.toggle(products)
-            }
-                }
         .onLongPressGesture(minimumDuration:0.2, maximumDistance:10 ){
             isPresented2.toggle()
         }

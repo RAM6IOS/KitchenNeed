@@ -12,27 +12,28 @@ struct SheetView: View {
     @State private var quantity = ""
     @State private var  details = ""
     let types = ["vegetable", "meat", "fruits", "bread" , "milk" ,"spices" ,"canned-food" ,"cleaning-materials"]
-    @State private var type = ""
+    @State private var type = "vegetable"
+    
     @Environment(\.managedObjectContext) var moc
     @EnvironmentObject var prospects: Prospects
     var body: some View {
         NavigationView{
             VStack{
-                List{
-                    TextField("name" ,text: $name)
-                    /*
+                Form{
                     Section("Types"){
                 Picker("types", selection: $type) {
                                 ForEach(types, id: \.self) { typ in
                                     HStack( spacing: 10){
-                                    Image(typ)
-                                            .resizable()
-                                            .scaledToFit()
-                                            .frame(width: 70, height: 70)
                                     Text(typ)
                                     }
                                 }
                             }
+                        Image(type)
+                            .resizable()
+                            .scaledToFill()
+                            .frame(width: 80, height: 80)
+                            .cornerRadius(12)
+                        
                     }
                     Section{
                 TextField("Name" , text: $name)
@@ -40,16 +41,8 @@ struct SheetView: View {
                     Section{
                 TextField("price" , text:$quantity)
                     }
-                    Section("Details"){
-                TextEditor( text: $details)
-                    .foregroundColor(Color.gray)
-                    .font(.custom("HelveticaNeue", size: 13))
-                    .lineSpacing(5)
-                    .frame(width: 300, height: 250)
-                    }
-                
                 }
-                     */
+                     
                 Button{
                     /*
                     let newProduct = Product(context: moc)
@@ -81,7 +74,7 @@ struct SheetView: View {
         
     }
     }
-}
+
 
 struct SheetView_Previews: PreviewProvider {
     static var previews: some View {
