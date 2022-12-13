@@ -23,9 +23,6 @@ struct Home: View {
                     Section("njreq"){
            CardView( filter: .contacted)
                     }
-                    Section("bhjnrec"){
-                        CardView( filter: .uncontacted)
-                    }
                 }
                 .listStyle(GroupedListStyle())
                 }
