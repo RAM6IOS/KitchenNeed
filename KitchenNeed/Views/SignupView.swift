@@ -6,91 +6,94 @@
 //
 
 import SwiftUI
+import Firebase
+import FirebaseFirestore
 
 struct SignupView: View {
-    @State private var image: Image?
-    @State private var inputImage: UIImage?
+   @State private var selectedImage: UIImage?
+    @State private var profileImage: Image?
     @State private var showingImagePicker = false
-    @State private var FirsName: String = "Name"
-    @State private var Email: String = "wdj31104@yuoia.com"
-    var language = ["French", "Arabic", "English"]
-    @State  var selectedlanguage = "Arabic"
     @Binding var ShowHome : Bool
     @State var showLgn = false
+    @State private var email: String = ""
+    @State private var username: String = ""
+    @State private var fullname: String = ""
+    @State private var password: String = ""
+    @EnvironmentObject var viewModel: AuthViewModel
+    
     var body: some View {
         VStack{
         if showLgn == true {
             VStack{
-            LogIn(ShowHome: $ShowHome)
+                LogIn(ShowHome: $ShowHome, showLgn: $showLgn)
             }
         } else {
             VStack{
                 Spacer()
-                ZStack{
-                    if (image != nil){
-                        image?
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 200, height: 100 )
-                            .overlay(
-                                    Circle()
-                                        .stroke(.white, lineWidth: 7)
-                                )
-                            .clipShape(Circle())
-                            .shadow(radius: 40)
-                        Image(systemName: "square.and.pencil")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 17, height: 17)
-                            .foregroundColor(.black)
-                            .offset(x:35,y:40)
-                    } else {
-                        Image("default-avatar")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 200, height: 100 )
-                            .clipShape(Circle())
-                        Image(systemName: "square.and.pencil")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 17, height: 17)
-                            .foregroundColor(.black)
-                            .offset(y:40)
-                        image?
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 200, height: 100 )
-                            .clipShape(Circle())
-                            .border(.green)
-                            .shadow(radius: 40)
-                    }
-                }
-                .onTapGesture {
-                    showingImagePicker = true
-                }
+               
+                Button {
+                    showingImagePicker.toggle()
+                            } label: {
+                    if let profileImage = profileImage {
+                                        profileImage
+                                          .resizable()
+                                          .scaledToFill()
+                                          .frame(width: 180, height: 100)
+                                          .overlay(
+                                                          RoundedRectangle(cornerRadius: 90)
+                                                              .stroke(Color.gray
+                                                                      , lineWidth: 10)
+                                                      )
+                                                      .clipShape(Circle())
+                                                      .padding(.top, 44)
+                                                } else {
+                                                    Image("default-avatar")
+                                                        .resizable()
+                                                        .scaledToFill()
+                                                        .frame(width: 180, height: 100 )
+                                                        .clipShape(Circle())
+                                                        .overlay(
+                                                                        RoundedRectangle(cornerRadius: 90)
+                                                                            .stroke(Color.white
+                                                                                    , lineWidth: 10)
+                                                                    )
+                                                                    .clipShape(Circle())
+                                                                    .padding(.top, 44)
+                                                        
+                                                }
+                            }
+                            .sheet(isPresented: $showingImagePicker , onDismiss: loadImage) {
+                                            ImagePicker(selectedImage: $selectedImage)
+                                        }
                 VStack{
                     
                Form{
-                    Section("name"){
-                    TextField("Name" , text: $FirsName)
-                        .font(.system(size: 15 , weight: .bold))
-                    }
-                    Section(header:Text("Email")){
-                        TextField("email" , text: $Email)
-                    }
-                    Section("language"){
-                        Picker("Please choose a language", selection: $selectedlanguage) {
-                                ForEach(language, id: \.self) {
-                                            Text($0)
-                                      }
-                                    }
-                    }
+                   Section("email"){
+                   TextField("Email" , text: $email)
+                       .font(.system(size: 15 , weight: .bold))
+                   }
+                   Section("username"){
+                   TextField("Username" , text: $username)
+                       .font(.system(size: 15 , weight: .bold))
+                   }
+                   Section("fullname"){
+                   TextField("Fullname" , text: $fullname)
+                       .font(.system(size: 15 , weight: .bold))
+                   }
+                   Section("password"){
+                   TextField("Password" , text: $password)
+                       .font(.system(size: 15 , weight: .bold))
+                   }
+                
                 }
                     Button{
                         withAnimation{
-                        ShowHome.toggle()
+                            viewModel.register(withEmail: email,
+                                               password: password,
+                                               fullname: fullname,
+                                               username: username,
+                                               image: selectedImage!)
                         }
-                       print("reds")
                     } label: {
                         Text("Sign up")
                             .bold()
@@ -105,28 +108,19 @@ struct SignupView: View {
                         showLgn.toggle()
                         }
                     } label: {
-                        Text("I ALREADY HAVE AN ACCOUNT")
-                            .bold()
-                            .font(.title3)
-                            .frame(width: 330, height: 50)
-                            .foregroundColor(.white)
-                            .background(Color.green)
-                            .cornerRadius(25)
+                        Text("I alrea have an account")
+                            .font(.footnote)
                     }
                 }
                 }
-            .onChange(of: inputImage) { _ in loadImage() }
-            .sheet(isPresented: $showingImagePicker) {
-                ImagePicker(image: $inputImage)
-                
-            }
+            
         }
         }
     }
     func loadImage() {
-        guard let inputImage = inputImage else { return }
-        image = Image(uiImage: inputImage)
-    }
+            guard let selectedImage = selectedImage else { return }
+            profileImage = Image(uiImage: selectedImage)
+        }
 }
 struct SignupView_Previews: PreviewProvider {
     static var previews: some View {

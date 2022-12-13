@@ -16,6 +16,7 @@ struct Profile: View {
     @State private var Email: String = "wdj31104@yuoia.com"
     var language = ["French", "Arabic", "English"]
     @State  var selectedlanguage = "Arabic"
+    @EnvironmentObject var viewModel: AuthViewModel
     var body: some View {
         NavigationView{
             VStack{
@@ -78,7 +79,7 @@ struct Profile: View {
                     }
                 }
                 Button{
-                    
+                    viewModel.logout()
                 } label: {
                     Text("Edit")
                         .bold()
@@ -91,18 +92,18 @@ struct Profile: View {
                 Spacer()
                 
                 }
-            .onChange(of: inputImage) { _ in loadImage() }
-            .sheet(isPresented: $showingImagePicker) {
-                ImagePicker(image: $inputImage)
+           // .onChange(of: inputImage) { _ in loadImage() }
+            //.sheet(isPresented: $showingImagePicker) {
+                //ImagePicker(image: $inputImage)
         
-            }
+           // }
             .navigationBarTitleDisplayMode(.inline)
         }
     }
-    func loadImage() {
-        guard let inputImage = inputImage else { return }
-        image = Image(uiImage: inputImage)
-    }
+    //func loadImage() {
+       // guard let inputImage = inputImage else { return }
+       // image = Image(uiImage: inputImage)
+    //}
 }
 
 struct Profile_Previews: PreviewProvider {

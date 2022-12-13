@@ -8,10 +8,12 @@ import SwiftUI
 struct ContentView: View {
     @State var ShowOnboarding = true
     @State var ShowHome = true
+    @EnvironmentObject var viewModel: AuthViewModel
     var body: some View {
         TabView {
-            if ShowHome {
+            if viewModel.userSession == nil {
                 SignupView( ShowHome: $ShowHome)
+                //RegistrationView()
             } else{
             Home()
                  .tabItem {

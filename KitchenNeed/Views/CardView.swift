@@ -20,11 +20,11 @@ struct CardView: View {
             ForEach(filteredProspects) { products in
             HStack{
                 VStack{
-                Image("fruits")
-                    .resizable()
-                    .scaledToFill()
-                    .frame(width: 80, height: 80)
-                    .cornerRadius(12)
+               // Image("fruits")
+                    //.resizable()
+                    //.scaledToFill()
+                   // .frame(width: 80, height: 80)
+                    //.cornerRadius(12)
                 }
                 VStack{
                     Text(products.name)

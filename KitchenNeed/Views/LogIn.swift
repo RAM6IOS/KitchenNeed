@@ -4,9 +4,11 @@
 //  Created by Bouchedoub Rmazi on 14/9/2022.
 import SwiftUI
 struct LogIn: View {
-    @State private var FirsName: String = ""
+    @State private var password: String = ""
     @State private var Email: String = ""
+    @EnvironmentObject var viewModel: AuthViewModel
     @Binding var ShowHome : Bool
+    @Binding var showLgn : Bool
     var body: some View {
         VStack{
             Spacer()
@@ -19,15 +21,15 @@ struct LogIn: View {
                      TextField("email" , text: $Email)
                  }
                 Section(header:Text("Email")){
-                TextField("Name" , text: $FirsName)
+                TextField("Name" , text: $password)
                     
                 }
              }
             }
-           
             Button{
                 withAnimation{
-                   ShowHome.toggle()
+                  // ShowHome.toggle()
+                    viewModel.login(withEmail: Email, password: password)
                 }
                print("reds")
             } label: {
@@ -39,12 +41,26 @@ struct LogIn: View {
                     .background(Color.green)
                     .cornerRadius(25)
             }
+            Button{
+                withAnimation{
+                    showLgn = false
+                }
+            } label: {
+                HStack{
+                    Text("Don't have an account?")
+                        .font(.footnote)
+                    
+                    Text("Sign Up")
+                        .font(.footnote)
+                        .fontWeight(.semibold)
+                }
+            }
         }
     }
 }
 
 struct LogIn_Previews: PreviewProvider {
     static var previews: some View {
-        LogIn(ShowHome: .constant(true))
+        LogIn(ShowHome: .constant(true), showLgn: .constant(false))
     }
 }
