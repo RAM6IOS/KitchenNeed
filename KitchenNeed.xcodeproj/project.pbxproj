@@ -37,7 +37,6 @@
 		63CD666C2886DA85003CDE86 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CD66662886DA85003CDE86 /* Profile.swift */; };
 		63CD666E2886DA85003CDE86 /* SheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CD66682886DA85003CDE86 /* SheetView.swift */; };
 		63CD666F2886DA85003CDE86 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CD66692886DA85003CDE86 /* ContentView.swift */; };
-		63CD66712886DAEE003CDE86 /* ProductCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CD66702886DAED003CDE86 /* ProductCardView.swift */; };
 		63CD66732886DB15003CDE86 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CD66722886DB15003CDE86 /* Home.swift */; };
 /* End PBXBuildFile section */
 
@@ -69,7 +68,6 @@
 		63CD66662886DA85003CDE86 /* Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		63CD66682886DA85003CDE86 /* SheetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SheetView.swift; sourceTree = "<group>"; };
 		63CD66692886DA85003CDE86 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		63CD66702886DAED003CDE86 /* ProductCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductCardView.swift; sourceTree = "<group>"; };
 		63CD66722886DB15003CDE86 /* Home.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -179,7 +177,6 @@
 			isa = PBXGroup;
 			children = (
 				63CD66722886DB15003CDE86 /* Home.swift */,
-				63CD66702886DAED003CDE86 /* ProductCardView.swift */,
 				63CD66642886DA85003CDE86 /* ButtonSheet.swift */,
 				63CD66662886DA85003CDE86 /* Profile.swift */,
 				63CD66682886DA85003CDE86 /* SheetView.swift */,
@@ -301,7 +298,6 @@
 				2DEF0AB82947954E00D19D8E /* AuthViewModel.swift in Sources */,
 				2D2544D428B4DFD400C40D18 /* CardView.swift in Sources */,
 				2DFD509F28BE88F700CE8FD2 /* Onboarding.swift in Sources */,
-				63CD66712886DAEE003CDE86 /* ProductCardView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

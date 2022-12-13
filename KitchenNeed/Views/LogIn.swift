@@ -28,7 +28,6 @@ struct LogIn: View {
             }
             Button{
                 withAnimation{
-                  // ShowHome.toggle()
                     viewModel.login(withEmail: Email, password: password)
                 }
                print("reds")
