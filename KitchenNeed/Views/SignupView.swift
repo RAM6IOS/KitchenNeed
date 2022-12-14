@@ -30,6 +30,12 @@ struct SignupView: View {
         } else {
             VStack{
                 Spacer()
+                Text("Create your account")
+                    .font(.largeTitle)
+                    .fontWeight(.semibold)
+                    .fontWeight(.heavy)
+                    .padding(.bottom , 10)
+                    .padding(.top , 10)
                
                 Button {
                     showingImagePicker.toggle()
@@ -38,7 +44,7 @@ struct SignupView: View {
                                         profileImage
                                           .resizable()
                                           .scaledToFill()
-                                          .frame(width: 180, height: 100)
+                                          .frame(width: 100, height: 100)
                                           .overlay(
                                                           RoundedRectangle(cornerRadius: 90)
                                                               .stroke(Color.gray
@@ -50,7 +56,7 @@ struct SignupView: View {
                                                     Image("default-avatar")
                                                         .resizable()
                                                         .scaledToFill()
-                                                        .frame(width: 180, height: 100 )
+                                                        .frame(width: 100, height: 100 )
                                                         .clipShape(Circle())
                                                         .overlay(
                                                                         RoundedRectangle(cornerRadius: 90)
@@ -67,32 +73,62 @@ struct SignupView: View {
                                         }
                 VStack{
                     
-               Form{
-                   Section("email"){
-                   TextField("Email" , text: $email)
-                       .font(.system(size: 15 , weight: .bold))
-                   }
-                   Section("username"){
-                   TextField("Username" , text: $username)
-                       .font(.system(size: 15 , weight: .bold))
-                   }
-                   Section("fullname"){
-                   TextField("Fullname" , text: $fullname)
-                       .font(.system(size: 15 , weight: .bold))
-                   }
-                   Section("password"){
-                   TextField("Password" , text: $password)
-                       .font(.system(size: 15 , weight: .bold))
-                   }
-                
-                }
+                    VStack{
+                        HStack(alignment: .bottom){
+                            Image(systemName: "envelope")
+                                .padding(.leading , 30)
+                            
+                            TextField("Email", text: $email)
+                                .padding(.top, 20)
+                                .foregroundColor(.blue)
+                        }
+                        Divider()
+                            .padding(.horizontal, 30)
+                            .padding(.top ,10)
+                        HStack(alignment: .bottom){
+                            Image(systemName: "person")
+                                .padding(.leading , 30)
+                            
+                            TextField("Username", text: $username)
+                                .padding(.top, 20)
+                                .foregroundColor(.blue)
+                        }
+                        Divider()
+                            .padding(.horizontal, 30)
+                            .padding(.top ,10)
+                        
+                        HStack(alignment: .bottom){
+                            Image(systemName: "person")
+                                .padding(.leading , 30)
+                            
+                            TextField("FullName", text: $fullname)
+                                .padding(.top, 20)
+                                .foregroundColor(.blue)
+                        }
+                        Divider()
+                            .padding(.horizontal, 30)
+                            .padding(.top ,10)
+                        
+                        HStack(alignment: .bottom){
+                            Image(systemName: "lock")
+                                .padding(.leading , 30)
+                            
+                            TextField("Password", text: $password)
+                                .padding(.top, 20)
+                                .foregroundColor(.blue)
+                        }
+                        Divider()
+                            .padding(.horizontal, 30)
+                            .padding(.top ,10)
+                        
+                    }
+                    Spacer()
                     Button{
                         withAnimation{
                             viewModel.register(withEmail: email,
                                                password: password,
                                                fullname: fullname,
-                                               username: username,
-                                               image: selectedImage!)
+                                               username: username, image: (selectedImage ??  UIImage(named: "default-avatar"))!)
                         }
                     } label: {
                         Text("Sign up")
@@ -108,9 +144,15 @@ struct SignupView: View {
                         showLgn.toggle()
                         }
                     } label: {
-                        Text("I alrea have an account")
-                            .font(.footnote)
+                        HStack{
+                            Text("I alrea have an account")
+                                .font(.footnote)
+                            Text("Sign in")
+                                .font(.footnote)
+                                .fontWeight(.semibold)
+                        }
                     }
+                    .padding(.bottom, 32)
                 }
                 }
             
