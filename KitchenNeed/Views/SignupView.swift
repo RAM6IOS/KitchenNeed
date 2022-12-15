@@ -17,7 +17,7 @@ struct SignupView: View {
     @State var showLgn = false
     @State private var email: String = ""
     @State private var username: String = ""
-    @State private var fullname: String = ""
+    @State private var name: String = ""
     @State private var password: String = ""
     @EnvironmentObject var viewModel: AuthViewModel
     
@@ -85,23 +85,13 @@ struct SignupView: View {
                         Divider()
                             .padding(.horizontal, 30)
                             .padding(.top ,10)
-                        HStack(alignment: .bottom){
-                            Image(systemName: "person")
-                                .padding(.leading , 30)
-                            
-                            TextField("Username", text: $username)
-                                .padding(.top, 20)
-                                .foregroundColor(.blue)
-                        }
-                        Divider()
-                            .padding(.horizontal, 30)
-                            .padding(.top ,10)
+                      
                         
                         HStack(alignment: .bottom){
                             Image(systemName: "person")
                                 .padding(.leading , 30)
                             
-                            TextField("FullName", text: $fullname)
+                            TextField("FullName", text: $name)
                                 .padding(.top, 20)
                                 .foregroundColor(.blue)
                         }
@@ -127,8 +117,8 @@ struct SignupView: View {
                         withAnimation{
                             viewModel.register(withEmail: email,
                                                password: password,
-                                               fullname: fullname,
-                                               username: username, image: (selectedImage ??  UIImage(named: "default-avatar"))!)
+                                                name: name,
+                                                image: (selectedImage ??  UIImage(named: "default-avatar"))!)
                         }
                     } label: {
                         Text("Sign up")

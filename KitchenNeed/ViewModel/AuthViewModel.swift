@@ -42,7 +42,7 @@ class AuthViewModel: ObservableObject {
     
     
     
-    func register(withEmail email: String, password: String, fullname: String, username: String ,image: UIImage) {
+    func register(withEmail email: String, password: String, name: String ,image: UIImage) {
         //self.didAuthenticateUser = true
         
         Auth.auth().createUser(withEmail: email, password: password) { result, error in
@@ -55,8 +55,7 @@ class AuthViewModel: ObservableObject {
             self.userSession = user
             print(self.userSession)
             let userData = ["email": email,
-                                        "username": username.lowercased(),
-                                        "fullname": fullname,
+                                        "name": name,
                                         "uid": user.uid]
                         
             Firestore.firestore().collection("users")

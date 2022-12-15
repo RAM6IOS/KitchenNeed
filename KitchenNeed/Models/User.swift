@@ -12,8 +12,8 @@ import Firebase
 
 struct User: Identifiable, Decodable {
     @DocumentID var id: String?
-    let username: String
-    let fullname: String
+   // let username: String
+    let name: String
     let profileImageUrl: String
     let email: String
     
