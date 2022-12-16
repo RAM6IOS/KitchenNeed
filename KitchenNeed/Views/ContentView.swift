@@ -15,7 +15,7 @@ struct ContentView: View {
                 SignupView( ShowHome: $ShowHome)
                 //RegistrationView()
             } else{
-            Home()
+                Home()
                  .tabItem {
 
                      Label("List", systemImage: "list.bullet.rectangle.portrait.fill")

@@ -26,6 +26,7 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 struct KitchenNeedApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     @StateObject private var dataController = DataController()
+  
     @StateObject var viewModel = AuthViewModel()
     var body: some Scene {
         WindowGroup {

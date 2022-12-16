@@ -17,12 +17,13 @@ class AuthViewModel: ObservableObject {
     
     @Published var userSession : FirebaseAuth.User?
     @Published var currentUser: User?
+    //let user: User
     
     init() {
             self.userSession = Auth.auth().currentUser
-            //self.fetchUser()
+            self.fetchUser()
        // self.fetchUser()
-        
+        //self.user = user
         }
     
     func login(withEmail email: String, password: String) {
