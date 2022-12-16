@@ -20,6 +20,7 @@
 		2D48C792288FF8D400981FAE /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D48C791288FF8D400981FAE /* Color.swift */; };
 		2D49ACC628D20851002A8045 /* LogIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D49ACC528D20851002A8045 /* LogIn.swift */; };
 		2D6D466228D0B12900557B0A /* GetStarted.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6D466128D0B12900557B0A /* GetStarted.swift */; };
+		2DA2287A294CA888001F88C0 /* UploadProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA22879294CA888001F88C0 /* UploadProductViewModel.swift */; };
 		2DA767692885644700264BE7 /* PartialSheet in Frameworks */ = {isa = PBXBuildFile; productRef = 2DA767682885644700264BE7 /* PartialSheet */; };
 		2DCB273B288DAE3600335695 /* KitchenNeedModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2DCB2739288DAE3600335695 /* KitchenNeedModel.xcdatamodeld */; };
 		2DCB273D288DB15800335695 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DCB273C288DB15800335695 /* DataController.swift */; };
@@ -55,6 +56,7 @@
 		2D48C791288FF8D400981FAE /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		2D49ACC528D20851002A8045 /* LogIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogIn.swift; sourceTree = "<group>"; };
 		2D6D466128D0B12900557B0A /* GetStarted.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetStarted.swift; sourceTree = "<group>"; };
+		2DA22879294CA888001F88C0 /* UploadProductViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadProductViewModel.swift; sourceTree = "<group>"; };
 		2DCB273A288DAE3600335695 /* KitchenNeedModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = KitchenNeedModel.xcdatamodel; sourceTree = "<group>"; };
 		2DCB273C288DB15800335695 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		2DE2CFD1288707A800FBFE62 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 				2DEF0AB72947954E00D19D8E /* AuthViewModel.swift */,
 				2D1FDB9E29489CB000BBF3ED /* ImageUploader.swift */,
 				2DEB35D8294BA8AF001B8FD4 /* ProfileViewModel.swift */,
+				2DA22879294CA888001F88C0 /* UploadProductViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -300,6 +303,7 @@
 				63CD66622886DA68003CDE86 /* Product.swift in Sources */,
 				2DEB35D9294BA8AF001B8FD4 /* ProfileViewModel.swift in Sources */,
 				2DCB273B288DAE3600335695 /* KitchenNeedModel.xcdatamodeld in Sources */,
+				2DA2287A294CA888001F88C0 /* UploadProductViewModel.swift in Sources */,
 				63CD665F2886D9D6003CDE86 /* KitchenNeedApp.swift in Sources */,
 				2D49ACC628D20851002A8045 /* LogIn.swift in Sources */,
 				63CD66732886DB15003CDE86 /* Home.swift in Sources */,

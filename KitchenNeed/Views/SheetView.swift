@@ -16,6 +16,7 @@ struct SheetView: View {
     
     @Environment(\.managedObjectContext) var moc
     @EnvironmentObject var prospects: Prospects
+    @ObservedObject var viewModel = UploadProductViewModel()
     var body: some View {
         NavigationView{
             VStack{
@@ -52,10 +53,13 @@ struct SheetView: View {
                     newProduct.details = details
                     try? moc.save()
                      */
-                    let prospect = Prospect()
-                    prospect.name = name
-                    prospects.people.append(prospect)
+                    //let prospect = Prospect()
+                   // prospect.name = name
+                   // prospects.people.append(prospect)
+                    viewModel.uploadProduct(withCaption: name, quantity: quantity, type: type)
+                    quantity = ""
                     name = ""
+                    type = ""
                     
                 } label: {
                     Text("Save")
