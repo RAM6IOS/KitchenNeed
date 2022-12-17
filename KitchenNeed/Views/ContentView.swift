@@ -13,14 +13,13 @@ struct ContentView: View {
         TabView {
             if viewModel.userSession == nil {
                 SignupView( ShowHome: $ShowHome)
-                //RegistrationView()
+               
             } else{
                 Home()
-                 .tabItem {
-
-                     Label("List", systemImage: "list.bullet.rectangle.portrait.fill")
-                }
-            
+                        .tabItem {
+                            
+                            Label("List", systemImage: "list.bullet.rectangle.portrait.fill")
+                        }
             GroupView()
                 .tabItem {
                    Label("Group", systemImage: "person.3")

@@ -25,8 +25,11 @@ struct Produc: Identifiable, Decodable {
     let  name : String
     let timestamp: Timestamp
     let uid: String
+    let quantity : String
+    let type : String
+    
     //var likes: Int
     
-   // var user: User?
+    var user: User?
     //var didLike: Bool? = false
 }

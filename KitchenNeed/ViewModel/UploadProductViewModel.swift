@@ -35,7 +35,7 @@ class UploadProductViewModel: ObservableObject {
                              "type":type,
                             "timestamp": Timestamp(date: Date())] as [String: Any]
         Firestore.firestore()
-                    .collection("tweets")
+                    .collection("product")
                     .document()
                     .setData(data) { error in
                         if let error = error {
