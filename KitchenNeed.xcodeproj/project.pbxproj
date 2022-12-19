@@ -22,7 +22,6 @@
 		2D6D466228D0B12900557B0A /* GetStarted.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6D466128D0B12900557B0A /* GetStarted.swift */; };
 		2DA2287A294CA888001F88C0 /* UploadProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA22879294CA888001F88C0 /* UploadProductViewModel.swift */; };
 		2DA2287C294CE664001F88C0 /* fetchProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA2287B294CE664001F88C0 /* fetchProduct.swift */; };
-		2DA2287E294CFE08001F88C0 /* ProductRowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA2287D294CFE08001F88C0 /* ProductRowViewModel.swift */; };
 		2DA22880294DB7FB001F88C0 /* ExploreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA2287F294DB7FB001F88C0 /* ExploreViewModel.swift */; };
 		2DA767692885644700264BE7 /* PartialSheet in Frameworks */ = {isa = PBXBuildFile; productRef = 2DA767682885644700264BE7 /* PartialSheet */; };
 		2DCB273B288DAE3600335695 /* KitchenNeedModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2DCB2739288DAE3600335695 /* KitchenNeedModel.xcdatamodeld */; };
@@ -61,7 +60,6 @@
 		2D6D466128D0B12900557B0A /* GetStarted.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetStarted.swift; sourceTree = "<group>"; };
 		2DA22879294CA888001F88C0 /* UploadProductViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadProductViewModel.swift; sourceTree = "<group>"; };
 		2DA2287B294CE664001F88C0 /* fetchProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fetchProduct.swift; sourceTree = "<group>"; };
-		2DA2287D294CFE08001F88C0 /* ProductRowViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductRowViewModel.swift; sourceTree = "<group>"; };
 		2DA2287F294DB7FB001F88C0 /* ExploreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreViewModel.swift; sourceTree = "<group>"; };
 		2DCB273A288DAE3600335695 /* KitchenNeedModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = KitchenNeedModel.xcdatamodel; sourceTree = "<group>"; };
 		2DCB273C288DB15800335695 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
@@ -157,7 +155,6 @@
 				2DEB35D8294BA8AF001B8FD4 /* ProfileViewModel.swift */,
 				2DA22879294CA888001F88C0 /* UploadProductViewModel.swift */,
 				2DA2287B294CE664001F88C0 /* fetchProduct.swift */,
-				2DA2287D294CFE08001F88C0 /* ProductRowViewModel.swift */,
 				2DA2287F294DB7FB001F88C0 /* ExploreViewModel.swift */,
 			);
 			path = ViewModel;
@@ -318,7 +315,6 @@
 				2D49ACC628D20851002A8045 /* LogIn.swift in Sources */,
 				63CD66732886DB15003CDE86 /* Home.swift in Sources */,
 				2DEF0AB82947954E00D19D8E /* AuthViewModel.swift in Sources */,
-				2DA2287E294CFE08001F88C0 /* ProductRowViewModel.swift in Sources */,
 				2DA22880294DB7FB001F88C0 /* ExploreViewModel.swift in Sources */,
 				2D2544D428B4DFD400C40D18 /* CardView.swift in Sources */,
 				2DFD509F28BE88F700CE8FD2 /* Onboarding.swift in Sources */,
