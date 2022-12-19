@@ -23,7 +23,7 @@ struct Home: View {
         if let user = viewModel.currentUser {
             NavigationView{
                 VStack{
-                        CardView(user: user)
+                    CardView(user: user)
                 }
                 .listStyle(GroupedListStyle())
                 

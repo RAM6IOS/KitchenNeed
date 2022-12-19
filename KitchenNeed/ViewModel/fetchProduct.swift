@@ -14,9 +14,13 @@ class ProductViewModel: ObservableObject {
     
     let user: User!
  @Published  var product = [Produc]()
-    init(user: User  ) {
+    //@Published var pro: Produc
+    init(user: User   ) {
         self.user = user
+        //self.pro = pro
         self.fetchUserProduct()
+        //self.remove(<#Produc#>)
+        //self.remove(product)
     }
     
     func fetchUserProduct() {
@@ -41,4 +45,24 @@ class ProductViewModel: ObservableObject {
                 }
         }
     
+    func remove(_ produc: Produc) {
+        guard let uid = Auth.auth().currentUser?.uid else { return }
+        guard let producId = produc.id else { return }
+            // [START delete_document]
+        Firestore.firestore().collection("tweets").document(producId).delete() { err in
+                if let err = err {
+                    print("Error removing document: \(err)")
+                } else {
+                    print("Document successfully removed!")
+                }
+            }
+        Firestore.firestore().collection("tweets").document(producId).delete { error in
+            if let error = error {
+              print("Unable to remove card: \(error.localizedDescription)")
+            }
+          }
+        
+        
+        }
+      
 }
