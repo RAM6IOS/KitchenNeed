@@ -13,43 +13,81 @@ struct SheetView: View {
     @State private var  details = ""
     let types = ["vegetable", "meat", "fruits", "bread" , "milk" ,"spices" ,"canned-food" ,"cleaning-materials"]
     @State private var type = "vegetable"
+    var heightOptions = ["L","mL", "kg" ,"g"]
+    @State private var heightselection = ""
+    @State private var price = ""
+    @State private var Currency = ""
+    var CurrencySymbol = ["$","€", "£" ,"¥"]
     @Environment(\.managedObjectContext) var moc
     @EnvironmentObject var prospects: Prospects
     @ObservedObject var viewModel = UploadProductViewModel()
     var body: some View {
         NavigationView{
-           
                 VStack{
                     Form{
                         Section("Types"){
-                            Picker("types", selection: $type) {
-                                ForEach(types, id: \.self) { typ in
-                                    HStack( spacing: 10){
-                                        Text(typ)
+                            HStack{
+                                Image(type)
+                                    .resizable()
+                                    .scaledToFill()
+                                    .frame(width: 80, height: 80)
+                                    .cornerRadius(12)
+                                
+                                Picker("", selection: $type) {
+                                    ForEach(types, id: \.self) { typ in
+                                        HStack( spacing: 10){
+                                            Text(typ)
+                                            
+                                        }
                                     }
                                 }
+                                
                             }
-                            Image(type)
-                                .resizable()
-                                .scaledToFill()
-                                .frame(width: 80, height: 80)
-                                .cornerRadius(12)
+                            
                             
                         }
                         Section{
                             TextField("Name" , text: $name)
                         }
                         Section{
-                            TextField("price" , text:$quantity)
+                            HStack{
+                                TextField("quantity" , text:$quantity)
+                                
+                                Picker( "", selection: $heightselection, content: {
+                                    ForEach(heightOptions, id: \.self) {
+                                        Text($0)
+                                    }
+                                })
+                            }
+                            
                         }
+                        
+                        Section{
+                            HStack{
+                                TextField("quantity" , text:$price)
+                                Picker( "", selection: $Currency, content: {
+                                    ForEach(CurrencySymbol, id: \.self) {
+                                        Text($0)
+                                    }
+                                })
+                            }
+                            
+                        }
+                        
+                        
                     }
-                    .background(Color(red: 32/255, green: 36/255, blue: 38/255))
+                    .background(Color.green)
+                    
+                    
                     
                     Button{
                         viewModel.uploadProduct(withCaption: name, quantity: quantity, type: type)
-                        quantity = ""
                         name = ""
                         type = ""
+                        quantity = ""
+                        price = ""
+                        Currency = ""
+                        heightselection = ""
                         
                     } label: {
                         Text("Save")
@@ -62,13 +100,8 @@ struct SheetView: View {
                     .cornerRadius(10)
                 }
                 .navigationTitle("Add Product")
-                
-                
-            
-        }
-       
-
-        
+            }
+     
     }
     }
 
