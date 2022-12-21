@@ -51,8 +51,7 @@ struct SheetView: View {
                         }
                         Section{
                             HStack{
-                                TextField("quantity" , text:$quantity)
-                                
+                                TextField("Quantity" , text:$quantity)
                                 Picker( "", selection: $heightselection, content: {
                                     ForEach(heightOptions, id: \.self) {
                                         Text($0)
@@ -64,7 +63,7 @@ struct SheetView: View {
                         
                         Section{
                             HStack{
-                                TextField("quantity" , text:$price)
+                                TextField("Price" , text:$price)
                                 Picker( "", selection: $Currency, content: {
                                     ForEach(CurrencySymbol, id: \.self) {
                                         Text($0)
@@ -81,7 +80,7 @@ struct SheetView: View {
                     
                     
                     Button{
-                        viewModel.uploadProduct(withCaption: name, quantity: quantity, type: type)
+                        viewModel.uploadProduct(withCaption: name, quantity: quantity, type: type, heightselection: heightselection, price: price, Currency:Currency)
                         name = ""
                         type = ""
                         quantity = ""

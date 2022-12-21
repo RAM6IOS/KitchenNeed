@@ -13,8 +13,8 @@ class UploadProductViewModel: ObservableObject {
     
     
     
-    func uploadProduct(withCaption name: String , quantity: String ,type: String) {
-        uploadProduct(name: name, quantity: quantity, type: type) { success in
+    func uploadProduct(withCaption name: String , quantity: String ,type: String ,  heightselection: String , price: String, Currency:String) {
+        uploadProduct(name: name, quantity: quantity, type: type, heightselection: heightselection, price: price, Currency:  Currency) { success in
             if success {
                 //dismiss view
                // self.didUploadTweeet = true
@@ -26,13 +26,16 @@ class UploadProductViewModel: ObservableObject {
         
         
     }
-    func uploadProduct(name: String,quantity: String,type: String, completion: @escaping(Bool) -> Void) {
+    func uploadProduct(name: String,quantity: String,type: String,  heightselection: String,price: String, Currency: String, completion: @escaping(Bool) -> Void) {
         
         guard let uid = Auth.auth().currentUser?.uid else { return }
         let data = ["uid": uid,
                             "name": name,
                              "quantity": quantity,
                              "type":type,
+                             "heightselection":heightselection,
+                             "price":price,
+                           "Currency": Currency,
                             "timestamp": Timestamp(date: Date())] as [String: Any]
         Firestore.firestore()
                     .collection("product")
