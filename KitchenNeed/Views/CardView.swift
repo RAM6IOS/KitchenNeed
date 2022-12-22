@@ -17,47 +17,56 @@ struct CardView: View {
     init(user:User){
         self.viewModel = ProductViewModel(user: user)
         // self.viewModel2 = Produc2ViewModel(produc: )
-        
-        
     }
     
     var body: some View {
         ScrollView{
             LazyVStack(alignment: .leading){
                 ForEach(viewModel.product){ product  in
-                    HStack(alignment: .center) {
-                        Image(product.type)
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 80)
-                            .padding(.all, 20)
+                    VStack{
                         
-                        VStack(alignment: .leading) {
-                            Text(product.type)
-                                .font(.system(size: 20, weight: .bold, design: .default))
-                                .foregroundColor(.black)
-                            Text(product.name)
-                                .font(.system(size: 16, weight: .bold, design: .default))
-                                .foregroundColor(.gray)
-                            HStack( spacing: 20){
-                                
-                                Text(product.name)
-                                    .font(.system(size: 16, weight: .bold, design: .default))
-                                    .foregroundColor(.gray)
-                                Text(product.name)
-                                    .font(.system(size: 16, weight: .bold, design: .default))
-                                    .foregroundColor(.gray)
+                        HStack(alignment: .center) {
+                            VStack{
+                                Image(product.type)
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(width: 80)
+                                    .padding(.all, 20)
                             }
+                            VStack(alignment: .leading) {
+                                Text(product.name)
+                                    .font(.system(size: 20, weight: .bold, design: .default))
+                                    .foregroundColor(.black)
+                                Text("\(product.type)" )
+                                    .font(.system(size: 16, weight: .bold, design: .default))
+                                    .foregroundColor(.gray)
+                                HStack( spacing: 20){
+                                    HStack{
+                                        Text("\(product.quantity) \(product.heights)")
+                                            .font(.system(size: 16, weight: .bold, design: .default))
+                                            .foregroundColor(.black)
+                                    }
+                                    Spacer()
+                                    HStack{
+                                        Text("\(product.price) \(product.currency)" )
+                                            .font(.system(size: 16, weight: .bold, design: .default))
+                                            .foregroundColor(.black)
+                                        
+                                        
+                                    }
+                                }
+                                
+                                
+                            }.padding(.trailing, 20)
                             
                             
-                        }.padding(.trailing, 20)
-                        
-                        Spacer()
+                            Spacer()
+                        }
                     }
                     
                     .frame(maxWidth: .infinity, alignment: .center)
                     //.background(Color(red: 32/255, green: 36/255, blue: 38/255))
-                    .background(.white)
+                    .background(Color.iconcoler)
                     .modifier(CardModifier())
                     .alert("do you want to delete? ", isPresented: $isPresented2, actions: {
                         // 1

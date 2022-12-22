@@ -27,6 +27,10 @@ struct Produc: Identifiable, Decodable {
     let uid: String
     let quantity : String
     let type : String
+    let price : String
+    let currency : String
+    let heights: String
+    let type2 : String
     
     //var likes: Int
     

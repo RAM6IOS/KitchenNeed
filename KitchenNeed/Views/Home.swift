@@ -22,39 +22,59 @@ struct Home: View {
     var body: some View {
         if let user = viewModel.currentUser {
             NavigationView{
-                VStack{
-                    CardView(user: user)
-                }
-                .listStyle(GroupedListStyle())
-                
-                .environmentObject(prospects)
-                .navigationBarTitle("Home")
-                .toolbar {
-                    ToolbarItem( placement: .navigationBarTrailing) {
+                ZStack{
+                    Color.fontcoler
+                        .ignoresSafeArea(.all, edges: .top)
+                    VStack{
+                        CardView(user: user)
+                            
                         
-                        Button(action: {isSheetPresented.toggle()}) {
-                            Image(systemName: "plus.circle.fill")
-                                .font(.system(size: 20))
+                        
+                    }
+                    
+                    .listStyle(GroupedListStyle())
+                    
+                    .environmentObject(prospects)
+                    .navigationBarTitle("Home")
+                    .toolbar {
+                        ToolbarItem( placement: .navigationBarTrailing) {
+                            
+                            Button(action: {isSheetPresented.toggle()}) {
+                                Image(systemName: "plus.circle.fill")
+                                    .font(.system(size: 20))
+                                    .foregroundColor(.iconcoler)
+                            }
+                            
+                        }
+                        ToolbarItem( placement: .navigationBarLeading) {
+                            KFImage(URL(string: user.profileImageUrl))
+                                .resizable()
+                                .scaledToFill()
+                                .clipShape(Circle())
+                                .frame(width: 30, height: 30)
+                            
                         }
                         
                     }
-                    ToolbarItem( placement: .navigationBarLeading) {
-                        KFImage(URL(string: user.profileImageUrl))
-                            .resizable()
-                            .scaledToFill()
-                            .clipShape(Circle())
-                            .frame(width: 30, height: 30)
- 
+                    .navigationBarTitleDisplayMode(.inline)
+                    .sheet(isPresented: $isSheetPresented){
+                        SheetView()
+                            .environmentObject(prospects)
                     }
-                    
-                }
-                .navigationBarTitleDisplayMode(.inline)
-                .sheet(isPresented: $isSheetPresented){
-                    SheetView()
-                        .environmentObject(prospects)
                 }
             }
+            
         }
             }
         }
+
+
+extension Color {
+    
+    static let newPrimaryColor = Color("backcoler")
+    static let fontcoler = Color("fontcoler")
+    static let iconcoler = Color("iconcoler")
+    static let cadcoler = Color("cadcoler")
+    //cadcoler
+}
 

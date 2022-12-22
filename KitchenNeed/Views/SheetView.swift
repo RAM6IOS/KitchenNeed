@@ -14,10 +14,12 @@ struct SheetView: View {
     let types = ["vegetable", "meat", "fruits", "bread" , "milk" ,"spices" ,"canned-food" ,"cleaning-materials"]
     @State private var type = "vegetable"
     var heightOptions = ["L","mL", "kg" ,"g"]
-    @State private var heightselection = ""
+    @State private var heights = "L"
     @State private var price = ""
-    @State private var Currency = ""
-    var CurrencySymbol = ["$","€", "£" ,"¥"]
+    @State private var currency = "$"
+    var currencySymbol = ["$","€", "£" ,"¥"]
+    let types2 = ["L","mL", "kg" ,"g"]
+    @State private var type2 = "L"
     @Environment(\.managedObjectContext) var moc
     @EnvironmentObject var prospects: Prospects
     @ObservedObject var viewModel = UploadProductViewModel()
@@ -32,8 +34,7 @@ struct SheetView: View {
                                     .scaledToFill()
                                     .frame(width: 80, height: 80)
                                     .cornerRadius(12)
-                                
-                                Picker("", selection: $type) {
+                                Picker("type", selection: $type) {
                                     ForEach(types, id: \.self) { typ in
                                         HStack( spacing: 10){
                                             Text(typ)
@@ -43,32 +44,42 @@ struct SheetView: View {
                                 }
                                 
                             }
-                            
-                            
                         }
                         Section{
                             TextField("Name" , text: $name)
                         }
                         Section{
                             HStack{
-                                TextField("Quantity" , text:$quantity)
-                                Picker( "", selection: $heightselection, content: {
-                                    ForEach(heightOptions, id: \.self) {
-                                        Text($0)
+                                TextField("Quantity" , text:$quantity )
+                                Picker("", selection: $heights) {
+                                    ForEach(heightOptions, id: \.self) { typ in
+                                        HStack( spacing: 10){
+                                            Text(typ)
+                                            
+                                        }
                                     }
-                                })
+                                }
+                                }
+                                
                             }
+                            
                             
                         }
                         
                         Section{
                             HStack{
                                 TextField("Price" , text:$price)
-                                Picker( "", selection: $Currency, content: {
-                                    ForEach(CurrencySymbol, id: \.self) {
-                                        Text($0)
+                                
+                                Picker("", selection: $currency) {
+                                    ForEach(currencySymbol, id: \.self) { typ in
+                                        HStack( spacing: 10){
+                                            Text(typ)
+                                            
+                                        }
                                     }
-                                })
+                                }
+                              
+                               
                             }
                             
                         }
@@ -76,17 +87,16 @@ struct SheetView: View {
                         
                     }
                     .background(Color.green)
-                    
-                    
-                    
+              
                     Button{
-                        viewModel.uploadProduct(withCaption: name, quantity: quantity, type: type, heightselection: heightselection, price: price, Currency:Currency)
+                        viewModel.uploadProduct(withCaption: name, quantity: quantity, type: type ,currency:currency, price :price ,heights:heights ,type2:type2)
                         name = ""
                         type = ""
                         quantity = ""
-                        price = ""
-                        Currency = ""
-                        heightselection = ""
+                       type2 = ""
+                        //price = ""
+                       // currency = ""
+                        //heightselection = ""
                         
                     } label: {
                         Text("Save")
@@ -102,7 +112,7 @@ struct SheetView: View {
             }
      
     }
-    }
+
 
 
 struct SheetView_Previews: PreviewProvider {
