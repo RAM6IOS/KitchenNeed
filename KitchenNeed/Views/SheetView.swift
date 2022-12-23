@@ -62,10 +62,6 @@ struct SheetView: View {
                                 }
                                 
                             }
-                            
-                            
-                        }
-                        
                         Section{
                             HStack{
                                 TextField("Price" , text:$price)
@@ -84,10 +80,7 @@ struct SheetView: View {
                             
                         }
                         
-                        
-                    }
-                    .background(Color.green)
-              
+                        }
                     Button{
                         viewModel.uploadProduct(withCaption: name, quantity: quantity, type: type ,currency:currency, price :price ,heights:heights ,type2:type2)
                         name = ""
@@ -107,6 +100,11 @@ struct SheetView: View {
                     }
                     .background(Color.green)
                     .cornerRadius(10)
+
+                    }
+                    .background(Color.green)
+              
+                    
                 }
                 .navigationTitle("Add Product")
             }

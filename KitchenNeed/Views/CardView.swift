@@ -5,18 +5,16 @@
 import SwiftUI
 import Firebase
 struct CardView: View {
-    
-    
-    //@EnvironmentObject var prospects: Prospects
     @State private var isPresented = false
     @State private var isPresented2 = false
     @State private var name = ""
+    let types = ["vegetable", "meat", "fruits", "bread" , "milk" ,"spices" ,"canned-food" ,"cleaning-materials"]
+    var heightOptions = ["L","mL", "kg" ,"g"]
+    var currencySymbol = ["$","€", "£" ,"¥"]
     @ObservedObject var viewModel :  ProductViewModel
-    //@ObservedObject var viewModel2 :  Produc2ViewModel
-    //var produc: Produc
+    
     init(user:User){
         self.viewModel = ProductViewModel(user: user)
-        // self.viewModel2 = Produc2ViewModel(produc: )
     }
     
     var body: some View {
@@ -101,7 +99,7 @@ struct CardView: View {
         .foregroundColor(Color(.label))
         .contentShape(Rectangle())
         
-        .onLongPressGesture(minimumDuration:0.2, maximumDistance:10 ){
+        .onLongPressGesture(minimumDuration:0.3, maximumDistance:10 ){
             isPresented2.toggle()
         }
         
