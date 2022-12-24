@@ -20,7 +20,7 @@ struct ContentView: View {
                             
                             Label("List", systemImage: "list.bullet.rectangle.portrait.fill")
                         }
-            GroupView()
+                Recipe()
                 .tabItem {
                    Label("Group", systemImage: "person.3")
                }

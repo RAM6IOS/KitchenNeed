@@ -17,7 +17,7 @@ import Foundation
 import Firebase
 
 
-class NewRecipeViewModel : ObservableObject{
+class NewRecipeViewModel :ObservableObject {
     
     
     
