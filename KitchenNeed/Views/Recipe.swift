@@ -9,10 +9,20 @@ import SwiftUI
 
 struct Recipe: View {
     @State private var isSheetPresented = false
+    @ObservedObject var viewModel = RecipeViewModel()
     var body: some View {
         NavigationView{
             VStack{
-                Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+                ScrollView {
+                    ForEach(viewModel.recipet){ recipe in
+                        
+                        Text("\(recipe.name)")
+                            .font(.subheadline).bold()
+                        Text("\(recipe.ingredients)")
+                            .font(.caption)
+                            .foregroundColor(.gray)
+                    }
+                }
             }
             .navigationBarTitle("Recipe")
             .toolbar {

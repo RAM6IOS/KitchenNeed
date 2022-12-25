@@ -6,3 +6,20 @@
 //
 
 import Foundation
+import FirebaseFirestoreSwift
+import Firebase
+
+
+struct Recipet:Identifiable , Decodable{
+    
+    @DocumentID var id: String?
+    let  name : String
+    let timestamp: Timestamp
+    let uid: String
+    let definition : String
+    let ingredients : String
+    let time : String
+    let degree : String
+    var user: User?
+ 
+}
