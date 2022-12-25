@@ -32,6 +32,7 @@ class RecipeViewModel : ObservableObject {
     }
     
     func fetchUser(withUid uid: String , completion: @escaping(User) -> Void) {
+       // print("Dibagen")
             Firestore.firestore().collection("users")
                 .document(uid)
                 .getDocument { snapshot, _ in
@@ -40,10 +41,14 @@ class RecipeViewModel : ObservableObject {
                     guard let user = try? snapshot.data(as: User.self) else { return }
                     
                     completion(user)
-                    
+                    //print(user.email)
+                    //print(user.username)
                 
                 }
         }
+    
+    
+    
     func fetchrecipe(completion: @escaping([Recipet]) -> Void) {
         Firestore.firestore().collection("recipe")
                     .order(by: "timestamp", descending: true)
@@ -55,5 +60,7 @@ class RecipeViewModel : ObservableObject {
                        
                 }
         }
-
+    
+    
+    
 }

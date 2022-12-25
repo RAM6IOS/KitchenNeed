@@ -10,6 +10,9 @@ import SwiftUI
 struct Recipe: View {
     @State private var isSheetPresented = false
     @ObservedObject var viewModel = RecipeViewModel()
+    
+    
+    
     var body: some View {
         NavigationView{
             VStack{
@@ -47,11 +50,12 @@ struct Recipe: View {
                 }
                 
             }
-            .navigationBarTitleDisplayMode(.inline)
             .sheet(isPresented: $isSheetPresented){
                 NewRecipe()
                     
             }
+            .navigationBarTitleDisplayMode(.inline)
+            
         }
     }
 }
