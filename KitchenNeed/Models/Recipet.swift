@@ -20,6 +20,7 @@ struct Recipet:Identifiable , Decodable{
     let ingredients : String
     let time : String
     let degree : String
+    let recipetImageUrl : String
     var user: User?
  
 }
