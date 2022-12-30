@@ -75,6 +75,7 @@ extension Color {
     static let fontcoler = Color("fontcoler")
     static let iconcoler = Color("iconcoler")
     static let cadcoler = Color("cadcoler")
+    static let AccentColor = Color("AccentColor")
     //cadcoler
 }
 
