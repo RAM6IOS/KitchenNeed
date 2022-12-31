@@ -13,7 +13,7 @@ struct RecipeDetailsView: View {
 
     var body: some View {
         VStack{
-            VStack(alignment: .leading, spacing: 0) {
+            VStack(alignment: .leading, spacing: 10) {
                 
                 KFImage(URL(string: recipe.recipetImageUrl))
                     .resizable()
@@ -31,110 +31,7 @@ struct RecipeDetailsView: View {
                                 //.font(.title3)
                                 .foregroundColor(Color.cadcoler)
                             // .foregroundColor(Color.gray)
-                    
-                    
-                    HStack(spacing: 10){
-                        Image( "chef")
-                            .resizable()
-                            .scaledToFill()
-                            .aspectRatio(contentMode: .fill)
-                            .frame(width: 30, height: 30)
-                            .font(.system(size: 20))
-                        Text("Diffyculty:")
-                            .font(Font.system(size: 15))
-                            .fontWeight(Font.Weight.heavy)
-                        HStack {
-                            
-                            Text("Meduim")
-                                .font(Font.custom("HelveticaNeue-Medium", size: 13))
-                                .padding([.leading, .trailing], 10)
-                                .padding([.top, .bottom], 5)
-                                .foregroundColor(Color.white)
-                        }
-                        .background(Color.AccentColor)
-                        .cornerRadius(7)
-                        
-                       
-                        Text("Origin:")
-                            .font(Font.system(size: 15))
-                            .fontWeight(Font.Weight.heavy)
-                        HStack {
-                            
-                            Text("Algerie")
-                                .font(Font.custom("HelveticaNeue-Medium", size: 13))
-                                .padding([.leading, .trailing], 10)
-                                .padding([.top, .bottom], 5)
-                                .foregroundColor(Color.white)
-                        }
-                        .background(Color.AccentColor)
-                        .cornerRadius(7)
-                    
-                }
-                    
-                    ZStack{
-                        Capsule()
-                            .frame(height: 50)
-                            .foregroundColor(Color.AccentColor)
-                        
-                        HStack(spacing: 15){
-                            HStack(spacing: 10){
-                                Image(systemName: "timer")
-                                    .frame(width: 30, height: 30)
-                                    .font(.system(size: 20))
-                                    .background(Color.fontcoler)
-                                    .foregroundColor(.white)
-                                    .clipShape(Circle())
-                                VStack{
-                                    Text("30m")
-                                        .fontWeight(Font.Weight.heavy)
-                                        .foregroundColor(Color.cadcoler)
-                                    Text("Cook")
-                                        .fontWeight(Font.Weight.heavy)
-                                        .foregroundColor(Color.cadcoler)
-                                    
-                                }
-                                
-                                
-                                
-                            }
-                            Spacer()
-                                
-                            HStack(spacing: 10){
-                                Image(systemName: "flame.fill")
-                                    .frame(width: 30, height: 30)
-                                    .font(.system(size: 20))
-                                    .background(Color.fontcoler)
-                                    .foregroundColor(.white)
-                                    .clipShape(Circle())
-                                VStack{
-                                    Text("69C")
-                                        .fontWeight(Font.Weight.heavy)
-                                        .foregroundColor(Color.cadcoler)
-                                    Text("degrees")
-                                        .fontWeight(Font.Weight.heavy)
-                                        .foregroundColor(Color.cadcoler)
-                                }
-                            }
-                            
-                            
-                        }
-                        .padding()
-                    }
-                            HStack{
-                                Text("Based on:")
-                                    .font(Font.system(size: 15))
-                                    .fontWeight(Font.Weight.heavy)
-                                HStack {
-                                    Text("category")
-                                        .font(Font.custom("HelveticaNeue-Medium", size: 13))
-                                        .padding([.leading, .trailing], 10)
-                                        .padding([.top, .bottom], 5)
-                                        .foregroundColor(Color.white)
-                                }
-                                .background(Color(red: 43/255, green: 175/255, blue: 187/255))
-                                .cornerRadius(7)
-                            
-                        }
+                    VStack{
                         if let user = recipe.user {
                             HStack{
                                 KFImage(URL(string: user.profileImageUrl ))
@@ -146,9 +43,109 @@ struct RecipeDetailsView: View {
                                     .fontWeight(Font.Weight.heavy)
                             }
                         }
+                    }
+                    VStack{
+                        HStack(spacing: 10){
+                            Image( "chef")
+                                .resizable()
+                                .scaledToFill()
+                                .aspectRatio(contentMode: .fill)
+                                .frame(width: 30, height: 30)
+                                .font(.system(size: 20))
+                            Text("Diffyculty:")
+                                .font(Font.system(size: 15))
+                                .fontWeight(Font.Weight.heavy)
+                            HStack {
+                                
+                                Text("Meduim")
+                                    .font(Font.custom("HelveticaNeue-Medium", size: 13))
+                                    .padding([.leading, .trailing], 10)
+                                    .padding([.top, .bottom], 5)
+                                    .foregroundColor(Color.cadcoler)
+                            }
+                            .background(Color.AccentColor)
+                            .cornerRadius(7)
+                            
+                            
+                            Text("Origin:")
+                                .font(Font.system(size: 15))
+                                .fontWeight(Font.Weight.heavy)
+                            HStack {
+                                
+                                Text("Algerie")
+                                    .font(Font.custom("HelveticaNeue-Medium", size: 13))
+                                    .padding([.leading, .trailing], 10)
+                                    .padding([.top, .bottom], 5)
+                                    .foregroundColor(Color.cadcoler)
+                            }
+                            .background(Color.AccentColor)
+                            .cornerRadius(7)
+                            
+                        }
+                    }
+                    .padding(.vertical , 10)
                     
-                    
-                    VStack(alignment: .leading){
+                    ZStack{
+                        Capsule()
+                            .frame(height: 50)
+                            .foregroundColor(Color.AccentColor)
+                        
+                        HStack{
+                            HStack(spacing: 10){
+                                Image(systemName: "square.stack.3d.up")
+                                    .frame(width: 30, height: 30)
+                                    .font(.system(size: 20))
+                                    .background(Color.fontcoler)
+                                    .foregroundColor(.white)
+                                    .clipShape(Circle())
+                                VStack{
+                                    Text("Biscuits")
+                                        .fontWeight(Font.Weight.heavy)
+                                        .foregroundColor(Color.cadcoler)
+                                    
+                                }
+                            }
+                            
+                            Spacer()
+                            HStack(spacing: 5){
+                                Image(systemName: "timer")
+                                    .frame(width: 30, height: 30)
+                                    .font(.system(size: 20))
+                                    .background(Color.fontcoler)
+                                    .foregroundColor(.white)
+                                    .clipShape(Circle())
+                                VStack{
+                                    Text("30m")
+                                        .fontWeight(Font.Weight.heavy)
+                                        .foregroundColor(Color.cadcoler)
+                                }
+                                
+                                
+                                
+                            }
+                            Spacer()
+                            HStack(spacing: 5){
+                                Image(systemName: "flame.fill")
+                                    .frame(width: 30, height: 30)
+                                    .font(.system(size: 20))
+                                    .background(Color.fontcoler)
+                                    .foregroundColor(.white)
+                                    .clipShape(Circle())
+                                VStack{
+                                    Text("69C")
+                                        .fontWeight(Font.Weight.heavy)
+                                        .foregroundColor(Color.cadcoler)
+                                    
+                                }
+                            }
+                            
+                            
+                        }
+                        .padding(.horizontal , 20)
+                        .padding(.vertical , 10)
+                    }
+                        
+                    VStack(alignment: .leading , spacing: 10){
                         Text("ingredients")
                             .fontWeight(Font.Weight.heavy)
                             .font(.title2)
@@ -158,11 +155,11 @@ struct RecipeDetailsView: View {
                         Text("""
                         It's important to note that becoming the richest person in the world is an extremely rare and difficult feat, and itmay not be the best or most fulfilling goal for everyone. It's important to set goals that align with your values and interests, and to focus on building a life that brings you happiness and fulfillment.
                         """)
-                        .foregroundColor(Color.gray)
+                        .foregroundColor(Color.cadcoler)
                         
                     }
                     
-                    VStack(alignment: .leading){
+                    VStack(alignment: .leading ,spacing: 10){
                         Text("ingredients")
                             .fontWeight(Font.Weight.heavy)
                             .font(.title2)
@@ -171,20 +168,10 @@ struct RecipeDetailsView: View {
                         Text("""
                         It's important to note that becoming the richest person in the world is an extremely rare and difficult feat, and itmay not be the best or most fulfilling goal for everyone. It's important to set goals that align with your values and interests, and to focus on building a life that brings you happiness and fulfillment.
                         """)
-                        .foregroundColor(Color.gray)
+                        .foregroundColor(Color.cadcoler)
                         
                     }
-                        
 
-                        
-                        
-                        
-                        
-                        // Horizontal Line separating details and price
-                        //.HorizontalLine(color: Color.gray.opacity(0.3))
-                        // .padding([.leading, .trailing], -12)
-                        
-                        
                     }
                 }
                 
@@ -195,27 +182,14 @@ struct RecipeDetailsView: View {
                     .padding(.top , -40)
                 )
                 
-                
-                //.clipped()
-               
-                
             }
             .background(Color.white)
-            // .cornerRadius(15)
-            // .shadow(color: Color.black.opacity(0.2), radius: 7, x: 0, y: 2)
-            // .padding(.horizontal,10)
             Spacer()
-            
-            
+
         }
 
     }
-    func path(in rect: CGRect)-> Path {
-        let  path = UIBezierPath(roundedRect: rect, byRoundingCorners: [.topLeft ,.topRight] , cornerRadii: CGSize(width: 35, height: 35))
-        
-        return Path(path.cgPath)
-    }
-
+    
 }
 
 
