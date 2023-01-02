@@ -20,106 +20,120 @@ struct NewRecipe: View {
     @State private var preparation  = ""
     @State private var time = ""
     @State private var degree = ""
+    @State private var times = ""
+    var timesSymbol = ["h" ,"m"]
+    @State private var temperatures = ""
+    var temperaturesSymbol = ["F" , "C"]
     @ObservedObject var viewModel = NewRecipeViewModel()
     var body: some View {
         NavigationView{
-            VStack{
-                if #available(iOS 16.0, *) {
-                    Button {
-                        showingImagePicker.toggle()
-                                } label: {
-                        if let profileImage = profileImage {
-                                            profileImage
-                                              .resizable()
-                                              .scaledToFill()
-                                              .frame(width: 100, height: 100)
-                                              .overlay(
-                                                              RoundedRectangle(cornerRadius: 90)
-                                                                  .stroke(Color.gray
-                                                                          , lineWidth: 10)
-                                                          )
-                                                          .clipShape(Circle())
-                                                          .padding(.top, 44)
-                                                    } else {
-                                                        Image("default-avatar")
-                                                            .resizable()
-                                                            .scaledToFill()
-                                                            .frame(width: 100, height: 100 )
-                                                            .clipShape(Circle())
-                                                            .overlay(
-                                                                            RoundedRectangle(cornerRadius: 90)
-                                                                                .stroke(Color.white
-                                                                                        , lineWidth: 10)
-                                                                        )
-                                                                        .clipShape(Circle())
-                                                                        .padding(.top, 44)
-                                                            
-                                                    }
+     
+                VStack() {
+                    if #available(iOS 16.0, *) {
+                        Form{
+                            Button {
+                                showingImagePicker.toggle()
+                            } label: {
+                                if let profileImage = profileImage {
+                                    profileImage
+                                        .resizable()
+                                        .scaledToFill()
+                                        .frame( height: 200 )
+                                        .clipShape(Rectangle())
+                                        .cornerRadius(10)
+                                        .padding(.horizontal,10)
+                                } else {
+                                    ZStack {
+                                        RoundedRectangle(cornerRadius: 10)
+                                            .strokeBorder(lineWidth: 3)
+                                        Image(systemName: "camera")
+                                            .font(.largeTitle)
+                                    }
+                                    .frame(height: 200)
+                                    .padding(.horizontal,10)
                                 }
-                                .sheet(isPresented: $showingImagePicker , onDismiss: loadImage) {
-                                                ImagePicker(selectedImage: $selectedImage)
-                                            }
-                    
-                    Form{
-                        Section{
-                            TextField("Name", text: $name)
-                        }
-                        Section("Definition"){
-                            TextEditor(text: $definition)
-                                //.font(.title)
-                                .lineSpacing(20)
-                                .autocapitalization(.words)
-                                .frame(height: 100)
-                                .disableAutocorrection(true)
-                                .padding()
-                        }
-                        Section("Ingredients"){
-                            TextEditor(text: $ingredients)
-                               // .font(.title)
-                                //.lineSpacing(20)
-                                //.autocapitalization(.words)
-                                .frame(minHeight: 100)
-                                //.disableAutocorrection(true)
-                                //.padding()
-                        }
-                        Section("Preparation"){
-                            TextEditor(text: $preparation)
-                                //.font(.title)
-                                .lineSpacing(20)
-                                .autocapitalization(.words)
-                                .frame(height: 100)
-                                .disableAutocorrection(true)
-                                .padding()
-                        }
-                        Section{
-                            TextField("Time" ,text:$time)
-                        }
-                        Section{
-                            TextField("Degree" ,text:$degree)
-                        }
+                            }
+                            .sheet(isPresented: $showingImagePicker , onDismiss: loadImage) {
+                                ImagePicker(selectedImage: $selectedImage)
+                            }
                         
+                            Section{
+                                
+                                TextField("Time" ,text:$name)
+                            }
+                            
+                            Section("Definition"){
+                                TextEditor(text: $definition)
+                                    .lineSpacing(20)
+                                    .autocapitalization(.words)
+                                    .frame(height: 100)
+                                    .disableAutocorrection(true)
+                                    .padding()
+                            }
+                            Section("Ingredients"){
+                                TextEditor(text: $ingredients)
+                                    .frame(minHeight: 100)
+                            }
+                            Section("Preparation"){
+                                TextEditor(text: $preparation)
+                                    .lineSpacing(20)
+                                    .autocapitalization(.words)
+                                    .frame(height: 100)
+                                    .disableAutocorrection(true)
+                                    .padding()
+                            }
+                            Section("Cooking Time"){
+                                HStack{
+                                    TextField("Time" ,text:$time)
+                                    Picker("", selection: $times) {
+                                        ForEach(timesSymbol, id: \.self) { typ in
+                                            HStack( spacing: 10){
+                                                Text(typ)
+                                                
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            Section("Cooking Temperature"){
+                                HStack{
+                                    TextField("temperature" ,text:$degree)
+                                    Picker("", selection: $temperatures) {
+                                        ForEach(temperaturesSymbol, id: \.self) { typ in
+                                            HStack( spacing: 10){
+                                                Text(typ)
+                                                
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            
+                        }
+                        Button{
+                            viewModel.uploadRecipe(withCaption: name, definition: definition, ingredients: ingredients, degree: degree, time: time, preparation: preparation,  image: (selectedImage ??  UIImage(named: "default-avatar"))!)
+                            
+                            
+                            
+                        } label: {
+                            Text("Save")
+                                .bold()
+                                .font(.title3)
+                                .frame(width: 300, height: 40)
+                                .foregroundColor(Color.backcoler)
+                        }
+                        .background(Color.AccentColor)
+                        .cornerRadius(10)
+                        
+                    } else {
+                        // Fallback on earlier versions
                     }
-                    .scrollContentBackground(.hidden)
-                } else {
-                    // Fallback on earlier versions
-                }
-                Button{
-                    viewModel.uploadRecipe(withCaption: name, definition: definition, ingredients: ingredients, degree: degree, time: time, preparation: preparation,  image: (selectedImage ??  UIImage(named: "default-avatar"))!)
+                   
                     
-                    
-                    
-                } label: {
-                    Text("Save")
-                        .bold()
-                        .font(.title3)
-                        .frame(width: 250, height: 40)
-                        .foregroundColor(.white)
                 }
-                .background(Color.green)
-                .cornerRadius(10)
-
-                }
-            .navigationBarTitle("New Recipe")
+                
+          
+           .navigationBarTitle("New Recipe")
                
                 
             }
