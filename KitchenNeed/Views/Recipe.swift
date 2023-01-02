@@ -21,53 +21,53 @@ struct Recipe: View {
                         } label: {
                             
                             VStack(alignment: .leading, spacing: 0) {
-                                
                                 KFImage(URL(string: recipe.recipetImageUrl))
-                                //.resizable()
-                                //.aspectRatio(contentMode: .fit)
                                     .resizable()
                                     .scaledToFill()
                                     .frame(minWidth: nil, idealWidth: nil, maxWidth: UIScreen.main.bounds.width, minHeight: nil, idealHeight: nil, maxHeight: 300, alignment: .center)
                                     .clipped()
                                 VStack(alignment: .leading, spacing: 6) {
-                                    Text(recipe.name)
-                                        .fontWeight(Font.Weight.heavy)
-                                    // .foregroundColor(Color.gray)
                                     HStack{
-                                        Text("Based on:")
+                                       
+                                        Text(recipe.name)
+                                            .foregroundColor(Color.cadcoler)
+                                            .font(.title)
+                                            .fontWeight(Font.Weight.heavy)
+                                    }
+                                    HStack{
+                                        Text("Category:")
                                             .font(Font.system(size: 15))
+                                            .foregroundColor(Color.cadcoler)
                                             .fontWeight(Font.Weight.heavy)
                                         HStack {
-                                            Text("category")
+                                            Text("Soups")
                                                 .font(Font.custom("HelveticaNeue-Medium", size: 13))
                                                 .padding([.leading, .trailing], 10)
                                                 .padding([.top, .bottom], 5)
-                                                .foregroundColor(Color.white)
+                                                .foregroundColor(Color.cadcoler)
+                                                
                                         }
-                                        .background(Color(red: 43/255, green: 175/255, blue: 187/255))
+                                        .background(Color.AccentColor)
                                         .cornerRadius(7)
                                     }
                                     if let user = recipe.user {
                                         HStack{
-                                            KFImage(URL(string: user.profileImageUrl ))
+                                            Image( "cook")
                                                 .resizable()
                                                 .scaledToFill()
-                                                .clipShape(Circle())
+                                                .aspectRatio(contentMode: .fill)
                                                 .frame(width: 30, height: 30)
+                                                .font(.system(size: 20))
+                                                KFImage(URL(string: user.profileImageUrl ))
+                                                    .resizable()
+                                                    .scaledToFill()
+                                                    .clipShape(Circle())
+                                                    .frame(width: 30, height: 30)
                                             Text(user.name)
+                                                .foregroundColor(Color.cadcoler)
                                                 .fontWeight(Font.Weight.heavy)
                                         }
                                     }
-                                    
-                                    
-                                    
-                                    
-                                    // Horizontal Line separating details and price
-                                    //.HorizontalLine(color: Color.gray.opacity(0.3))
-                                    // .padding([.leading, .trailing], -12)
-                                    
-                                    
-                                    
                                 }
                                 .padding(12)
                             }
@@ -86,7 +86,7 @@ struct Recipe: View {
                     Button(action: {isSheetPresented.toggle()}) {
                         Image(systemName: "plus.circle.fill")
                             .font(.system(size: 20))
-                            .foregroundColor(.iconcoler)
+                            .foregroundColor(.AccentColor)
                     }
                     
                 }

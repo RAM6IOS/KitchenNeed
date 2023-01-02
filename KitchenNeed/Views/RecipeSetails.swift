@@ -23,14 +23,11 @@ struct RecipeDetailsView: View {
                     .clipped()
                 ScrollView(.vertical , showsIndicators: false){
                 VStack(alignment: .leading, spacing: 6) {
-                    
-                       
                             Text(recipe.name)
                                 .fontWeight(Font.Weight.heavy)
                                 .font(.system(size: 40))
-                                //.font(.title3)
                                 .foregroundColor(Color.cadcoler)
-                            // .foregroundColor(Color.gray)
+
                     VStack{
                         if let user = recipe.user {
                             HStack{
