@@ -23,13 +23,16 @@ struct Home: View {
         if let user = viewModel.currentUser {
             NavigationView{
                 ZStack{
-                    Color.fontcoler
-                        .ignoresSafeArea(.all, edges: .top)
-                    VStack{
-                        CardView(user: user)
-                            
+                   // Color.AccentColor
+                      //  .ignoresSafeArea(.all, edges: .top)
+                  
                         
+                            VStack{
+                                ScrollView{
+                                    CardView(user: user)
+                                }
                         
+
                     }
                     
                     .listStyle(GroupedListStyle())
@@ -41,8 +44,9 @@ struct Home: View {
                             
                             Button(action: {isSheetPresented.toggle()}) {
                                 Image(systemName: "plus.circle.fill")
-                                    .font(.system(size: 20))
-                                    .foregroundColor(.iconcoler)
+                                    .font(.system(size: 25))
+                                    .foregroundColor(.AccentColor)
+                                    
                             }
                             
                         }
