@@ -24,6 +24,10 @@ struct NewRecipe: View {
     var timesSymbol = ["h" ,"m"]
     @State private var temperatures = ""
     var temperaturesSymbol = ["F" , "C"]
+    @State var difficulty = "Easy"
+    var difficultyLevel = ["Easy" , "Moderate" ,"Challenging" ,"Professional"]
+    @State private var categorie = ""
+    let categories: [String] = ["Breakfast", "Lunch", "Dinner", "Dessert" , "Appetisers" , "Soups" ,"Salads" ,"Breads" ,"Baked" , "Sweet" ,"Pizza" ,"Poultry" ,"Meat" ,"Seafood","Rice" ,"Pasta" ,"Sides" ,"Sandwiches" ,"drinks" ,"Ice Cream"]
     @ObservedObject var viewModel = NewRecipeViewModel()
     var body: some View {
         NavigationView{
@@ -57,10 +61,32 @@ struct NewRecipe: View {
                                 ImagePicker(selectedImage: $selectedImage)
                             }
                         
-                            Section{
+                            Section("Recipe Name"){
                                 
-                                TextField("Time" ,text:$name)
+                                TextField("Name" ,text:$name)
                             }
+                            Section("Difficulty Level"){
+                                Picker(selection: $difficulty, label: Text("")) {
+                                    ForEach(difficultyLevel, id: \.self) { typ in
+                                        Text(typ).tag(typ)
+                                        
+                                    }
+                                        }
+                                       .frame(width: 350)
+                                        .background(Color.yellow)
+                                        .cornerRadius(10)
+                                        .pickerStyle(SegmentedPickerStyle())
+                            }
+                            Section("Recipe Category"){
+                                Picker(selection: $categorie, label: Text("Categorie")) {
+                                    ForEach(categories, id: \.self) { typ in
+                                        Text(typ).tag(typ)
+                                        
+                                    }
+                                        }
+                                        
+                            }
+                            
                             
                             Section("Definition"){
                                 TextEditor(text: $definition)
@@ -110,6 +136,7 @@ struct NewRecipe: View {
                             }
                             
                         }
+                        .background(Color.AccentColor)
                         Button{
                             viewModel.uploadRecipe(withCaption: name, definition: definition, ingredients: ingredients, degree: degree, time: time, preparation: preparation,  image: (selectedImage ??  UIImage(named: "default-avatar"))!)
                             

@@ -14,7 +14,6 @@ struct RecipeDetailsView: View {
     var body: some View {
         VStack{
             VStack(alignment: .leading, spacing: 10) {
-                
                 KFImage(URL(string: recipe.recipetImageUrl))
                     .resizable()
                     .scaledToFill()
@@ -62,8 +61,6 @@ struct RecipeDetailsView: View {
                             }
                             .background(Color.AccentColor)
                             .cornerRadius(7)
-                            
-                            
                             Text("Origin:")
                                 .font(Font.system(size: 15))
                                 .fontWeight(Font.Weight.heavy)
