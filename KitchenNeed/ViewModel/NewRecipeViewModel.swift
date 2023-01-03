@@ -30,8 +30,8 @@ class NewRecipeViewModel :ObservableObject {
     
     
     
-    func uploadRecipe(withCaption name: String , definition: String , ingredients: String ,degree: String ,time: String ,preparation: String ,image: UIImage ) {
-        uploadRecipet(name: name, definition: definition, ingredients: ingredients , degree: degree , time: time,preparation:preparation, image: image ) { success in
+    func uploadRecipe(withCaption name: String , definition: String , ingredients: String ,degree: String ,time: String ,preparation: String ,image: UIImage ,times:String,temperatures:String,difficulty:String,categorie:String) {
+        uploadRecipet(name: name, definition: definition, ingredients: ingredients , degree: degree , time: time,preparation:preparation, image: image ,times:times,temperatures:temperatures,difficulty:difficulty,categorie:categorie) { success in
             if success {
                 //dismiss view
                 // self.didUploadTweeet = true
@@ -43,7 +43,7 @@ class NewRecipeViewModel :ObservableObject {
         
         
     }
-    func uploadRecipet(name: String,definition: String,ingredients: String, degree: String ,time:String,preparation:String,image: UIImage,completion: @escaping(Bool) -> Void) {
+    func uploadRecipet(name: String,definition: String,ingredients: String, degree: String ,time:String,preparation:String,image: UIImage,times:String,temperatures:String,difficulty:String,categorie:String,completion: @escaping(Bool) -> Void) {
         
         
         
@@ -56,7 +56,10 @@ class NewRecipeViewModel :ObservableObject {
                         "preparation":preparation,
                         "time":time,
                         "degree":degree,
-                        //"recipetImageUrl":image,
+                        "times":times,
+                        "temperatures":temperatures,
+                        "difficulty":difficulty,
+                        "categorie":categorie,
                         "recipetImageUrl": recipetImageUrl,
                         "timestamp": Timestamp(date: Date())] as [String: Any]
             Firestore.firestore()
