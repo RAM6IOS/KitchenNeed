@@ -11,7 +11,7 @@ struct SheetView: View {
     @State private var name = ""
     @State private var quantity = ""
     @State private var  details = ""
-    let types = ["vegetable", "meat", "fruits", "bread" , "milk" ,"spice" ,"canned-food" ,"cleaning-materials"]
+    let types = ["vegetable", "meat","seafood", "fruits", "bread" , "milk","dairy-products" ,"spice" ,"canned-food" ,"snacks","cleaning-materials","PersonalHygiene","stationery"]
     @State private var type = "vegetable"
     var heightOptions = ["L","mL", "kg" ,"g"]
     @State private var heights = "L"
