@@ -56,7 +56,15 @@ struct CardView: View {
                 .frame(maxWidth: .infinity, alignment: .center)
                 .overlay(
                     Button {
-                        isPresented2.toggle()
+                        guard let producId = product.id else { return }
+                        // [START delete_document]
+                        Firestore.firestore().collection("product").document(producId).delete() { err in
+                            if let err = err {
+                                print("Error removing document: \(err)")
+                            } else {
+                                print("Document successfully removed!")
+                            }
+                        }
                     } label: {
                         Image(systemName: "trash.fill")
                             .font(Font.system(size: 16))
@@ -68,10 +76,10 @@ struct CardView: View {
                 .modifier(CardModifier())
                 .foregroundColor(Color(.label))
                 .contentShape(Rectangle())
-                .alert("do you want to delete? ", isPresented: $isPresented2, actions: {
+                /*.alert("do you want to delete? ", isPresented: $isPresented2, actions: {
                     Button("No", role: .cancel, action: {})
                     Button("Delete", role: .destructive, action: {
-                        guard let uid = Auth.auth().currentUser?.uid else { return }
+                        //guard let uid = Auth.auth().currentUser?.uid else { return }
                         guard let producId = product.id else { return }
                         // [START delete_document]
                         Firestore.firestore().collection("product").document(producId).delete() { err in
@@ -89,7 +97,7 @@ struct CardView: View {
                     })
                 }, message: {
                     Text("Message")
-                })
+                })*/
                 .padding(.all, 10)
             }
         }
