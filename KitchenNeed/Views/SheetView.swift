@@ -45,10 +45,10 @@ struct SheetView: View {
                                 
                             }
                         }
-                        Section{
+                        Section("Product Name"){
                             TextField("Name" , text: $name)
                         }
-                        Section{
+                        Section("Product Quantity"){
                             HStack{
                                 TextField("Quantity" , text:$quantity )
                                 Picker("", selection: $heights) {
@@ -62,7 +62,7 @@ struct SheetView: View {
                                 }
                                 
                             }
-                        Section{
+                        Section("Product Price"){
                             HStack{
                                 TextField("Price" , text:$price)
                                 
@@ -87,26 +87,21 @@ struct SheetView: View {
                         type = ""
                         quantity = ""
                        type2 = ""
-                        //price = ""
-                       // currency = ""
-                        //heightselection = ""
                         
                     } label: {
                         Text("Save")
                             .bold()
                             .font(.title3)
-                            .frame(width: 250, height: 40)
-                            .foregroundColor(.white)
+                            .frame(width: 350, height: 40)
+                            .foregroundColor(.black)
                     }
-                    .background(Color.green)
+                    .background(Color.AccentColor)
                     .cornerRadius(10)
 
                     }
-                    .background(Color.green)
-              
-                    
+                    .navigationTitle("Add Product")
                 }
-                .navigationTitle("Add Product")
+                
             }
      
     }
