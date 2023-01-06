@@ -20,15 +20,6 @@ import UIKit
 
 
 class NewRecipeViewModel :ObservableObject {
-    //@Published var userSession : FirebaseAuth.User?
-    //@Published var viewModel = NewRecipeViewModel()
-    // @Published var recipet : Recipet
-    
-    
-    
-    
-    
-    
     
     func uploadRecipe(withCaption name: String , definition: String , ingredients: String ,degree: String ,time: String ,preparation: String ,image: UIImage ,times:String,temperatures:String,difficulty:String,categorie:String) {
         uploadRecipet(name: name, definition: definition, ingredients: ingredients , degree: degree , time: time,preparation:preparation, image: image ,times:times,temperatures:temperatures,difficulty:difficulty,categorie:categorie) { success in

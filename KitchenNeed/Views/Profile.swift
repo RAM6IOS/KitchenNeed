@@ -20,6 +20,9 @@ struct Profile: View {
     var body: some View {
         NavigationView{
             VStack{
+                
+            }
+            /*VStack{
                 ZStack{
                     if (image != nil){
                         image?
@@ -91,7 +94,7 @@ struct Profile: View {
                 .cornerRadius(10)
                 Spacer()
                 
-                }
+                }*/
            // .onChange(of: inputImage) { _ in loadImage() }
             //.sheet(isPresented: $showingImagePicker) {
                 //ImagePicker(image: $inputImage)
@@ -100,10 +103,7 @@ struct Profile: View {
             .navigationBarTitleDisplayMode(.inline)
         }
     }
-    //func loadImage() {
-       // guard let inputImage = inputImage else { return }
-       // image = Image(uiImage: inputImage)
-    //}
+    
 }
 
 struct Profile_Previews: PreviewProvider {

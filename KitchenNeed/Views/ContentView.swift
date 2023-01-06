@@ -24,10 +24,12 @@ struct ContentView: View {
                 .tabItem {
                    Label("Group", systemImage: "person.3")
                }
-            Profile()
-                .tabItem {
-                        Label("Profile", systemImage: "person.fill")
+                if let user = viewModel.currentUser {
+                    Profile()
+                        .tabItem {
+                            Label("Profile", systemImage: "person.fill")
                         }
+                }
             }
         }
         .fullScreenCover(isPresented:$ShowOnboarding, content: {
