@@ -25,7 +25,7 @@ struct ContentView: View {
                    Label("Group", systemImage: "person.3")
                }
                 if let user = viewModel.currentUser {
-                    Profile()
+                    Profile(user: user)
                         .tabItem {
                             Label("Profile", systemImage: "person.fill")
                         }

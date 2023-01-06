@@ -7,82 +7,104 @@
 
 import SwiftUI
 import CoreImage
+import Kingfisher
 
 struct Profile: View {
-    @State private var image: Image?
-    @State private var inputImage: UIImage?
-    @State private var showingImagePicker = false
-    @State private var FirsName: String = "Name"
-    @State private var Email: String = "wdj31104@yuoia.com"
-    var language = ["French", "Arabic", "English"]
-    @State  var selectedlanguage = "Arabic"
-    @EnvironmentObject var viewModel: AuthViewModel
+    @EnvironmentObject var viewModel2: AuthViewModel
+    @ObservedObject var viewModel :fetchRecipeViewModel
+    @ObservedObject var viewModel3 = RecipeViewModel()
+    init(user:User){
+        self.viewModel = fetchRecipeViewModel(user: user)
+    }
     var body: some View {
         NavigationView{
             VStack{
+                if let user = viewModel2.currentUser {
+                    KFImage(URL(string: user.profileImageUrl))
+                        .resizable()
+                        .scaledToFill()
+                        .clipShape(Circle())
+                        .frame(width: 100, height: 100)
+                    Text(user.name)
+                        .foregroundColor(Color.cadcoler)
+                        .font(.title)
+                        .fontWeight(Font.Weight.heavy)
+                }
                 
-            }
-            /*VStack{
-                ZStack{
-                    if (image != nil){
-                        image?
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 200, height: 100 )
-                            .overlay(
-                                    Circle()
-                                        .stroke(.white, lineWidth: 7)
-                                )
-                            .clipShape(Circle())
-                            .shadow(radius: 40)
-                        Image(systemName: "square.and.pencil")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 17, height: 17)
-                            .foregroundColor(.black)
-                            .offset(x:35,y:40)
-                    } else {
-                        Image("default-avatar")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 200, height: 100 )
-                            .clipShape(Circle())
-                        Image(systemName: "square.and.pencil")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 17, height: 17)
-                            .foregroundColor(.black)
-                            .offset(y:40)
-                        image?
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 200, height: 100 )
-                            .clipShape(Circle())
-                            .border(.green)
-                            .shadow(radius: 40)
-                    }
-                }
-                .onTapGesture {
-                    showingImagePicker = true
-                }
-                Form{
-                    Section("name"){
-                    TextField("Name" , text: $FirsName)
-                        .font(.system(size: 15 , weight: .bold))
-                    }
-                    Section(header:Text("Email")){
-                        TextField("email" , text: $Email)
-                    }
-                    Section("language"){
-                        Picker("Please choose a language", selection: $selectedlanguage) {
-                                ForEach(language, id: \.self) {
-                                            Text($0)
+                
+                VStack(alignment: .leading){
+                    Text("Recipes")
+                        .foregroundColor(Color.cadcoler)
+                        .font(Font.system(size: 30))
+                        .fontWeight(Font.Weight.heavy)
+                    ScrollView{
+                        ForEach(viewModel.recipet){ recipe in
+                            NavigationLink {
+                                RecipeDetailsView(recipe: recipe)
+                            } label: {
+                                VStack(alignment: .leading, spacing: 0) {
+                                    KFImage(URL(string: recipe.recipetImageUrl))
+                                        .resizable()
+                                        .scaledToFill()
+                                        .frame(minWidth: nil, idealWidth: nil, maxWidth: UIScreen.main.bounds.width, minHeight: nil, idealHeight: nil, maxHeight: 300, alignment: .center)
+                                        .clipped()
+                                    VStack(alignment: .leading, spacing: 6) {
+                                        HStack{
+                                            
+                                            Text(recipe.name)
+                                                .foregroundColor(Color.cadcoler)
+                                                .font(.title)
+                                                .fontWeight(Font.Weight.heavy)
+                                        }
+                                        HStack{
+                                            Text("Category:")
+                                                .font(Font.system(size: 15))
+                                                .foregroundColor(Color.cadcoler)
+                                                .fontWeight(Font.Weight.heavy)
+                                            HStack {
+                                                Text("Soups")
+                                                    .font(Font.custom("HelveticaNeue-Medium", size: 13))
+                                                    .padding([.leading, .trailing], 10)
+                                                    .padding([.top, .bottom], 5)
+                                                    .foregroundColor(Color.cadcoler)
+                                                
+                                            }
+                                            .background(Color.AccentColor)
+                                            .cornerRadius(7)
+                                        }
+                                        if let user = recipe.user {
+                                            HStack{
+                                                Image( "cook")
+                                                    .resizable()
+                                                    .scaledToFill()
+                                                    .aspectRatio(contentMode: .fill)
+                                                    .frame(width: 30, height: 30)
+                                                    .font(.system(size: 20))
+                                                KFImage(URL(string: user.profileImageUrl ))
+                                                    .resizable()
+                                                    .scaledToFill()
+                                                    .clipShape(Circle())
+                                                    .frame(width: 30, height: 30)
+                                                Text(user.name)
+                                                    .foregroundColor(Color.cadcoler)
+                                                    .fontWeight(Font.Weight.heavy)
+                                            }
                                         }
                                     }
+                                    .padding(12)
+                                }
+                                .background(Color.white)
+                                .cornerRadius(15)
+                                .shadow(color: Color.black.opacity(0.2), radius: 7, x: 0, y: 2)
+                                .padding(.horizontal,10)
+                            }
+                        }
                     }
                 }
-                Button{
-                    viewModel.logout()
+                .padding(.vertical , 20)
+                
+                /*Button{
+                    viewModel2.logout()
                 } label: {
                     Text("Edit")
                         .bold()
@@ -91,26 +113,32 @@ struct Profile: View {
                         .foregroundColor(.white)
                 }
                 .background(Color.green)
-                .cornerRadius(10)
-                Spacer()
+                .cornerRadius(10)*/
                 
-                }*/
-           // .onChange(of: inputImage) { _ in loadImage() }
-            //.sheet(isPresented: $showingImagePicker) {
-                //ImagePicker(image: $inputImage)
-        
-           // }
-            .navigationBarTitleDisplayMode(.inline)
+                
+                }
+            .toolbar {
+                ToolbarItem( placement: .navigationBarTrailing) {
+                    Button(action: {}) {
+                        Image(systemName: "gearshape")
+                            .font(.system(size: 25))
+                            .foregroundColor(.AccentColor)
+                            
+                    }
+                    
+                }
+                
+                
+            }
+            .navigationTitle("Profile")
+           
+            
         }
     }
     
 }
 
-struct Profile_Previews: PreviewProvider {
-    static var previews: some View {
-        Profile()
-    }
-}
+
 
 
 
