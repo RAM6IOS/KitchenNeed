@@ -17,7 +17,7 @@ struct SettingsView: View {
             .toolbar {
                 ToolbarItem( placement: .navigationBarLeading) {
                     Button(action: {presentationMode.wrappedValue.dismiss()}) {
-                        Image("Close")
+                       Text("Close")
                             .font(.system(size: 25))
                             .foregroundColor(.AccentColor)
                         

@@ -14,6 +14,7 @@ struct Profile: View {
     @ObservedObject var viewModel :fetchRecipeViewModel
     @ObservedObject var viewModel3 = RecipeViewModel()
     @State var ShowSettings = false
+    let columns = [GridItem(.flexible()), GridItem(.flexible())]
     init(user:User){
         self.viewModel = fetchRecipeViewModel(user: user)
     }
@@ -36,69 +37,32 @@ struct Profile: View {
                 VStack(alignment: .leading){
                     Text("My Recipes")
                         .foregroundColor(Color.cadcoler)
-                        .font(Font.system(size: 30))
+                        .font(Font.system(size: 25))
                         .fontWeight(Font.Weight.heavy)
                         .padding(.horizontal ,10)
                     ScrollView{
-                        ForEach(viewModel.recipet){ recipe in
-                            NavigationLink {
-                                RecipeDetailsView(recipe: recipe)
-                            } label: {
-                                VStack(alignment: .leading, spacing: 0) {
-                                    KFImage(URL(string: recipe.recipetImageUrl))
-                                        .resizable()
-                                        .scaledToFill()
-                                        .frame(minWidth: nil, idealWidth: nil, maxWidth: UIScreen.main.bounds.width, minHeight: nil, idealHeight: nil, maxHeight: 300, alignment: .center)
-                                        .clipped()
-                                    VStack(alignment: .leading, spacing: 6) {
-                                        HStack{
+
+                        LazyVGrid(columns: columns, spacing: 20) {
+                            ForEach(viewModel.recipet){ recipet in
+                                NavigationLink {
+                                    RecipeDetailsView(recipe: recipet)
+                                } label: {
+                                    VStack{
+                                        ZStack(alignment: .bottomTrailing) {
+                                            KFImage(URL(string: recipet.recipetImageUrl))
+                                                .resizable()
+                                                .aspectRatio(contentMode: .fill)
+                                                .frame(width: 180, height: 250)
+                                            Text("Khas Khas And Gud Ki Panjiri")
+                                                .font(.headline)
+                                                .foregroundColor(Color.white)
+                                                .padding(12)
                                             
-                                            Text(recipe.name)
-                                                .foregroundColor(Color.cadcoler)
-                                                .font(.title)
-                                                .fontWeight(Font.Weight.heavy)
                                         }
-                                        HStack{
-                                            Text("Category:")
-                                                .font(Font.system(size: 15))
-                                                .foregroundColor(Color.cadcoler)
-                                                .fontWeight(Font.Weight.heavy)
-                                            HStack {
-                                                Text("Soups")
-                                                    .font(Font.custom("HelveticaNeue-Medium", size: 13))
-                                                    .padding([.leading, .trailing], 10)
-                                                    .padding([.top, .bottom], 5)
-                                                    .foregroundColor(Color.cadcoler)
-                                                
-                                            }
-                                            .background(Color.AccentColor)
-                                            .cornerRadius(7)
-                                        }
-                                        if let user = recipe.user {
-                                            HStack{
-                                                Image( "cook")
-                                                    .resizable()
-                                                    .scaledToFill()
-                                                    .aspectRatio(contentMode: .fill)
-                                                    .frame(width: 30, height: 30)
-                                                    .font(.system(size: 20))
-                                                KFImage(URL(string: user.profileImageUrl ))
-                                                    .resizable()
-                                                    .scaledToFill()
-                                                    .clipShape(Circle())
-                                                    .frame(width: 30, height: 30)
-                                                Text(user.name)
-                                                    .foregroundColor(Color.cadcoler)
-                                                    .fontWeight(Font.Weight.heavy)
-                                            }
-                                        }
+                                        .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
+                                        
                                     }
-                                    .padding(12)
                                 }
-                                .background(Color.white)
-                                .cornerRadius(15)
-                                .shadow(color: Color.black.opacity(0.2), radius: 7, x: 0, y: 2)
-                                .padding(.horizontal,10)
                             }
                         }
                     }
