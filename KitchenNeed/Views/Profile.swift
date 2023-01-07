@@ -13,6 +13,7 @@ struct Profile: View {
     @EnvironmentObject var viewModel2: AuthViewModel
     @ObservedObject var viewModel :fetchRecipeViewModel
     @ObservedObject var viewModel3 = RecipeViewModel()
+    @State var ShowSettings = false
     init(user:User){
         self.viewModel = fetchRecipeViewModel(user: user)
     }
@@ -33,10 +34,11 @@ struct Profile: View {
                 
                 
                 VStack(alignment: .leading){
-                    Text("Recipes")
+                    Text("My Recipes")
                         .foregroundColor(Color.cadcoler)
                         .font(Font.system(size: 30))
                         .fontWeight(Font.Weight.heavy)
+                        .padding(.horizontal ,10)
                     ScrollView{
                         ForEach(viewModel.recipet){ recipe in
                             NavigationLink {
@@ -117,9 +119,12 @@ struct Profile: View {
                 
                 
                 }
+            .fullScreenCover(isPresented:$ShowSettings, content: {
+                          SettingsView()
+                            })
             .toolbar {
                 ToolbarItem( placement: .navigationBarTrailing) {
-                    Button(action: {}) {
+                    Button(action: {ShowSettings.toggle()}) {
                         Image(systemName: "gearshape")
                             .font(.system(size: 25))
                             .foregroundColor(.AccentColor)
