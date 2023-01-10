@@ -8,10 +8,13 @@
 import SwiftUI
 import Kingfisher
 
+
 struct Recipe: View {
+   
     @State private var isSheetPresented = false
     @ObservedObject var viewModel = RecipeViewModel()
-    @State var text =  ""
+    @State private var categorie = ""
+    let categories: [String] = ["all","Breakfast", "Lunch", "Dinner", "Dessert" , "Appetisers" , "Soups" ,"Salads" ,"Breads" ,"Baked" , "Sweet" ,"Pizza" ,"Poultry" ,"Meat" ,"Seafood","Rice" ,"Pasta" ,"Sides" ,"Sandwiches" ,"drinks" ,"Ice Cream"]
     var body: some View {
         NavigationView{
             VStack{
@@ -34,6 +37,23 @@ struct Recipe: View {
                        
                 }
                 .padding(.horizontal, 10)
+                ScrollView(.horizontal, showsIndicators: false) {
+                            HStack() {
+                            ForEach(categories, id: \.self) { item in
+                                
+                                Text(item)
+                                    .onTapGesture {
+                                        if item == "all" {
+                                            viewModel.searchText2 = ""
+                                        } else {
+                                            viewModel.searchText2 = item
+                                        }
+                                        print("tttt\( viewModel.searchText2)")
+                                }
+                            }
+                                
+                            }
+                        }
                 ScrollView {
                     ForEach(viewModel.searchableRecipe){ recipe in
                         NavigationLink {
@@ -100,6 +120,13 @@ struct Recipe: View {
                 }
             }
             .navigationBarTitle("Recipe")
+            .onAppear {
+               
+                if viewModel.searchText2 == "all" {
+                    viewModel.searchText2 == ""
+                    
+                }
+            }
             .toolbar {
                 ToolbarItem( placement: .navigationBarTrailing) {
                     
@@ -130,10 +157,7 @@ struct Recipe: View {
             
         }
     }
+    
 }
 
-struct Recipe_Previews: PreviewProvider {
-    static var previews: some View {
-        Recipe()
-    }
-}
+
