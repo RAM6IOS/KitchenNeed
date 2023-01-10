@@ -48,13 +48,14 @@ struct Profile: View {
                                     RecipeDetailsView(recipe: recipet)
                                 } label: {
                                     VStack{
-                                        ZStack(alignment: .bottomTrailing) {
+                                        ZStack(alignment: .bottomLeading) {
                                             KFImage(URL(string: recipet.recipetImageUrl))
                                                 .resizable()
                                                 .aspectRatio(contentMode: .fill)
                                                 .frame(width: 180, height: 250)
                                             Text("Khas Khas And Gud Ki Panjiri")
                                                 .font(.headline)
+                                                .fontWeight(.medium)
                                                 .foregroundColor(Color.white)
                                                 .padding(12)
                                             

@@ -11,11 +11,31 @@ import Kingfisher
 struct Recipe: View {
     @State private var isSheetPresented = false
     @ObservedObject var viewModel = RecipeViewModel()
+    @State var text =  ""
     var body: some View {
         NavigationView{
             VStack{
+                HStack{
+                    TextField("Search ...", text: $viewModel.searchText)
+                        .padding(7)
+                        .padding(.horizontal, 25)
+                        .background(Color(.systemGray6))
+                        .cornerRadius(8)
+                        .overlay(
+                            HStack {
+                                Image(systemName: "magnifyingglass")
+                                    .foregroundColor(.gray)
+                                    .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
+                                    .padding(.leading, 8)
+                            }
+                        )
+                        .disableAutocorrection(true)
+                        .textInputAutocapitalization(.never)
+                       
+                }
+                .padding(.horizontal, 10)
                 ScrollView {
-                    ForEach(viewModel.recipet){ recipe in
+                    ForEach(viewModel.searchableRecipe){ recipe in
                         NavigationLink {
                             RecipeDetailsView(recipe: recipe)
                         } label: {

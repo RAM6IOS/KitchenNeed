@@ -12,9 +12,22 @@ import Firebase
 
 class RecipeViewModel : ObservableObject {
     @Published var recipet = [Recipet]()
+    @Published var searchText = ""
     
     init() {
         fetchRecipet()
+        }
+    
+    var searchableRecipe: [Recipet] {
+            if searchText.isEmpty {
+                return recipet
+            } else {
+                let lowercasedQuery = searchText.lowercased()
+                    return recipet.filter({
+                        $0.name.lowercased().contains(lowercasedQuery) //|| $0.time.lowercased().contains(lowercasedQuery)
+                    })
+            }
+             
         }
     func fetchRecipet() {
         fetchrecipe{ recipet in
