@@ -42,6 +42,14 @@ struct Recipe: View {
                             ForEach(categories, id: \.self) { item in
                                 
                                 Text(item)
+                                    .padding(7)
+                                    .padding(.horizontal)
+                                    .background(
+                                            Rectangle()
+                                            .cornerRadius(8)
+                                            .foregroundColor(Color.AccentColor)
+                                         .opacity(1/4)
+                                                        )
                                     .onTapGesture {
                                         if item == "all" {
                                             viewModel.searchText2 = ""
