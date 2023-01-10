@@ -32,6 +32,13 @@ struct ContentView: View {
                 }
             }
         }
+        .onAppear {
+                   if #available(iOS 15.0, *) {
+                           let appearance = UITabBarAppearance()
+                           UITabBar.appearance().scrollEdgeAppearance = appearance
+                       }
+                           }
+
         .fullScreenCover(isPresented:$ShowOnboarding, content: {
             Onboarding(ShowOnboarding: $ShowOnboarding)
         })
