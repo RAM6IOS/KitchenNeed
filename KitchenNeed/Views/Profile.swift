@@ -104,6 +104,7 @@ struct Profile: View {
            
             
         }
+        .accentColor(Color(.white))
     }
     
 }
