@@ -178,49 +178,7 @@ struct RecipeDetailsView: View {
                 )
                 
             }
-            .toolbar {
-                ToolbarItem( placement: .navigationBarTrailing) {
-                    Menu {
-                        Button{
-                            guard let producId = recipe.id else { return }
-                            // [START delete_document]
-                            Firestore.firestore().collection("recipe").document(producId).delete() { err in
-                                if let err = err {
-                                    print("Error removing document: \(err)")
-                                } else {
-                                    print("Document successfully removed!")
-                                }
-                            }
-                            presentationMode.wrappedValue.dismiss()
-                        } label: {
-                            Label("Delete", systemImage: "trash")
-                        }
-                               
-                            
-                      /*  Button{
-                            
-                        } label: {
-                            Label("Add to Reading List", systemImage: "eyeglasses")
-                        }*/
-                    } label: {
-                        Button(action: {}) {
-                            if #available(iOS 16.0, *) {
-                                Image(systemName: "ellipsis")
-                                    .font(.system(size: 20))
-                                    .fontWeight(Font.Weight.heavy)
-                                    .foregroundColor(.white)
-                            } else {
-                                // Fallback on earlier versions
-                            }
-                                
-                        }
-                    }
-                  
-                    
-                }
-                
-                
-            }
+           
             .ignoresSafeArea(edges: .top)
             .background(Color.white)
             Spacer()
