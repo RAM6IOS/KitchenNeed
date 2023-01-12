@@ -173,10 +173,11 @@ struct RecipeDetailsView: View {
                     .horizontal)
                 .background(Color.white
                     .clipShape(SpecificCorners())
-                    .padding(.top , -40)
+                    .padding(.top , -30)
                 )
                 
             }
+            .ignoresSafeArea(edges: .top)
             .background(Color.white)
             Spacer()
 

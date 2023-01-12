@@ -124,9 +124,12 @@ struct Recipe: View {
                             .shadow(color: Color.black.opacity(0.2), radius: 7, x: 0, y: 2)
                             .padding(.horizontal,10)
                         }
+                        
+                        
                     }
                 }
             }
+            
             .navigationBarTitle("Recipe")
             .toolbar {
                 ToolbarItem( placement: .navigationBarTrailing) {
@@ -146,8 +149,10 @@ struct Recipe: View {
                     
             }
             .navigationBarTitleDisplayMode(.inline)
+           
             
         }
+        .accentColor(Color(.white))
     }
     
 }
