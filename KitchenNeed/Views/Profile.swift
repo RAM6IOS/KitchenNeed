@@ -45,7 +45,7 @@ struct Profile: View {
                         LazyVGrid(columns: columns, spacing: 20) {
                             ForEach(viewModel.recipet){ recipet in
                                 NavigationLink {
-                                    RecipeDetailsView(recipe: recipet)
+                                    RecipeDetailsProfile(recipe: recipet)
                                 } label: {
                                     VStack{
                                         ZStack(alignment: .bottomLeading) {

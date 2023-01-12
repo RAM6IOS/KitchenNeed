@@ -1,15 +1,15 @@
 //
-//  RecipeSetails.swift
+//  RecipeDetailsProfile.swift
 //  KitchenNeed
 //
-//  Created by Bouchedoub Ramzi on 27/12/2022.
+//  Created by Bouchedoub Ramzi on 12/1/2023.
 //
 
 import SwiftUI
 import Kingfisher
 import Firebase
 
-struct RecipeDetailsView: View {
+struct RecipeDetailsProfile: View {
     let recipe: Recipet
     @Environment(\.presentationMode) var presentationMode
     var body: some View {
@@ -183,7 +183,6 @@ struct RecipeDetailsView: View {
                     Menu {
                         Button{
                             guard let producId = recipe.id else { return }
-                            // [START delete_document]
                             Firestore.firestore().collection("recipe").document(producId).delete() { err in
                                 if let err = err {
                                     print("Error removing document: \(err)")
@@ -226,9 +225,6 @@ struct RecipeDetailsView: View {
             Spacer()
 
         }
-
     }
-    
 }
-
 
