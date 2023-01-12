@@ -72,7 +72,7 @@ struct Recipe: View {
                                 KFImage(URL(string: recipe.recipetImageUrl))
                                     .resizable()
                                     .scaledToFill()
-                                    .frame(minWidth: nil, idealWidth: nil, maxWidth: UIScreen.main.bounds.width, minHeight: nil, idealHeight: nil, maxHeight: 300, alignment: .center)
+                                    .frame(minWidth: nil, idealWidth: nil, maxWidth: UIScreen.main.bounds.width, minHeight: nil, idealHeight: nil, maxHeight: 250, alignment: .center)
                                     .clipped()
                                 VStack(alignment: .leading, spacing: 6) {
                                     HStack{
@@ -128,13 +128,6 @@ struct Recipe: View {
                 }
             }
             .navigationBarTitle("Recipe")
-            .onAppear {
-               
-                if viewModel.searchText2 == "all" {
-                    viewModel.searchText2 == ""
-                    
-                }
-            }
             .toolbar {
                 ToolbarItem( placement: .navigationBarTrailing) {
                     
@@ -145,16 +138,7 @@ struct Recipe: View {
                     }
                     
                 }
-                ToolbarItem( placement: .navigationBarLeading) {
-                    /*
-                    KFImage(URL(string: user.profileImageUrl))
-                        .resizable()
-                        .scaledToFill()
-                        .clipShape(Circle())
-                        .frame(width: 30, height: 30)
-                     */
-                    
-                }
+                
                 
             }
             .sheet(isPresented: $isSheetPresented){
