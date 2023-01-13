@@ -12,11 +12,13 @@ import Firebase
 
 class fetchRecipeViewModel: ObservableObject {
     
-      let user: User!
+     let user: User!
+   
     @Published  var recipet : [Recipet] = []
     
     init(user: User   ) {
         self.user = user
+        
         self.fetchUserRecipe()
         
     }

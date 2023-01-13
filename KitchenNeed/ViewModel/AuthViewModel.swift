@@ -17,6 +17,7 @@ class AuthViewModel: ObservableObject {
     
     @Published var userSession : FirebaseAuth.User?
     @Published var currentUser: User?
+    //@Published var recipe: Recipet?
     //let user: User
     
     init() {

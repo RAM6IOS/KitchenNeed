@@ -12,6 +12,7 @@ import Firebase
 struct RecipeDetailsProfile: View {
     let recipe: Recipet
     @Environment(\.presentationMode) var presentationMode
+    @State var showingedit = false
     var body: some View {
         VStack{
             VStack(alignment: .leading, spacing: 10) {
@@ -177,7 +178,11 @@ struct RecipeDetailsProfile: View {
                     .padding(.top , -30)
                 )
                 
+                
             }
+            .fullScreenCover(isPresented:$showingedit, content: {
+                EditProduct( recipet: recipe)
+            })
             .toolbar {
                 ToolbarItem( placement: .navigationBarTrailing) {
                     Menu {
@@ -196,11 +201,11 @@ struct RecipeDetailsProfile: View {
                         }
                                
                             
-                      /*  Button{
-                            
+                        Button{
+                            showingedit.toggle()
                         } label: {
-                            Label("Add to Reading List", systemImage: "eyeglasses")
-                        }*/
+                            Label("Edit", systemImage: "pencil")
+                        }
                     } label: {
                         Button(action: {}) {
                             if #available(iOS 16.0, *) {
@@ -221,6 +226,7 @@ struct RecipeDetailsProfile: View {
                 
             }
             .ignoresSafeArea(edges: .top)
+            
             .background(Color.white)
             Spacer()
 
