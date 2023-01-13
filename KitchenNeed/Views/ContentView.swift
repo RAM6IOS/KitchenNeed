@@ -9,30 +9,36 @@ struct ContentView: View {
     @State var ShowOnboarding = true
     @State var ShowHome = true
     @EnvironmentObject var viewModel: AuthViewModel
+   // let recipet = viewModel.recipe
     var body: some View {
         TabView {
             if viewModel.userSession == nil {
                 SignupView( ShowHome: $ShowHome)
                
             } else{
-                Home()
-                        .tabItem {
-                            
-                            Label("List", systemImage: "list.bullet.rectangle.portrait.fill")
-                        }
-                Recipe()
-                .tabItem {
-                   Label("Group", systemImage: "person.3")
-               }
                 if let user = viewModel.currentUser {
-                    Profile(user: user)
-                        .tabItem {
-                            Label("Profile", systemImage: "person.fill")
-                        }
-                }
+                Home()
+                    .tabItem {
+                        
+                        Label("List", systemImage: "list.bullet.rectangle.portrait.fill")
+                    }
+                Recipe()
+                    .tabItem {
+                        Label("Group", systemImage: "person.3")
+                    }
+               
+                    
+                        Profile(user: user)
+                            .tabItem {
+                                Label("Profile", systemImage: "person.fill")
+                            }
+                    
+                
+            }
             }
         }
         .onAppear {
+           
                    if #available(iOS 15.0, *) {
                            let appearance = UITabBarAppearance()
                            UITabBar.appearance().scrollEdgeAppearance = appearance
