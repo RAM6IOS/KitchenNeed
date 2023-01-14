@@ -6,10 +6,14 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct EditProduct: View {
     @ObservedObject var viewModel2 : EditProductiVewModel
     @Environment(\.presentationMode) var presentationMode
+    @State private var selectedImage: UIImage?
+    @State private var profileImage: Image?
+    @State private var showingImagePicker = false
     init( recipet: Recipet){
       
         self.viewModel2 = EditProductiVewModel(recipe: recipet)
@@ -18,6 +22,34 @@ struct EditProduct: View {
         NavigationView{
             VStack{
                 Form{
+                    Button {
+                        showingImagePicker.toggle()
+                        
+                       
+                    } label: {
+                        if let profileImage = profileImage {
+                            profileImage
+                                .resizable()
+                                .scaledToFill()
+                                .frame( height: 200 )
+                                .clipShape(Rectangle())
+                                .cornerRadius(10)
+                                .padding(.horizontal,10)
+                        } else{
+                            KFImage(URL(string: viewModel2.recipe.recipetImageUrl))
+                                .resizable()
+                                .scaledToFill()
+                                .frame( height: 200 )
+                                .clipShape(Rectangle())
+                                .cornerRadius(10)
+                                .padding(.horizontal,10)
+                        }
+                        
+                        
+                    }
+                    .sheet(isPresented: $showingImagePicker , onDismiss: loadImage) {
+                        ImagePicker(selectedImage: $selectedImage)
+                    }
                     Section("Recipe Name"){
                         TextField("name", text:$viewModel2.recipe.name )
                     }
@@ -34,7 +66,7 @@ struct EditProduct: View {
                         TextField("Degree", text:$viewModel2.recipe.degree)
                     }
                     Button{
-                        viewModel2.EditProducti()
+                        viewModel2.EditProducti(image: (selectedImage ??  UIImage(named: "default-avatar"))!)
                         
                     } label: {
                         Text("Save")
@@ -64,6 +96,11 @@ struct EditProduct: View {
             }
         }
     }
+    func loadImage() {
+            guard let selectedImage = selectedImage else { return }
+            profileImage = Image(uiImage: selectedImage)
+
+        }
 }
 
 

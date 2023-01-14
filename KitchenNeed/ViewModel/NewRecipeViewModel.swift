@@ -36,8 +36,7 @@ class NewRecipeViewModel :ObservableObject {
     }
     func uploadRecipet(name: String,definition: String,ingredients: String, degree: String ,time:String,preparation:String,image: UIImage,times:String,temperatures:String,difficulty:String,categorie:String,completion: @escaping(Bool) -> Void) {
         
-        
-        
+    
         ImageUploader.uploadImage2(image: image) { recipetImageUrl in
             guard let uid = Auth.auth().currentUser?.uid else { return }
             let data = ["uid": uid,
@@ -68,30 +67,7 @@ class NewRecipeViewModel :ObservableObject {
                     
                 }
         }
-        
-        
-       /*  func uploadProfileImage(_ image: UIImage  ) {
-         guard let uid = Auth.auth().currentUser?.uid else { return }
-         // guard let uid = viewModel.userSession?.uid else { return }
-         //guard var id = recipet.id else { return  }
-         ImageUploader.uploadImage2(image: image) { recipetImageUrl in
-         Firestore.firestore().collection("recipe")
-         .document(uid)
-         .updateData(["recipetImageUrl": recipetImageUrl]) { _ in
-         //self.userSession = self.tempUserSession
-         //self.fetchUser()
-         print("User Session2")
-         print(uid)
-         //self.didAuthenticateUser = false
-         //self.fetchUser()
-         }
-         
-         }
-         
-         }*/
-         
-        
-        
+     
     }
     
 }
