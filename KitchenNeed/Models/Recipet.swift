@@ -18,6 +18,11 @@ struct Recipet:Identifiable , Decodable{
     let uid: String
     var definition : String
     var ingredients : String
+    var preparation : String
+    var times : String
+    var temperatures : String
+    var difficulty: String
+    var categorie : String
     var time : String
     var degree : String
     var recipetImageUrl : String
