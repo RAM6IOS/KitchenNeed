@@ -35,12 +35,13 @@ struct Onboarding: View {
                         Text("Get Started")
                             .bold()
                             .font(.title3)
-                            .frame(width: 350, height: 50)
+                            .frame(width: 350, height: 40)
                             .foregroundColor(.white)
-                            .background(Color.green)
-                            .cornerRadius(30)
+                            .background(Color.AccentColor)
+                            .cornerRadius(25)
                         }
                 }
+                .padding(.bottom , 15)
             }
             HStack{
                 if currentPage > 0 {
@@ -51,9 +52,9 @@ struct Onboarding: View {
                     } label: {
                         Image(systemName: "arrow.left")
                             .padding()
-                            .foregroundColor(.white)
+                            .foregroundColor(Color.black)
                             .font(.system(size: 25))
-                            .background(Color.green)
+                            .background(Color.AccentColor)
                             .clipShape(Circle())
                     }
                 }
@@ -68,9 +69,9 @@ struct Onboarding: View {
                 } label: {
                      Image(systemName: "arrow.right")
                     .padding()
-                    .foregroundColor(.white)
+                    .foregroundColor(Color.black)
                     .font(.system(size: 25))
-                    .background(Color.green)
+                    .background(Color.AccentColor)
                     .clipShape(Circle())
                 }
                 }

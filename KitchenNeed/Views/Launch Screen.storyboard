@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="playstore" translatesAutoresizingMaskIntoConstraints="NO" id="zfu-s7-yUo">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logos" translatesAutoresizingMaskIntoConstraints="NO" id="zfu-s7-yUo">
                                 <rect key="frame" x="125" y="352" width="140" height="140"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="140" id="O51-Ku-Ict"/>
@@ -47,6 +47,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="playstore" width="512" height="512"/>
+        <image name="logos" width="512" height="512"/>
     </resources>
 </document>
