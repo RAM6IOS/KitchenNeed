@@ -19,21 +19,28 @@ class  EditProductiVewModel: ObservableObject {
     
     func EditProducti(image: UIImage){
         
-        ImageUploader.uploadImage2(image: image) { recipetImageUrl in
+       
             guard let recipeId = self.recipe.id else { return }
             Firestore.firestore().collection("recipe").document( recipeId )
                 .updateData(["name": self.recipe.name,
                              "definition": self.recipe.definition,
                              "ingredients":self.recipe.ingredients,
                              "time":self.recipe.time,
-                             "degree":self.recipe.degree,
-                             "recipetImageUrl":recipetImageUrl
+                             "degree":self.recipe.degree
                             ]) { _ in
-              print("Likes user\( recipetImageUrl)")
+                  print("Likes user")
+                    ImageUploader.uploadImage2(image: image) { recipetImageUrl in
+                        guard let recipeId = self.recipe.id else { return }
+                        Firestore.firestore().collection("recipe").document( recipeId )
+                            .updateData(["recipetImageUrl":recipetImageUrl
+                                        ]) { _ in
+                          print("Likes user\( recipetImageUrl)")
+                      
+                            }
+                    }
           
                 }
-             
-        }
+        
     }
    
 }

@@ -15,7 +15,6 @@ struct EditProduct: View {
     @State private var profileImage: Image?
     @State private var showingImagePicker = false
     init( recipet: Recipet){
-      
         self.viewModel2 = EditProductiVewModel(recipe: recipet)
     }
     var body: some View {
@@ -24,8 +23,6 @@ struct EditProduct: View {
                 Form{
                     Button {
                         showingImagePicker.toggle()
-                        
-                       
                     } label: {
                         if let profileImage = profileImage {
                             profileImage
