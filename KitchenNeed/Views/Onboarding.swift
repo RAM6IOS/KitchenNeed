@@ -15,10 +15,12 @@ struct Onboarding: View {
         GeometryReader(content: { geometry in
         VStack{
         TabView(selection: $currentPage){
-            IntroView(name: "Create and save your shopping list", image:"groceries" )
+            IntroView(name: "Create and sharing your recipe ", image:"cooking" )
                 .tag(0)
-            IntroView(name: "Analyze your purchase & spending patterns", image: "grocery")
+            IntroView(name: "Create and save your shopping list", image:"groceries" )
                 .tag(1)
+            //IntroView(name: "Analyze your purchase & spending patterns", image: "grocery")
+              //  .tag(2)
             GetStarted(ShowOnboarding: $ShowOnboarding)
                 .tag(2)
         }

@@ -14,7 +14,7 @@ struct IntroView: View {
         VStack{
             Text(name)
                 .font(
-                        .system(size: 20)
+                        .system(size: 25)
                         .weight(.heavy)
                     )
                 .padding(.vertical , 20)
