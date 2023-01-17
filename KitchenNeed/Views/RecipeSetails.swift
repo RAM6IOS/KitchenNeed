@@ -42,19 +42,19 @@ struct RecipeDetailsView: View {
                         }
                     }
                     VStack{
-                        HStack(spacing: 10){
+                        HStack(spacing: 5){
                             Image( "chef")
                                 .resizable()
                                 .scaledToFill()
                                 .aspectRatio(contentMode: .fill)
-                                .frame(width: 30, height: 30)
+                                .frame(width: 20, height: 20)
                                 .font(.system(size: 20))
                             Text("Diffyculty:")
                                 .font(Font.system(size: 15))
                                 .fontWeight(Font.Weight.heavy)
                             HStack {
                                 
-                                Text("Meduim")
+                                Text("\(recipe.difficulty)")
                                     .font(Font.custom("HelveticaNeue-Medium", size: 13))
                                     .padding([.leading, .trailing], 10)
                                     .padding([.top, .bottom], 5)
@@ -94,7 +94,7 @@ struct RecipeDetailsView: View {
                                     .foregroundColor(.white)
                                     .clipShape(Circle())
                                 VStack{
-                                    Text("Biscuits")
+                                    Text("\(recipe.categorie)")
                                         .fontWeight(Font.Weight.heavy)
                                         .foregroundColor(Color.cadcoler)
                                     
@@ -110,7 +110,7 @@ struct RecipeDetailsView: View {
                                     .foregroundColor(.white)
                                     .clipShape(Circle())
                                 VStack{
-                                    Text("06:30m")
+                                    Text("\(recipe.hours)h:\(recipe.minutes)m")
                                         .fontWeight(Font.Weight.heavy)
                                         .foregroundColor(Color.cadcoler)
                                 }
@@ -124,7 +124,7 @@ struct RecipeDetailsView: View {
                                     .foregroundColor(.white)
                                     .clipShape(Circle())
                                 VStack{
-                                    Text("69C")
+                                    Text("\(recipe.degree)\(recipe.temperatures)")
                                         .fontWeight(Font.Weight.heavy)
                                         .foregroundColor(Color.cadcoler)
                                     
@@ -133,7 +133,7 @@ struct RecipeDetailsView: View {
                             
                             
                         }
-                        .padding(.horizontal , 20)
+                        .padding(.horizontal , 15)
                         .padding(.vertical , 10)
                     }
                         
