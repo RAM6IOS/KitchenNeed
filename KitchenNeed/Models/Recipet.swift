@@ -24,6 +24,8 @@ struct Recipet:Identifiable , Decodable{
     var categorie : String
     var time : String
     var degree : String
+    var minutes: Int
+    var  hours : Int
     var recipetImageUrl : String
     var user: User?
  
