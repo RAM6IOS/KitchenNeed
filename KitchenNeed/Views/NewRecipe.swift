@@ -28,6 +28,8 @@ struct NewRecipe: View {
     var difficultyLevel = ["Easy" , "Moderate" ,"Challenging" ,"Professional"]
     @State private var categorie = ""
     let categories: [String] = ["Breakfast", "Lunch", "Dinner", "Dessert" , "Appetisers" , "Soups" ,"Salads" ,"Breads" ,"Baked" , "Sweet" ,"Pizza" ,"Poultry" ,"Meat" ,"Seafood","Rice" ,"Pasta" ,"Sides" ,"Sandwiches" ,"drinks" ,"Ice Cream"]
+    @State var hours: Int = 0
+    @State var minutes: Int = 0
     @ObservedObject var viewModel = NewRecipeViewModel()
     var body: some View {
         NavigationView{
@@ -86,8 +88,37 @@ struct NewRecipe: View {
                                         }
                                         
                             }
+                            Section("Cooking Time"){
+                                HStack {
+                                    Picker("", selection: $hours){
+                                        ForEach(0..<24, id: \.self) { i in
+                                            Text("\(i) hours").tag(i)
+                                        }
+                                    }.pickerStyle(WheelPickerStyle())
+                                        .frame(width: 140)
+                                    Picker("", selection: $minutes){
+                                        ForEach(0..<60, id: \.self) { i in
+                                            Text("\(i) min").tag(i)
+                                        }
+                                    }.pickerStyle(WheelPickerStyle())
+                                        .frame(width: 140)
+                                }
+                            }
+                            Section("Cooking Temperature"){
+                                HStack{
+                                    TextField("temperature" ,text:$degree)
+                                    Picker("", selection: $temperatures) {
+                                        ForEach(temperaturesSymbol, id: \.self) { typ in
+                                            HStack( spacing: 10){
+                                                Text(typ)
+                                                
+                                            }
+                                        }
+                                    }
+                                }
+                            }
                             
-                            
+                                 
                             Section("Definition"){
                                 TextEditor(text: $definition)
                                     .lineSpacing(20)
@@ -108,32 +139,8 @@ struct NewRecipe: View {
                                     .disableAutocorrection(true)
                                     .padding()
                             }
-                            Section("Cooking Time"){
-                                HStack{
-                                    TextField("Time" ,text:$time)
-                                    Picker("", selection: $times) {
-                                        ForEach(timesSymbol, id: \.self) { typ in
-                                            HStack( spacing: 10){
-                                                Text(typ)
-                                                
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                            Section("Cooking Temperature"){
-                                HStack{
-                                    TextField("temperature" ,text:$degree)
-                                    Picker("", selection: $temperatures) {
-                                        ForEach(temperaturesSymbol, id: \.self) { typ in
-                                            HStack( spacing: 10){
-                                                Text(typ)
-                                                
-                                            }
-                                        }
-                                    }
-                                }
-                            }
+                            
+                            
                             
                         }
                         .background(Color.AccentColor)

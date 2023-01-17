@@ -110,13 +110,10 @@ struct RecipeDetailsView: View {
                                     .foregroundColor(.white)
                                     .clipShape(Circle())
                                 VStack{
-                                    Text("30m")
+                                    Text("06:30m")
                                         .fontWeight(Font.Weight.heavy)
                                         .foregroundColor(Color.cadcoler)
                                 }
-                                
-                                
-                                
                             }
                             Spacer()
                             HStack(spacing: 5){

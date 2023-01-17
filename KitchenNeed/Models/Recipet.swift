@@ -11,7 +11,6 @@ import Firebase
 
 
 struct Recipet:Identifiable , Decodable{
-    
     @DocumentID var id: String?
     var name : String
     var timestamp: Timestamp
