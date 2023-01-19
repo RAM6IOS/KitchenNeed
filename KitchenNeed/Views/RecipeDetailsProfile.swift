@@ -43,12 +43,12 @@ struct RecipeDetailsProfile: View {
                         }
                     }
                     VStack{
-                        HStack(spacing: 10){
+                        HStack(spacing: 5){
                             Image( "chef")
                                 .resizable()
                                 .scaledToFill()
                                 .aspectRatio(contentMode: .fill)
-                                .frame(width: 30, height: 30)
+                                .frame(width: 20, height: 20)
                                 .font(.system(size: 20))
                             Text("Diffyculty:")
                                 .font(Font.system(size: 15))
@@ -87,7 +87,7 @@ struct RecipeDetailsProfile: View {
                             .foregroundColor(Color.AccentColor)
                         
                         HStack{
-                            HStack(spacing: 10){
+                            HStack(spacing: 5){
                                 Image(systemName: "square.stack.3d.up")
                                     .frame(width: 30, height: 30)
                                     .font(.system(size: 20))
