@@ -14,6 +14,10 @@ struct EditProduct: View {
     @State private var selectedImage: UIImage?
     @State private var profileImage: Image?
     @State private var showingImagePicker = false
+    var difficultyLevel = ["Easy" , "Moderate" ,"Challenging" ,"Professional"]
+    var categories: [String] = ["Breakfast", "Lunch", "Dinner", "Dessert" , "Appetisers" , "Soups" ,"Salads" ,"Breads" ,"Baked" , "Sweet" ,"Pizza" ,"Poultry" ,"Meat" ,"Seafood","Rice" ,"Pasta" ,"Sides" ,"Sandwiches" ,"drinks" ,"Ice Cream"]
+    @State private var temperatures = ""
+    var temperaturesSymbol = ["F" , "C"]
     init( recipet: Recipet){
         self.viewModel2 = EditProductiVewModel(recipe: recipet)
     }
@@ -50,18 +54,79 @@ struct EditProduct: View {
                     Section("Recipe Name"){
                         TextField("name", text:$viewModel2.recipe.name )
                     }
+                    Section("Difficulty Level"){
+                        Picker(selection: $viewModel2.recipe.definition, label: Text("")) {
+                            ForEach(difficultyLevel, id: \.self) { typ in
+                                Text(typ).tag(typ)
+                                
+                            }
+                                }
+                               .frame(width: 350)
+                                .background(Color.yellow)
+                                .cornerRadius(10)
+                                .pickerStyle(SegmentedPickerStyle())
+                       
+                    }
+                    Section("Recipe Category"){
+                        Picker(selection: $viewModel2.recipe.categorie, label: Text("Categorie")) {
+                            ForEach(categories, id: \.self) { typ in
+                                Text(typ).tag(typ)
+                                
+                            }
+                                }
+                                
+                    }
+                    Section("Cooking Time"){
+                        HStack {
+                            Picker("", selection: $viewModel2.recipe.hours){
+                                ForEach(0..<24, id: \.self) { i in
+                                    Text("\(i) hours").tag(i)
+                                }
+                            }.pickerStyle(WheelPickerStyle())
+                                .frame(width: 140)
+                            Picker("", selection: $viewModel2.recipe.minutes){
+                                ForEach(0..<60, id: \.self) { i in
+                                    Text("\(i) min").tag(i)
+                                }
+                            }.pickerStyle(WheelPickerStyle())
+                                .frame(width: 140)
+                        }
+                    }
+                    Section("Cooking Temperature"){
+                        HStack{
+                            TextField("temperature" ,text:$viewModel2.recipe.degree)
+                            Picker("", selection: $temperatures) {
+                                ForEach(temperaturesSymbol, id: \.self) { typ in
+                                    HStack( spacing: 10){
+                                        Text(typ)
+                                        
+                                    }
+                                }
+                            }
+                        }
+                    }
+
                     Section("Definition"){
-                        TextEditor( text:$viewModel2.recipe.definition)
+                        TextEditor(text: $viewModel2.recipe.definition)
+                            .lineSpacing(20)
+                            .autocapitalization(.words)
+                            .frame(height: 100)
+                            .disableAutocorrection(true)
+                            .padding()
                     }
                     Section("Ingredients"){
-                        TextEditor( text:$viewModel2.recipe.ingredients)
+                        TextEditor(text: $viewModel2.recipe.ingredients)
+                            .frame(minHeight: 100)
                     }
-                    Section("Time"){
-                        TextField("Time", text:$viewModel2.recipe.time)
+                    Section("Preparation"){
+                        TextEditor(text: $viewModel2.recipe.preparation)
+                            .lineSpacing(20)
+                            .autocapitalization(.words)
+                            .frame(height: 100)
+                            .disableAutocorrection(true)
+                            .padding()
                     }
-                    Section("Degree"){
-                        TextField("Degree", text:$viewModel2.recipe.degree)
-                    }
+                    
                     Button{
                         viewModel2.EditProducti(image: (selectedImage ??  UIImage(named: "default-avatar"))!)
                         
