@@ -55,7 +55,7 @@ struct RecipeDetailsProfile: View {
                                 .fontWeight(Font.Weight.heavy)
                             HStack {
                                 
-                                Text("Meduim")
+                                Text("\(recipe.difficulty)")
                                     .font(Font.custom("HelveticaNeue-Medium", size: 13))
                                     .padding([.leading, .trailing], 10)
                                     .padding([.top, .bottom], 5)
@@ -95,7 +95,7 @@ struct RecipeDetailsProfile: View {
                                     .foregroundColor(.white)
                                     .clipShape(Circle())
                                 VStack{
-                                    Text("Biscuits")
+                                    Text("\(recipe.categorie)")
                                         .fontWeight(Font.Weight.heavy)
                                         .foregroundColor(Color.cadcoler)
                                     
@@ -111,7 +111,7 @@ struct RecipeDetailsProfile: View {
                                     .foregroundColor(.white)
                                     .clipShape(Circle())
                                 VStack{
-                                    Text("30m")
+                                    Text("\(recipe.hours)h:\(recipe.minutes)m")
                                         .fontWeight(Font.Weight.heavy)
                                         .foregroundColor(Color.cadcoler)
                                 }
@@ -128,7 +128,7 @@ struct RecipeDetailsProfile: View {
                                     .foregroundColor(.white)
                                     .clipShape(Circle())
                                 VStack{
-                                    Text("69C")
+                                    Text("\(recipe.degree)\(recipe.temperatures)")
                                         .fontWeight(Font.Weight.heavy)
                                         .foregroundColor(Color.cadcoler)
                                     
