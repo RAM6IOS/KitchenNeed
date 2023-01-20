@@ -25,7 +25,12 @@ class  EditProductiVewModel: ObservableObject {
                 .updateData(["name": self.recipe.name,
                              "definition": self.recipe.definition,
                              "ingredients":self.recipe.ingredients,
+                             "preparation":self.recipe.preparation,
+                             "difficulty":self.recipe.difficulty,
+                             "categorie":self.recipe.categorie,
                              "time":self.recipe.time,
+                             "hours":self.recipe.hours,
+                             "minutes":self.recipe.minutes,
                              "degree":self.recipe.degree
                             ]) { _ in
                   print("Likes user")
