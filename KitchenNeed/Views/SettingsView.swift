@@ -13,6 +13,24 @@ struct SettingsView: View {
     var body: some View {
         NavigationView{
             VStack{
+                List{
+                    NavigationLink{
+                        about()
+                    } label: {
+                        Text("about")
+                    }
+                    NavigationLink{
+                        
+                    } label: {
+                        Text("Privacy Policy")
+                    }
+                    NavigationLink{
+                        
+                    } label: {
+                        Text("share")
+                    }
+                    
+                }
                 
                 Button{
                     viewModel.logout()

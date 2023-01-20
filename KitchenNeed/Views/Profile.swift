@@ -53,7 +53,7 @@ struct Profile: View {
                                                     .resizable()
                                                     .aspectRatio(contentMode: .fill)
                                                     .frame(width: 180, height: 250)
-                                                Text("Khas Khas And Gud Ki Panjiri")
+                                                Text("\(recipet.name)")
                                                     .font(.headline)
                                                     .fontWeight(.medium)
                                                     .foregroundColor(Color.white)
