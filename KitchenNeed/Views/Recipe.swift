@@ -88,7 +88,7 @@ struct Recipe: View {
                                             .foregroundColor(Color.cadcoler)
                                             .fontWeight(Font.Weight.heavy)
                                         HStack {
-                                            Text("Soups")
+                                            Text("\(recipe.categorie)")
                                                 .font(Font.custom("HelveticaNeue-Medium", size: 13))
                                                 .padding([.leading, .trailing], 10)
                                                 .padding([.top, .bottom], 5)

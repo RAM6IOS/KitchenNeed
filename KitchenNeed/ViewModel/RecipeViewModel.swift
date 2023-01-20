@@ -26,7 +26,7 @@ class RecipeViewModel : ObservableObject {
                 let lowercasedQuery = searchText.lowercased()
                 let lowercasedQuery2 = searchText2.lowercased()
                     return recipet.filter({
-                        $0.name.lowercased().contains(lowercasedQuery2) ||  $0.name.lowercased().contains(lowercasedQuery)
+                        $0.categorie.lowercased().contains(lowercasedQuery2) ||  $0.name.lowercased().contains(lowercasedQuery)
                         //|| $0.time.lowercased().contains(lowercasedQuery)
                     })
             }
