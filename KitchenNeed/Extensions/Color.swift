@@ -21,3 +21,16 @@ struct ColorTheme {
     
     
 }
+
+
+extension Color {
+    
+    static let newPrimaryColor = Color("backcoler")
+    static let fontcoler = Color("fontcoler")
+    static let iconcoler = Color("iconcoler")
+    static let cadcoler = Color("cadcoler")
+    static let AccentColor = Color("AccentColor")
+    static let backcoler = Color("backcoler")
+    //cadcoler
+    //
+}
