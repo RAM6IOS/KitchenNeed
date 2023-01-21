@@ -10,7 +10,6 @@ import Kingfisher
 struct Profile: View {
     @EnvironmentObject var viewModel2: AuthViewModel
     @ObservedObject var viewModel :fetchRecipeViewModel
-    @ObservedObject var viewModel3 = RecipeViewModel()
     @State var ShowSettings = false
     let columns = [GridItem(.flexible()), GridItem(.flexible())]
     init(user:User){

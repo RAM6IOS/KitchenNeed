@@ -4,24 +4,8 @@
 //
 //  Created by Bouchedoub Rmazi on 18/7/2022.
 //
-
 import SwiftUI
-
 struct SheetView: View {
-    @State private var name = ""
-    @State private var quantity = ""
-    @State private var  details = ""
-    let types = ["vegetable", "meat","seafood", "fruits", "bread" , "milk","dairy-products" ,"spice" ,"canned-food" ,"snacks","cleaning-materials","PersonalHygiene","stationery"]
-    @State private var type = "vegetable"
-    var heightOptions = ["L","mL", "kg" ,"g"]
-    @State private var heights = "L"
-    @State private var price = ""
-    @State private var currency = "$"
-    var currencySymbol = ["$","€", "£" ,"¥"]
-    let types2 = ["L","mL", "kg" ,"g"]
-    @State private var type2 = "L"
-    @Environment(\.managedObjectContext) var moc
-    @EnvironmentObject var prospects: Prospects
     @ObservedObject var viewModel = UploadProductViewModel()
     var body: some View {
         NavigationView{
@@ -29,30 +13,28 @@ struct SheetView: View {
                     Form{
                         Section("Types"){
                             HStack{
-                                Image(type)
+                                Image(viewModel.type)
                                     .resizable()
                                     .scaledToFill()
                                     .frame(width: 80, height: 80)
                                     .cornerRadius(12)
-                                Picker("type", selection: $type) {
-                                    ForEach(types, id: \.self) { typ in
+                                Picker("type", selection: $viewModel.type) {
+                                    ForEach(viewModel.types, id: \.self) { typ in
                                         HStack( spacing: 10){
                                             Text(typ)
-                                            
                                         }
                                     }
                                 }
-                                
                             }
                         }
                         Section("Product Name"){
-                            TextField("Name" , text: $name)
+                            TextField("Name" , text: $viewModel.name)
                         }
                         Section("Product Quantity"){
                             HStack{
-                                TextField("Quantity" , text:$quantity )
-                                Picker("", selection: $heights) {
-                                    ForEach(heightOptions, id: \.self) { typ in
+                                TextField("Quantity" , text:$viewModel.quantity )
+                                Picker("", selection: $viewModel.heights) {
+                                    ForEach(viewModel.heightOptions, id: \.self) { typ in
                                         HStack( spacing: 10){
                                             Text(typ)
                                             
@@ -60,34 +42,27 @@ struct SheetView: View {
                                     }
                                 }
                                 }
-                                
                             }
                         Section("Product Price"){
                             HStack{
-                                TextField("Price" , text:$price)
-                                
-                                Picker("", selection: $currency) {
-                                    ForEach(currencySymbol, id: \.self) { typ in
+                                TextField("Price" , text:$viewModel.price)
+                                Picker("", selection: $viewModel.currency) {
+                                    ForEach(viewModel.currencySymbol, id: \.self) { typ in
                                         HStack( spacing: 10){
                                             Text(typ)
                                             
                                         }
                                     }
                                 }
-                              
-                               
                             }
-                            
                         }
                         
                         }
                     Button{
-                        viewModel.uploadProduct(withCaption: name, quantity: quantity, type: type ,currency:currency, price :price ,heights:heights ,type2:type2)
-                        name = ""
-                        type = ""
-                        quantity = ""
-                       type2 = ""
-                        
+                        viewModel.uploadProduct(withCaption: viewModel.name, quantity: viewModel.quantity, type: viewModel.type ,currency:viewModel.currency, price :viewModel.price ,heights:viewModel.heights ,type2: viewModel.heights)
+                        viewModel.name = ""
+                        viewModel.type = ""
+                        viewModel.quantity = ""
                     } label: {
                         Text("Save")
                             .bold()
@@ -97,13 +72,11 @@ struct SheetView: View {
                     }
                     .background(Color.AccentColor)
                     .cornerRadius(10)
-
                     }
                     .navigationTitle("Add Product")
                 }
                 
             }
-     
     }
 
 
