@@ -3,12 +3,10 @@
 //  KitchenNeed
 //
 //  Created by Bouchedoub Rmazi on 17/7/2022.
-//
 
 import SwiftUI
 import CoreImage
 import Kingfisher
-
 struct Profile: View {
     @EnvironmentObject var viewModel2: AuthViewModel
     @ObservedObject var viewModel :fetchRecipeViewModel
@@ -31,9 +29,6 @@ struct Profile: View {
                         .foregroundColor(Color.cadcoler)
                         .font(.title)
                         .fontWeight(Font.Weight.heavy)
-                    
-                    
-                    
                     VStack(alignment: .leading){
                         Text("My Recipes")
                             .foregroundColor(Color.cadcoler)
@@ -41,37 +36,18 @@ struct Profile: View {
                             .fontWeight(Font.Weight.heavy)
                             .padding(.horizontal ,10)
                         ScrollView{
-                            
                             LazyVGrid(columns: columns, spacing: 20) {
                                 ForEach(viewModel.recipet){ recipet in
                                     NavigationLink {
                                         RecipeDetailsProfile(recipe: recipet)
                                     } label: {
-                                        VStack{
-                                            ZStack(alignment: .bottomLeading) {
-                                                KFImage(URL(string: recipet.recipetImageUrl))
-                                                    .resizable()
-                                                    .aspectRatio(contentMode: .fill)
-                                                    .frame(width: 180, height: 250)
-                                                Text("\(recipet.name)")
-                                                    .font(.headline)
-                                                    .fontWeight(.medium)
-                                                    .foregroundColor(Color.white)
-                                                    .padding(12)
-                                                
-                                            }
-                                            .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
-                                            
-                                        }
+                                        Recipecard(recipet: recipet)
                                     }
                                 }
                             }
                         }
                     }
                     .padding(.vertical , 20)
-                    
-                    
-                    
                 }
                 }
                     .fullScreenCover(isPresented:$ShowSettings, content: {
@@ -83,21 +59,13 @@ struct Profile: View {
                                 Image(systemName: "gearshape")
                                     .font(.system(size: 25))
                                     .foregroundColor(.AccentColor)
-                                
                             }
-                            
                         }
-                        
-                        
                     }
                     .navigationTitle("Profile")
-            
-           
-            
         }
         .accentColor(Color(.white))
     }
-    
 }
 
 

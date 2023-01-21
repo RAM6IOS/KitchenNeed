@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D05B6F1297C521F00B9C68B /* Recipecard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D05B6F0297C521E00B9C68B /* Recipecard.swift */; };
 		2D18BE8829465B44008FBE3B /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 2D18BE8729465B44008FBE3B /* FirebaseAuth */; };
 		2D18BE8E29465CE5008FBE3B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2D18BE8D29465CE5008FBE3B /* GoogleService-Info.plist */; };
 		2D1FDB9F29489CB000BBF3ED /* ImageUploader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1FDB9E29489CB000BBF3ED /* ImageUploader.swift */; };
@@ -57,6 +58,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2D05B6F0297C521E00B9C68B /* Recipecard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipecard.swift; sourceTree = "<group>"; };
 		2D18BE8D29465CE5008FBE3B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2D1FDB9E29489CB000BBF3ED /* ImageUploader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUploader.swift; sourceTree = "<group>"; };
 		2D2544D328B4DFD400C40D18 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
@@ -236,6 +238,7 @@
 				2D886FAA29706BA4004AB700 /* RecipeDetailsProfile.swift */,
 				2D773C4F2971570100A86E5C /* EditProduct.swift */,
 				2D69A966297B09390004BA47 /* about.swift */,
+				2D05B6F0297C521E00B9C68B /* Recipecard.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -360,6 +363,7 @@
 				2DE850FB295B6ECB0012ABAB /* RecipeSetails.swift in Sources */,
 				2D88B5CC295621F6008F47A5 /* NewRecipeViewModel.swift in Sources */,
 				2D2544D428B4DFD400C40D18 /* CardView.swift in Sources */,
+				2D05B6F1297C521F00B9C68B /* Recipecard.swift in Sources */,
 				2DE850F729584A620012ABAB /* RecipeViewModel.swift in Sources */,
 				2DFD509F28BE88F700CE8FD2 /* Onboarding.swift in Sources */,
 			);
