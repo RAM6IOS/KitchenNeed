@@ -7,27 +7,15 @@
 
 import Foundation
 import Firebase
-
-
 class UploadProductViewModel: ObservableObject {
-    
-    
-    
     func uploadProduct(withCaption name: String , quantity: String ,type: String ,currency: String ,price: String ,heights: String ,type2:String) {
         uploadProduct(name: name, quantity: quantity, type: type , currency: currency , price: price,heights:heights ,type2:type2) { success in
             if success {
-                //dismiss view
-               // self.didUploadTweeet = true
-               // self.viewModel2.fetchTweets()
             } else {
-                //show error
             }
         }
-        
-        
     }
     func uploadProduct(name: String,quantity: String,type: String, currency: String ,price:String,heights:String,type2:String,completion: @escaping(Bool) -> Void) {
-        
         guard let uid = Auth.auth().currentUser?.uid else { return }
         let data = ["uid": uid,
                             "name": name,
@@ -44,11 +32,9 @@ class UploadProductViewModel: ObservableObject {
                     .setData(data) { error in
                         if let error = error {
                             completion(false)
-                            
                             return
                         }
                         completion(true)
-                        
-                    }
+                        }
     }
 }
