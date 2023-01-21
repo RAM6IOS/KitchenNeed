@@ -9,7 +9,21 @@ import SwiftUI
 
 struct about: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack{
+            Text("About")
+                .fontWeight(Font.Weight.heavy)
+                .font(.system(size: 40))
+                .foregroundColor(Color.cadcoler)
+            Text("KitchenNeed")
+                .fontWeight(Font.Weight.heavy)
+                .font(.system(size: 30))
+                .foregroundColor(Color.cadcoler)
+            Text("""
+ Meet the KitchenNeed app:your ultimate culinary sidekick. With the app, you can publish your own tasty food recipes to share with our global community of hungry home cooks. It’s easy to use and offers a variety of irresistibly tasty and healthy recipes that appeal to beginners and experts alike, create shopping lists. Ready to start cooking and baking?
+""")
+            .padding()
+            Spacer()
+        }
     }
 }
 
