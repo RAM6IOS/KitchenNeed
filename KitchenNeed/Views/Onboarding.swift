@@ -1,9 +1,6 @@
 //
 //  Onboarding.swift
 //  KitchenNeed
-//
-//  Created by Bouchedoub Rmazi on 30/8/2022.
-//
 
 import SwiftUI
 import CoreMIDI
@@ -19,8 +16,6 @@ struct Onboarding: View {
                 .tag(0)
             IntroView(name: "Create and save your shopping list", image:"groceries" )
                 .tag(1)
-            //IntroView(name: "Analyze your purchase & spending patterns", image: "grocery")
-              //  .tag(2)
             GetStarted(ShowOnboarding: $ShowOnboarding)
                 .tag(2)
         }
@@ -86,10 +81,3 @@ struct Onboarding: View {
     }
 }
 
-struct Onboarding_Previews: PreviewProvider {
-    static var previews: some View {
-        NavigationView{
-        Onboarding(ShowOnboarding: .constant(true))
-        }
-    }
-}

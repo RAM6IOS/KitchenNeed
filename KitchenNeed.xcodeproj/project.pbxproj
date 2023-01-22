@@ -42,6 +42,8 @@
 		2DE850FB295B6ECB0012ABAB /* RecipeSetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE850FA295B6ECB0012ABAB /* RecipeSetails.swift */; };
 		2DEB35DC294BBEFE001B8FD4 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 2DEB35DB294BBEFE001B8FD4 /* Kingfisher */; };
 		2DEB8CFA297D541B001E7BED /* CardModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DEB8CF9297D541B001E7BED /* CardModifier.swift */; };
+		2DEB8CFD297D9D42001E7BED /* TextFieldview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DEB8CFC297D9D42001E7BED /* TextFieldview.swift */; };
+		2DEB8D00297DAE22001E7BED /* Buttonshow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DEB8CFF297DAE22001E7BED /* Buttonshow.swift */; };
 		2DEF0AB429478F6500D19D8E /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 2DEF0AB329478F6500D19D8E /* FirebaseFirestore */; };
 		2DEF0AB629478F7B00D19D8E /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 2DEF0AB529478F7B00D19D8E /* FirebaseFirestoreSwift */; };
 		2DEF0AB82947954E00D19D8E /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DEF0AB72947954E00D19D8E /* AuthViewModel.swift */; };
@@ -90,6 +92,8 @@
 		2DE850F829584E740012ABAB /* Recipet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipet.swift; sourceTree = "<group>"; };
 		2DE850FA295B6ECB0012ABAB /* RecipeSetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeSetails.swift; sourceTree = "<group>"; };
 		2DEB8CF9297D541B001E7BED /* CardModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardModifier.swift; sourceTree = "<group>"; };
+		2DEB8CFC297D9D42001E7BED /* TextFieldview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldview.swift; sourceTree = "<group>"; };
+		2DEB8CFF297DAE22001E7BED /* Buttonshow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buttonshow.swift; sourceTree = "<group>"; };
 		2DEF0AB72947954E00D19D8E /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		2DEF0AB92947A80500D19D8E /* KitchenNeed.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = KitchenNeed.entitlements; sourceTree = "<group>"; };
 		2DEF0ABA2947B13400D19D8E /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -143,6 +147,7 @@
 			children = (
 				2DEF0AB92947A80500D19D8E /* KitchenNeed.entitlements */,
 				2D18BE8D29465CE5008FBE3B /* GoogleService-Info.plist */,
+				2DEB8CFB297D5DBC001E7BED /* Components */,
 				2D48C790288FF89F00981FAE /* Extensions */,
 				2DE2CFD02887077600FBFE62 /* ViewModel */,
 				63CD66632886DA85003CDE86 /* Views */,
@@ -186,6 +191,15 @@
 				2D773C51297172BA00A86E5C /* EditProductiVewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		2DEB8CFB297D5DBC001E7BED /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				2DEB8CFC297D9D42001E7BED /* TextFieldview.swift */,
+				2DEB8CFF297DAE22001E7BED /* Buttonshow.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		2DEF0AB229478F6500D19D8E /* Frameworks */ = {
@@ -336,6 +350,7 @@
 				2D69A967297B09390004BA47 /* about.swift in Sources */,
 				2D1FDB9F29489CB000BBF3ED /* ImageUploader.swift in Sources */,
 				2D371F2928C26F6600FEA74C /* IntroView.swift in Sources */,
+				2DEB8D00297DAE22001E7BED /* Buttonshow.swift in Sources */,
 				2D42354328C1285500600266 /* SignupView.swift in Sources */,
 				2D710C3C2956162D00F3E9EA /* NewRecipe.swift in Sources */,
 				2D6D466228D0B12900557B0A /* GetStarted.swift in Sources */,
@@ -345,6 +360,7 @@
 				2DEF0ABB2947B13400D19D8E /* User.swift in Sources */,
 				2D48C792288FF8D400981FAE /* Color.swift in Sources */,
 				2DCB273D288DB15800335695 /* DataController.swift in Sources */,
+				2DEB8CFD297D9D42001E7BED /* TextFieldview.swift in Sources */,
 				63CD66622886DA68003CDE86 /* Product.swift in Sources */,
 				2DCB273B288DAE3600335695 /* KitchenNeedModel.xcdatamodeld in Sources */,
 				2DEB8CFA297D541B001E7BED /* CardModifier.swift in Sources */,

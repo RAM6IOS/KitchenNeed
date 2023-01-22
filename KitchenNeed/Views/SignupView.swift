@@ -1,31 +1,19 @@
 //
 //  SignupView.swift
 //  KitchenNeed
-//
-//  Created by Bouchedoub Rmazi on 1/9/2022.
-//
-
 import SwiftUI
 import Firebase
 import FirebaseFirestore
-
 struct SignupView: View {
    @State private var selectedImage: UIImage?
     @State private var profileImage: Image?
-    @State private var showingImagePicker = false
     @Binding var ShowHome : Bool
-    @State var showLgn = false
-    @State private var email: String = ""
-    @State private var username: String = ""
-    @State private var name: String = ""
-    @State private var password: String = ""
     @EnvironmentObject var viewModel: AuthViewModel
-    
     var body: some View {
         VStack{
-        if showLgn == true {
+            if viewModel.showLgn == true {
             VStack{
-                LogIn(ShowHome: $ShowHome, showLgn: $showLgn)
+                LogIn(ShowHome: $ShowHome, showLgn: $viewModel.showLgn)
             }
         } else {
             VStack{
@@ -36,9 +24,8 @@ struct SignupView: View {
                     .fontWeight(.heavy)
                     .padding(.bottom , 10)
                     .padding(.top , 10)
-               
                 Button {
-                    showingImagePicker.toggle()
+                    viewModel.showingImagePicker.toggle()
                             } label: {
                     if let profileImage = profileImage {
                                         profileImage
@@ -46,7 +33,7 @@ struct SignupView: View {
                                           .scaledToFill()
                                           .frame(width: 100, height: 100)
                                           .overlay(
-                                                          RoundedRectangle(cornerRadius: 90)
+                                                RoundedRectangle(cornerRadius: 90)
                                                               .stroke(Color.gray
                                                                       , lineWidth: 10)
                                                       )
@@ -68,84 +55,38 @@ struct SignupView: View {
                                                         
                                                 }
                             }
-                            .sheet(isPresented: $showingImagePicker , onDismiss: loadImage) {
+                            .sheet(isPresented: $viewModel.showingImagePicker , onDismiss: loadImage) {
                                             ImagePicker(selectedImage: $selectedImage)
                                         }
                 VStack{
-                    
                     VStack{
-                        HStack(alignment: .bottom){
-                            Image(systemName: "envelope")
-                                .padding(.leading , 30)
-                            
-                            TextField("Email", text: $email)
-                                .padding(.top, 20)
-                                .foregroundColor(.blue)
-                        }
-                        Divider()
-                            .padding(.horizontal, 30)
-                            .padding(.top ,10)
-                      
-                        
-                        HStack(alignment: .bottom){
-                            Image(systemName: "person")
-                                .padding(.leading , 30)
-                            
-                            TextField("FullName", text: $name)
-                                .padding(.top, 20)
-                                .foregroundColor(.blue)
-                        }
-                        Divider()
-                            .padding(.horizontal, 30)
-                            .padding(.top ,10)
-                        
-                        HStack(alignment: .bottom){
-                            Image(systemName: "lock")
-                                .padding(.leading , 30)
-                            
-                            TextField("Password", text: $password)
-                                .padding(.top, 20)
-                                .foregroundColor(.blue)
-                        }
-                        Divider()
-                            .padding(.horizontal, 30)
-                            .padding(.top ,10)
-                        
+                        TextFieldview(name: $viewModel.email, systemname: "envelope", nameField: "Email")
+                        TextFieldview(name: $viewModel.name, systemname: "person", nameField: "Name")
+                        TextFieldview(name: $viewModel.password, systemname: "lock", nameField: "Password")
                     }
                     Spacer()
                     Button{
                         withAnimation{
-                            viewModel.register(withEmail: email,
-                                               password: password,
-                                                name: name,
+                            viewModel.register(withEmail: viewModel.email,
+                                               password: viewModel.password,
+                                                name: viewModel.name,
                                                 image: (selectedImage ??  UIImage(named: "default-avatar"))!)
+                            viewModel.password = ""
+                            viewModel.email = ""
+                            viewModel.name = ""
                         }
                     } label: {
                         Text("Sign up")
                             .bold()
                             .font(.title3)
-                            .frame(width: 330, height: 50)
+                            .frame(width: 340, height: 50)
                             .foregroundColor(.white)
-                            .background(Color.green)
+                            .background(Color.AccentColor)
                             .cornerRadius(25)
                     }
-                    Button{
-                        withAnimation{
-                        showLgn.toggle()
-                        }
-                    } label: {
-                        HStack{
-                            Text("I alrea have an account")
-                                .font(.footnote)
-                            Text("Sign in")
-                                .font(.footnote)
-                                .fontWeight(.semibold)
-                        }
-                    }
-                    .padding(.bottom, 32)
+                    Buttonshow(showLgn:$viewModel.showLgn, teite1: "I alrea have an account", teite2: "Sign in")
                 }
                 }
-            
         }
         }
     }
@@ -153,9 +94,4 @@ struct SignupView: View {
             guard let selectedImage = selectedImage else { return }
             profileImage = Image(uiImage: selectedImage)
         }
-}
-struct SignupView_Previews: PreviewProvider {
-    static var previews: some View {
-        SignupView(  ShowHome: .constant(true))
-    }
 }

@@ -11,6 +11,11 @@ import Firebase
 class AuthViewModel: ObservableObject {
     @Published var userSession : FirebaseAuth.User?
     @Published var currentUser: User?
+    @Published var email: String = ""
+    @Published var name: String = ""
+    @Published var password: String = ""
+    @Published var showLgn = false
+    @Published  var showingImagePicker = false
     init() {
             self.userSession = Auth.auth().currentUser
             self.fetchUser()

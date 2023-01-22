@@ -46,13 +46,6 @@ struct LogIn: View {
                         Divider()
                             .padding(.horizontal, 30)
                             .padding(.top ,10)
-                       /* HStack{
-                            Spacer()
-                            Text("Forget the assword?")
-                                .foregroundColor(.blue)
-                        }
-                        .padding(.horizontal)
-                        */
                     }
                 }
                 .padding(.bottom , 20)
@@ -66,23 +59,10 @@ struct LogIn: View {
                         .font(.title3)
                         .frame(width: 330, height: 50)
                         .foregroundColor(.white)
-                        .background(Color.green)
+                        .background(Color.AccentColor)
                         .cornerRadius(25)
                 }
-                Button{
-                    withAnimation{
-                        showLgn = false
-                    }
-                } label: {
-                    HStack{
-                        Text("Don't have an account?")
-                            .font(.footnote)
-                        
-                        Text("Sign Up")
-                            .font(.footnote)
-                            .fontWeight(.semibold)
-                    }
-                }
+                Buttonshow(showLgn:$showLgn, teite1:"Don't have an account?", teite2: "Sign Up")
                 
             }
             Spacer()

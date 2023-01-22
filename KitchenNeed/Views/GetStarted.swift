@@ -26,11 +26,3 @@ struct GetStarted: View {
         }
     }
 }
-
-struct GetStarted_Previews: PreviewProvider {
-    static var previews: some View {
-        NavigationView{
-        GetStarted(ShowOnboarding: .constant(true))
-        }
-    }
-}
