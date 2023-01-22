@@ -13,7 +13,6 @@
 		2D1FDB9F29489CB000BBF3ED /* ImageUploader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1FDB9E29489CB000BBF3ED /* ImageUploader.swift */; };
 		2D1FDBA129489CF500BBF3ED /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 2D1FDBA029489CF500BBF3ED /* FirebaseStorage */; };
 		2D2544D428B4DFD400C40D18 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2544D328B4DFD400C40D18 /* CardView.swift */; };
-		2D2544D628B53C3F00C40D18 /*  GroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2544D528B53C3F00C40D18 /*  GroupView.swift */; };
 		2D3709012884ABFE0044EF45 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D3709002884ABFE0044EF45 /* Preview Assets.xcassets */; };
 		2D371F2928C26F6600FEA74C /* IntroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D371F2828C26F6600FEA74C /* IntroView.swift */; };
 		2D42354328C1285500600266 /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D42354228C1285500600266 /* SignupView.swift */; };
@@ -63,7 +62,6 @@
 		2D18BE8D29465CE5008FBE3B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2D1FDB9E29489CB000BBF3ED /* ImageUploader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUploader.swift; sourceTree = "<group>"; };
 		2D2544D328B4DFD400C40D18 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
-		2D2544D528B53C3F00C40D18 /*  GroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " GroupView.swift"; sourceTree = "<group>"; };
 		2D3708F62884ABF90044EF45 /* KitchenNeed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KitchenNeed.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D3709002884ABFE0044EF45 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2D371F2828C26F6600FEA74C /* IntroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroView.swift; sourceTree = "<group>"; };
@@ -226,7 +224,6 @@
 				63CD66682886DA85003CDE86 /* SheetView.swift */,
 				63CD66692886DA85003CDE86 /* ContentView.swift */,
 				2D2544D328B4DFD400C40D18 /* CardView.swift */,
-				2D2544D528B53C3F00C40D18 /*  GroupView.swift */,
 				2DFD509E28BE88F700CE8FD2 /* Onboarding.swift */,
 				2DFD50A228BEA44500CE8FD2 /* Launch Screen.storyboard */,
 				2D42354228C1285500600266 /* SignupView.swift */,
@@ -338,7 +335,6 @@
 				63CD666E2886DA85003CDE86 /* SheetView.swift in Sources */,
 				2D69A967297B09390004BA47 /* about.swift in Sources */,
 				2D1FDB9F29489CB000BBF3ED /* ImageUploader.swift in Sources */,
-				2D2544D628B53C3F00C40D18 /*  GroupView.swift in Sources */,
 				2D371F2928C26F6600FEA74C /* IntroView.swift in Sources */,
 				2D42354328C1285500600266 /* SignupView.swift in Sources */,
 				2D710C3C2956162D00F3E9EA /* NewRecipe.swift in Sources */,
