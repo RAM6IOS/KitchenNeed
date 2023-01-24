@@ -25,14 +25,12 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 @main
 struct KitchenNeedApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
-    @StateObject private var dataController = DataController()
-  
     @StateObject var viewModel = AuthViewModel()
     var body: some Scene {
         WindowGroup {
             ContentView()
                 .environmentObject(viewModel)
-                .environment(\.managedObjectContext, dataController.container.viewContext)
+                
         }
     }
 }
