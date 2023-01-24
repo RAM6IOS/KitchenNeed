@@ -11,6 +11,8 @@ class RecipeViewModel : ObservableObject {
     @Published var recipet = [Recipet]()
     @Published var searchText = ""
     @Published var searchText2 = ""
+    @Published  var categories : [String] = ["all","Breakfast", "Lunch", "Dinner", "Dessert" , "Appetisers" , "Soups" ,"Salads" ,"Breads" ,"Baked" , "Sweet" ,"Pizza" ,"Poultry" ,"Meat" ,"Seafood","Rice" ,"Pasta" ,"Sides" ,"Sandwiches" ,"drinks" ,"Ice Cream"]
+    @Published var isSheetPresented = false
     init() {
         fetchRecipet()
         }
