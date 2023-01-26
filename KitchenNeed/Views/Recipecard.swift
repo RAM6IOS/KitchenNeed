@@ -9,7 +9,7 @@ import SwiftUI
 import Kingfisher
 
 struct Recipecard: View {
-    @State var recipet : Recipet
+   var recipet : Recipet
     var body: some View {
         VStack{
             ZStack(alignment: .bottomLeading) {

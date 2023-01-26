@@ -9,9 +9,8 @@ import SwiftUI
 import Kingfisher
 
 struct RecipeCard: View {
-    @State var recipet : Recipet
+    var recipet : Recipet
     var body: some View {
-        
             KFImage(URL(string: recipet.recipetImageUrl))
                 .resizable()
                 .scaledToFill()
