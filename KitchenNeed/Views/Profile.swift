@@ -40,7 +40,22 @@ struct Profile: View {
                                     NavigationLink {
                                         RecipeDetailsProfile(recipe: recipet)
                                     } label: {
-                                        Recipecard(recipet: recipet)
+                                        //Recipecard(recipet: recipet)
+                                        VStack{
+                                            ZStack(alignment: .bottomLeading) {
+                                                KFImage(URL(string: recipet.recipetImageUrl))
+                                                    .resizable()
+                                                    .aspectRatio(contentMode: .fill)
+                                                    .frame(width: 180, height: 250)
+                                                Text("\(recipet.name)")
+                                                    .font(.headline)
+                                                    .fontWeight(.medium)
+                                                    .foregroundColor(Color.white)
+                                                    .padding(12)
+                                                
+                                            }
+                                            .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
+                                        }
                                     }
                                 }
                             }

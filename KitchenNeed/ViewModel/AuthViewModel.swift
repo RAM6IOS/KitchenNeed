@@ -8,6 +8,7 @@ import SwiftUI
 import FirebaseFirestore
 import Firebase
 
+
 class AuthViewModel: ObservableObject {
     @Published var userSession : FirebaseAuth.User?
     @Published var currentUser: User?

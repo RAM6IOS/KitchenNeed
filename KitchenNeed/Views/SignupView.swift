@@ -9,6 +9,9 @@ struct SignupView: View {
     @State private var profileImage: Image?
     @Binding var ShowHome : Bool
     @EnvironmentObject var viewModel: AuthViewModel
+    @State var email: String = ""
+    @State var name: String = ""
+    @State var password: String = ""
     var body: some View {
         VStack{
             if viewModel.showLgn == true {
@@ -60,20 +63,23 @@ struct SignupView: View {
                                         }
                 VStack{
                     VStack{
-                        TextFieldview(name: $viewModel.email, systemname: "envelope", nameField: "Email")
-                        TextFieldview(name: $viewModel.name, systemname: "person", nameField: "Name")
-                        TextFieldview(name: $viewModel.password, systemname: "lock", nameField: "Password")
+                        TextFieldview(name: $email, systemname: "envelope", nameField: "Email")
+                       TextFieldview(name: $name, systemname: "person", nameField: "Name")
+                       TextFieldview(name: $password, systemname: "lock", nameField: "Password")
                     }
                     Spacer()
                     Button{
                         withAnimation{
-                            viewModel.register(withEmail: viewModel.email,
-                                               password: viewModel.password,
-                                                name: viewModel.name,
+                            viewModel.register(withEmail: email,
+                                               password: password,
+                                                name: name,
                                                 image: (selectedImage ??  UIImage(named: "default-avatar"))!)
-                            viewModel.password = ""
-                            viewModel.email = ""
-                            viewModel.name = ""
+                           // if viewModel.userSession != nil {
+                                password = ""
+                                email = ""
+                                name = ""
+                                
+                           // }
                         }
                     } label: {
                         Text("Sign up")

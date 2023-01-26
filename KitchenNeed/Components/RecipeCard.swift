@@ -41,7 +41,7 @@ struct RecipeCard: View {
                     .background(Color.AccentColor)
                     .cornerRadius(7)
                 }
-                if let user = recipet.user {
+               // if let user = recipet.user {
                     HStack{
                         Image( "cook")
                             .resizable()
@@ -49,16 +49,20 @@ struct RecipeCard: View {
                             .aspectRatio(contentMode: .fill)
                             .frame(width: 30, height: 30)
                             .font(.system(size: 20))
-                            KFImage(URL(string: user.profileImageUrl ))
+                        KFImage(URL(string: recipet.user?.profileImageUrl ??  "default-avatar" ))
                                 .resizable()
                                 .scaledToFill()
                                 .clipShape(Circle())
                                 .frame(width: 30, height: 30)
-                        Text(user.name)
+                        Text(recipet.user?.name ?? "name")
                             .foregroundColor(Color.cadcoler)
                             .fontWeight(Font.Weight.heavy)
+                        Text("ttt")
+                            .foregroundColor(Color.cadcoler)
+                            .fontWeight(Font.Weight.heavy)
+                        
                     }
-                }
+                //}
             }
             .padding(12)
         }
