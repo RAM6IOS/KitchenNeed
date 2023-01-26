@@ -11,7 +11,7 @@ import Kingfisher
 struct RecipeCard: View {
     @State var recipet : Recipet
     var body: some View {
-        VStack(alignment: .leading, spacing: 0) {
+        
             KFImage(URL(string: recipet.recipetImageUrl))
                 .resizable()
                 .scaledToFill()
@@ -41,35 +41,11 @@ struct RecipeCard: View {
                     .background(Color.AccentColor)
                     .cornerRadius(7)
                 }
-               // if let user = recipet.user {
-                    HStack{
-                        Image( "cook")
-                            .resizable()
-                            .scaledToFill()
-                            .aspectRatio(contentMode: .fill)
-                            .frame(width: 30, height: 30)
-                            .font(.system(size: 20))
-                        KFImage(URL(string: recipet.user?.profileImageUrl ??  "default-avatar" ))
-                                .resizable()
-                                .scaledToFill()
-                                .clipShape(Circle())
-                                .frame(width: 30, height: 30)
-                        Text(recipet.user?.name ?? "name")
-                            .foregroundColor(Color.cadcoler)
-                            .fontWeight(Font.Weight.heavy)
-                        Text("ttt")
-                            .foregroundColor(Color.cadcoler)
-                            .fontWeight(Font.Weight.heavy)
-                        
-                    }
-                //}
+               
             }
             .padding(12)
-        }
-        .background(Color.white)
-        .cornerRadius(15)
-        .shadow(color: Color.black.opacity(0.2), radius: 7, x: 0, y: 2)
-        .padding(.horizontal,10)
+       
+        
     }
 }
 

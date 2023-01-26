@@ -42,7 +42,7 @@ struct Recipe: View {
                         } label: {
                             VStack(alignment: .leading, spacing: 0) {
                                 RecipeCard(recipet: recipe)
-                                /*if let user = recipe.user {
+                                if let user = recipe.user {
                                     HStack{
                                         Image( "cook")
                                             .resizable()
@@ -62,7 +62,7 @@ struct Recipe: View {
                                     }
                                     .padding(.horizontal,11)
                                     .padding(.bottom ,8)
-                                }*/
+                                }
                                
                             }
                             .background(Color.white)
