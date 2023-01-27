@@ -9,8 +9,8 @@ import SwiftUI
 
 struct TextFieldview: View {
     @Binding var name : String
-    @State var systemname : String
-    @State var nameField : String
+     var systemname : String
+     var nameField : String
     var body: some View {
         VStack{
             HStack(alignment: .bottom){

@@ -64,8 +64,8 @@ struct SignupView: View {
                 VStack{
                     VStack{
                         TextFieldview(name: $email, systemname: "envelope", nameField: "Email")
-                       TextFieldview(name: $name, systemname: "person", nameField: "Name")
-                       TextFieldview(name: $password, systemname: "lock", nameField: "Password")
+                        TextFieldview(name: $name, systemname: "person", nameField: "Name")
+                        TextFieldview(name: $password, systemname: "lock", nameField: "Password")
                     }
                     Spacer()
                     Button{

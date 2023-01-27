@@ -37,8 +37,8 @@ struct Recipe: View {
                 ScrollView {
                     ForEach(viewModel.searchableRecipe){ recipe in
                         NavigationLink {
-                            //RecipeDetailsView(recipe: recipe)
-                            RecipeDetailsProfile(recipe: recipe)
+                            RecipeDetailsView(recipe: recipe)
+                            //RecipeDetailsProfile(recipe: recipe)
                         } label: {
                             VStack(alignment: .leading, spacing: 0) {
                                 RecipeCard(recipet: recipe)
