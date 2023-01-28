@@ -12,6 +12,7 @@ struct SignupView: View {
     @State var email: String = ""
     @State var name: String = ""
     @State var password: String = ""
+   @State var showpasword = false
     var body: some View {
         VStack{
             if viewModel.showLgn == true {
@@ -21,8 +22,14 @@ struct SignupView: View {
         } else {
             VStack{
                 Spacer()
+                Image("1024")
+                    .resizable()
+                    .scaledToFill()
+                    .frame(width: 100, height: 100)
+                    .clipShape(RoundedRectangle(cornerRadius: 25, style: .continuous))
+                    .padding(.top, 44)
                 Text("Create your account")
-                    .font(.largeTitle)
+                    .font(.title2)
                     .fontWeight(.semibold)
                     .fontWeight(.heavy)
                     .padding(.bottom , 10)
@@ -35,25 +42,14 @@ struct SignupView: View {
                                           .resizable()
                                           .scaledToFill()
                                           .frame(width: 100, height: 100)
-                                          .overlay(
-                                                RoundedRectangle(cornerRadius: 90)
-                                                              .stroke(Color.gray
-                                                                      , lineWidth: 10)
-                                                      )
-                                                      .clipShape(Circle())
+                                          .clipShape(RoundedRectangle(cornerRadius: 25, style: .continuous))
                                                       .padding(.top, 44)
                                                 } else {
                                                     Image("default-avatar")
                                                         .resizable()
                                                         .scaledToFill()
                                                         .frame(width: 100, height: 100 )
-                                                        .clipShape(Circle())
-                                                        .overlay(
-                                                                        RoundedRectangle(cornerRadius: 90)
-                                                                            .stroke(Color.white
-                                                                                    , lineWidth: 10)
-                                                                    )
-                                                                    .clipShape(Circle())
+                                                        .clipShape(RoundedRectangle(cornerRadius: 25, style: .continuous))
                                                                     .padding(.top, 44)
                                                         
                                                 }
@@ -65,7 +61,46 @@ struct SignupView: View {
                     VStack{
                         TextFieldview(name: $email, systemname: "envelope", nameField: "Email")
                         TextFieldview(name: $name, systemname: "person", nameField: "Name")
-                        TextFieldview(name: $password, systemname: "lock", nameField: "Password")
+                        //TextFieldview(name: $password, systemname: "lock", nameField: "Password")
+                        if showpasword {
+                            HStack(alignment: .bottom){
+                                Image(systemName: "lock")
+                                    .padding(.leading , 30)
+                                TextField("Password", text: $password)
+                                    .padding(.top, 20)
+                                    .foregroundColor(.blue)
+                                Image(systemName: "eye")
+                                    .padding(.leading , 30)
+                                    .onTapGesture {
+                                        withAnimation{
+                                            self.showpasword.toggle()
+                                        }
+                                    }
+                            }
+                            Divider()
+                                .padding(.horizontal, 30)
+                                .padding(.top ,10)
+                        } else{
+                            HStack(alignment: .bottom){
+                                Image(systemName: "lock")
+                                    .padding(.leading , 30)
+                                
+                                SecureField("Password", text: $password)
+                                    .padding(.top, 20)
+                                    .foregroundColor(.blue)
+                                
+                                Image(systemName: "eye.slash")
+                                    .padding(.leading , 30)
+                                    .onTapGesture {
+                                        withAnimation{
+                                            self.showpasword.toggle()
+                                        }
+                                    }
+                            }
+                            Divider()
+                                .padding(.horizontal, 30)
+                                .padding(.top ,10)
+                        }
                     }
                     Spacer()
                     Button{
@@ -74,12 +109,12 @@ struct SignupView: View {
                                                password: password,
                                                 name: name,
                                                 image: (selectedImage ??  UIImage(named: "default-avatar"))!)
-                           // if viewModel.userSession != nil {
+                            if $viewModel.userSession != nil {
                                 password = ""
                                 email = ""
                                 name = ""
                                 
-                           // }
+                            }
                         }
                     } label: {
                         Text("Sign up")

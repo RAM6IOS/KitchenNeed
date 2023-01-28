@@ -9,11 +9,18 @@ struct LogIn: View {
     @EnvironmentObject var viewModel: AuthViewModel
     @Binding var ShowHome : Bool
     @Binding var showLgn : Bool
+    @State var showpasword = false
     var body: some View {
         VStack{
             Spacer()
+            Image("1024")
+                .resizable()
+                .scaledToFill()
+                .frame(width: 100, height: 100)
+                .clipShape(RoundedRectangle(cornerRadius: 25, style: .continuous))
+                .padding(.top, 44)
             Text("Welcome back")
-                .font(.largeTitle)
+                .font(.title2)
                 .fontWeight(.semibold)
                 .fontWeight(.heavy)
                 .padding(.bottom , 10)
@@ -21,7 +28,6 @@ struct LogIn: View {
             
             VStack{
                 VStack(spacing: 10){
-                    
                         HStack(alignment: .bottom){
                             Image(systemName: "envelope")
                                 .padding(.leading , 30)
@@ -33,15 +39,40 @@ struct LogIn: View {
                         Divider()
                             .padding(.horizontal, 30)
                             .padding(.top ,10)
-                    
-                    VStack{
+                    if showpasword {
                         HStack(alignment: .bottom){
-                            Image(systemName: "magnifyingglass")
+                            Image(systemName: "lock")
                                 .padding(.leading , 30)
-                            
                             TextField("Password", text: $password)
                                 .padding(.top, 20)
                                 .foregroundColor(.blue)
+                            Image(systemName: "eye")
+                                .padding(.leading , 30)
+                                .onTapGesture {
+                                    withAnimation{
+                                        self.showpasword.toggle()
+                                    }
+                                }
+                        }
+                        Divider()
+                            .padding(.horizontal, 30)
+                            .padding(.top ,10)
+                    } else{
+                        HStack(alignment: .bottom){
+                            Image(systemName: "lock")
+                                .padding(.leading , 30)
+                            
+                            SecureField("Password", text: $password)
+                                .padding(.top, 20)
+                                .foregroundColor(.blue)
+                            
+                            Image(systemName: "eye.slash")
+                                .padding(.leading , 30)
+                                .onTapGesture {
+                                    withAnimation{
+                                        self.showpasword.toggle()
+                                    }
+                                }
                         }
                         Divider()
                             .padding(.horizontal, 30)

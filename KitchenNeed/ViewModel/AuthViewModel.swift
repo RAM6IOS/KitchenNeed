@@ -51,9 +51,10 @@ class AuthViewModel: ObservableObject {
                             .setData(userData) { _ in
                             }
             self.uploadProfileImage(image)
-            print(userData)
+           // print(userData)
+           
         }
-         
+    
     }
     func uploadProfileImage(_ image: UIImage) {
             guard let uid = userSession?.uid else { return }
