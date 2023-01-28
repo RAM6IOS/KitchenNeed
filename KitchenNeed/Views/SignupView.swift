@@ -34,7 +34,7 @@ struct SignupView: View {
                     .fontWeight(.heavy)
                     .padding(.bottom , 10)
                     .padding(.top , 10)
-                Button {
+               /* Button {
                     viewModel.showingImagePicker.toggle()
                             } label: {
                     if let profileImage = profileImage {
@@ -56,12 +56,11 @@ struct SignupView: View {
                             }
                             .sheet(isPresented: $viewModel.showingImagePicker , onDismiss: loadImage) {
                                             ImagePicker(selectedImage: $selectedImage)
-                                        }
+                                        }*/
                 VStack{
                     VStack{
                         TextFieldview(name: $email, systemname: "envelope", nameField: "Email")
                         TextFieldview(name: $name, systemname: "person", nameField: "Name")
-                        //TextFieldview(name: $password, systemname: "lock", nameField: "Password")
                         if showpasword {
                             HStack(alignment: .bottom){
                                 Image(systemName: "lock")

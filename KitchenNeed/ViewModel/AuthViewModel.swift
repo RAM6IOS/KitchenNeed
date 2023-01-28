@@ -86,6 +86,20 @@ class AuthViewModel: ObservableObject {
             userSession = nil
             try? Auth.auth().signOut()
         }
+    
+    func delete() {
+        userSession = nil
+        Auth.auth().currentUser?.delete{ error in
+          if let error = error {
+            // An error occurred while trying to delete the user
+            print(error)
+          } else {
+            // User deleted successfully
+             
+          }
+            
+        }
+        }
 }
 
 
