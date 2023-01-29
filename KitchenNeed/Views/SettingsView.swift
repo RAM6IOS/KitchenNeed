@@ -21,7 +21,7 @@ struct SettingsView: View {
                     }
                     
                     NavigationLink{
-                        
+                        UpdateEmail()
                     } label: {
                         HStack{
                             Image(systemName: "envelope")
