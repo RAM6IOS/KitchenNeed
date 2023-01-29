@@ -21,7 +21,9 @@ struct SettingsView: View {
                     }
                     
                     NavigationLink{
-                        UpdateEmail()
+                        if let user = viewModel.currentUser {
+                            UpdateEmail(user: user)
+                        }
                     } label: {
                         HStack{
                             Image(systemName: "envelope")

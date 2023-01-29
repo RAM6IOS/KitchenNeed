@@ -8,16 +8,19 @@
 import SwiftUI
 
 struct UpdateEmail: View {
-    @EnvironmentObject var viewModel: AuthViewModel
+    @ObservedObject var viewModel :UpdateEmailViewModel2
     @State var email = ""
     @State var password = ""
+    init(user: User){
+        self.viewModel = UpdateEmailViewModel2(user: user)
+    }
     var body: some View {
         VStack{
             HStack(alignment: .bottom){
                 Image(systemName: "envelope")
                     .padding(.leading , 30)
                 
-                TextField("Email", text:$email)
+                TextField("Email", text:$viewModel.user.email)
                     .padding(.top, 20)
                     .foregroundColor(.blue)
             }
@@ -40,7 +43,7 @@ struct UpdateEmail: View {
                 .font(.title2)
             Text("type a new one above")
             Button{
-                viewModel.updateEmail(password: password, newEmail: email)
+                viewModel.updateEmail(password: password, newEmail: viewModel.user.email)
                 
             } label: {
                 Text("Change Email")
