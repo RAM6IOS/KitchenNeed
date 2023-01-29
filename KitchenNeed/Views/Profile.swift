@@ -24,6 +24,8 @@ struct Profile: View {
                         .scaledToFill()
                         .clipShape(Circle())
                         .frame(width: 100, height: 100)
+                        .clipShape(RoundedRectangle(cornerRadius: 25, style: .continuous))
+                        .padding(.top, 44)
                     Text(user.name)
                         .foregroundColor(Color.cadcoler)
                         .font(.title)
