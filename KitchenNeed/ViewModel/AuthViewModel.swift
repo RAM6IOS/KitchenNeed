@@ -100,6 +100,26 @@ class AuthViewModel: ObservableObject {
             
         }
         }
+    
+    func updateEmail(password:String , newEmail: String){
+        let user = Auth.auth().currentUser
+        let credential = EmailAuthProvider.credential(withEmail: user!.email!, password: password)
+        user?.reauthenticate(with: credential) { (authResult, error) in
+          if let error = error {
+            print("Error reauthenticating user: \(error)")
+            return
+          }
+          user?.updateEmail(to: newEmail) { (error) in
+            if let error = error {
+              print("Error changing email: \(error)")
+            } else {
+              print("Email changed successfully")
+            }
+          }
+        }
+         
+        
+    }
 }
 
 
