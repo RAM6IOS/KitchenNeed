@@ -31,7 +31,9 @@ struct SettingsView: View {
                         }
                     }
                     NavigationLink{
-                        UpdatePassword()
+                        if let user = viewModel.currentUser {
+                            UpdatePassword(user: user)
+                        }
                     } label: {
                         HStack{
                             Image(systemName: "lock")
