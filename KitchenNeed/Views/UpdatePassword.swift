@@ -90,5 +90,6 @@ struct UpdatePassword: View {
             Spacer()
         }.navigationTitle("Password Serrings")
     }
+    
 }
 

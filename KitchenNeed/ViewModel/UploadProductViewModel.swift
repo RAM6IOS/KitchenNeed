@@ -9,10 +9,10 @@ class UploadProductViewModel: ObservableObject {
     @Published var details = ""
     @Published var types = ["vegetable", "meat","seafood", "fruits", "bread" , "milk","dairy-products" ,"spice" ,"canned-food" ,"snacks","cleaning-materials","PersonalHygiene","stationery"]
     @Published var  type = "vegetable"
-    @Published var heightOptions = ["L","mL", "kg" ,"g"]
-    @Published var heights = "L"
+    @Published var heightOptions = ["Item","L","mL", "kg" ,"g"]
+    @Published var heights = ""
     @Published var price = ""
-    @Published var currency = "$"
+    @Published var currency = ""
     @Published var currencySymbol = ["$","€", "£" ,"¥"]
     func uploadProduct(withCaption name: String , quantity: String ,type: String ,currency: String ,price: String ,heights: String ,type2:String) {
         uploadProduct(name: name, quantity: quantity, type: type , currency: currency , price: price,heights:heights ,type2:type2) { success in

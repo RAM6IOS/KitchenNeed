@@ -28,18 +28,12 @@ class UpdatePasswordViewModel: ObservableObject {
             }
              user?.updatePassword(to: newPassword) { (error) in
                  if let error = error {
-                     print("Error changing email: \(error)")
+                     print("Error changing Password: \(error)")
                  } else {
                      print("Password changed successfully")
                  }
              }
-            /*user?.updatePassword(to: newPassword, completion: { (error) in
-               if let error = error {
-                  // Handle password update error
-                  return
-               }
-                print("Password changed successfully")
-            })*/
+            
          })
          
          
