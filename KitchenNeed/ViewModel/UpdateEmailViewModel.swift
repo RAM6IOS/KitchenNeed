@@ -29,7 +29,9 @@ class  UpdateEmailViewModel2: ObservableObject {
                     
                     guard let userId = self.user.id else { return }
                     Firestore.firestore().collection("users").document( userId )
-                        .updateData(["email": self.user.email]) { _ in
+                        .updateData(["email": self.user.email,
+                                    "name": self.user.name]
+                        ) { _ in
                             
                             print("Email updateData")
                             

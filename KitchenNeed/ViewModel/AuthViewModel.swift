@@ -50,22 +50,24 @@ class AuthViewModel: ObservableObject {
                             .document(user.uid)
                             .setData(userData) { _ in
                             }
-            self.uploadProfileImage(image)
+            //self.uploadProfileImage(image)
            // print(userData)
            
         }
     
     }
-    func uploadProfileImage(_ image: UIImage) {
+    func uploadProfileImage(name:String) {
             guard let uid = userSession?.uid else { return }
-            ImageUploader.uploadImage(image: image) { profileImageUrl in
+            //ImageUploader.uploadImage(image: image) { profileImageUrl in
                 Firestore.firestore().collection("users")
                     .document(uid)
-                    .updateData(["profileImageUrl": profileImageUrl]) { _ in
-                        self.fetchUser()
+                    .updateData([
+                                 "name": name
+                                ]) { _ in
+                        //self.fetchUser()
                         print("User Session")
                     }
-            }
+            //}
         }
     func fetchUser() {
             guard let uid = self.userSession?.uid else { return }

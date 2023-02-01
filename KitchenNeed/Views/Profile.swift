@@ -22,36 +22,13 @@ struct Profile: View {
         NavigationView{
             VStack{
                 if let user = viewModel2.currentUser {
-                   /* KFImage(URL(string: user.profileImageUrl))
+                    KFImage(URL(string: user.profileImageUrl))
                         .resizable()
                         .scaledToFill()
                         .clipShape(Circle())
                         .frame(width: 100, height: 100)
                         .clipShape(RoundedRectangle(cornerRadius: 25, style: .continuous))
-                        .padding(.top, 44)*/
-                     Button {
-                         showingImagePicker.toggle()
-                                 } label: {
-                         if let profileImage = profileImage {
-                                             profileImage
-                                               .resizable()
-                                               .scaledToFill()
-                                               .frame(width: 100, height: 100)
-                                               .clipShape(RoundedRectangle(cornerRadius: 25, style: .continuous))
-                                                           .padding(.top, 44)
-                                                     } else {
-                                                         KFImage(URL(string: user.profileImageUrl))
-                                                             .resizable()
-                                                             .scaledToFill()
-                                                             .frame(width: 100, height: 100 )
-                                                             .clipShape(RoundedRectangle(cornerRadius: 25, style: .continuous))
-                                                                         .padding(.top, 44)
-                                                             
-                                                     }
-                                 }
-                                 .sheet(isPresented: $showingImagePicker , onDismiss: loadImage) {
-                                                 ImagePicker(selectedImage: $selectedImage)
-                                             }
+                        .padding(.top, 44)
                     Text(user.name)
                         .foregroundColor(Color.cadcoler)
                         .font(.title)
@@ -93,10 +70,7 @@ struct Profile: View {
         }
         .accentColor(Color(.white))
     }
-    func loadImage() {
-            guard let selectedImage = selectedImage else { return }
-            profileImage = Image(uiImage: selectedImage)
-        }
+    
 }
 
 

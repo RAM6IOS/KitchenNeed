@@ -14,7 +14,7 @@ struct User: Identifiable, Decodable {
     @DocumentID var id: String?
    // let username: String
     var name: String
-    let profileImageUrl: String
+    var profileImageUrl: String
     var email: String
     
     //var isCurrantUser : Bool { return Auth.auth().currentUser?.uid == id }

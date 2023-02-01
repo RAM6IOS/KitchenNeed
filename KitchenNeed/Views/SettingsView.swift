@@ -19,7 +19,14 @@ struct SettingsView: View {
                     } label: {
                         Text("about")
                     }
-                    
+                    NavigationLink{
+                        if let user = viewModel.currentUser {
+                           UpdateIProfile(user: user)
+                        }
+                    }label: {
+                        Image(systemName: "person")
+                        Text("Change Profile")
+                    }
                     NavigationLink{
                         if let user = viewModel.currentUser {
                             UpdateEmail(user: user)
@@ -78,7 +85,11 @@ struct SettingsView: View {
             }
             .toolbar {
                 ToolbarItem( placement: .navigationBarLeading) {
-                    Button(action: {presentationMode.wrappedValue.dismiss()}) {
+                    Button(action: {
+                        viewModel.fetchUser()
+                        presentationMode.wrappedValue.dismiss()
+                        
+                    }) {
                         Text("Close")
                             .font(.system(size: 20))
                             .foregroundColor(.AccentColor)

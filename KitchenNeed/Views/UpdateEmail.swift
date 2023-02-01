@@ -9,6 +9,7 @@ import SwiftUI
 
 struct UpdateEmail: View {
     @ObservedObject var viewModel :UpdateEmailViewModel2
+    @EnvironmentObject var viewModel2: AuthViewModel
     @State var email = ""
     @State var password = ""
     init(user: User){
@@ -44,7 +45,7 @@ struct UpdateEmail: View {
             Text("type a new one above")
             Button{
                 viewModel.updateEmail(password: password, newEmail: viewModel.user.email)
-                
+                viewModel2.fetchUser()
             } label: {
                 Text("Change Email")
                     .bold()
