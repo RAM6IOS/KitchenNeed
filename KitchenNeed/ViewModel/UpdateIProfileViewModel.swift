@@ -45,7 +45,6 @@ class  UpdateIProfileViewModel: ObservableObject {
                         }
         
         ImageUploader.uploadImage(image: image) { profileImageUrl in
-            // guard let userId = self.recipe.id else { return }
              Firestore.firestore().collection("users").document(userId)
                  .updateData(["profileImageUrl":profileImageUrl
                              ]) { _ in

@@ -40,19 +40,27 @@ struct UpdateIProfile: View {
                                             }
                         }
                         .sheet(isPresented: $showingImagePicker , onDismiss: loadImage) {
-                                        ImagePicker(selectedImage: $selectedImage)
-                                    }
-            HStack{
-                Image(systemName: "person")
-                TextField("Name", text: $viewModel.user.name)
+                            ImagePicker(selectedImage: $selectedImage)
+                        }
+                        .padding(.bottom ,10)
+                                HStack{
+                                    Image(systemName: "person")
+                                    TextField("Name", text: $viewModel.user.name)
+                                }
+                                .padding()
+                                .background(Color.white)
+                                .overlay(
+                                    RoundedRectangle(cornerRadius: 5)
+                                        .stroke(Color.black, lineWidth: 1)
+                                )
+                                .padding(.horizontal)
+                            
+            VStack(alignment: .leading){
+                Text("Need to change your Image and Name ?")
+                    .bold()
+                    .font(.title2)
+                Text("type a new one above")
             }
-            .padding()
-            .background(Color.white)
-            .overlay(
-                RoundedRectangle(cornerRadius: 5)
-                    .stroke(Color.black, lineWidth: 1)
-            )
-            .padding(.horizontal)
             
             Button{
                 viewModel.updateIProfil( name: viewModel.user.name, image: (selectedImage ??  UIImage(named: "default-avatar"))!)
@@ -61,11 +69,12 @@ struct UpdateIProfile: View {
                 Text("Save")
                     .bold()
                     .font(.title3)
-                    .frame(width: 350, height: 40)
+                    .frame(width: 350, height: 50)
                     .foregroundColor(Color.backcoler)
             }
             .background(Color.AccentColor)
             .cornerRadius(10)
+            .padding()
             Spacer()
         }
         .navigationTitle("EditProfile")

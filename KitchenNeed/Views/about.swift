@@ -10,6 +10,12 @@ import SwiftUI
 struct about: View {
     var body: some View {
         VStack{
+            Image("1024")
+                .resizable()
+                .scaledToFill()
+                .frame(width: 100, height: 100)
+                .clipShape(RoundedRectangle(cornerRadius: 25, style: .continuous))
+                .padding(.top, 44)
             Text("About")
                 .fontWeight(Font.Weight.heavy)
                 .font(.system(size: 40))
@@ -27,8 +33,3 @@ struct about: View {
     }
 }
 
-struct about_Previews: PreviewProvider {
-    static var previews: some View {
-        about()
-    }
-}
