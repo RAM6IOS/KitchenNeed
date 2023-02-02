@@ -10,7 +10,17 @@ class  EditProductiVewModel: ObservableObject {
     init(recipe: Recipet) {
         self.recipe = recipe
     }
-    func EditProducti(image: UIImage){
+    func EditImage(image: UIImage){
+        ImageUploader.uploadImage2(image: image) { recipetImageUrl in
+            guard let recipeId = self.recipe.id else { return }
+            Firestore.firestore().collection("recipe").document( recipeId )
+                .updateData(["recipetImageUrl":recipetImageUrl
+                            ]) { _ in
+              print("image")
+                }
+        }
+    }
+    func EditProducti(){
             guard let recipeId = self.recipe.id else { return }
             Firestore.firestore().collection("recipe").document( recipeId )
                 .updateData(["name": self.recipe.name,
@@ -24,14 +34,6 @@ class  EditProductiVewModel: ObservableObject {
                              "minutes":self.recipe.minutes,
                              "degree":self.recipe.degree
                             ]) { _ in
-                    ImageUploader.uploadImage2(image: image) { recipetImageUrl in
-                        guard let recipeId = self.recipe.id else { return }
-                        Firestore.firestore().collection("recipe").document( recipeId )
-                            .updateData(["recipetImageUrl":recipetImageUrl
-                                        ]) { _ in
-                          print("Likes user\( recipetImageUrl)")
-                            }
-                    }
                 }
     }
 }

@@ -128,8 +128,10 @@ struct EditProduct: View {
                     }
                     
                     Button{
-                        viewModel2.EditProducti(image: (selectedImage ??  UIImage(named: "default-avatar"))!)
-                        
+                        viewModel2.EditProducti()
+                        if (selectedImage != nil) {
+                            viewModel2.EditImage(image: (selectedImage ??  UIImage(named:"Recipe-avatar" ))!)
+                        }
                     } label: {
                         Text("Save")
                             .bold()
