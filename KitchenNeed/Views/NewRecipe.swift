@@ -145,7 +145,7 @@ struct NewRecipe: View {
                         }
                         .background(Color.AccentColor)
                         Button{
-                            viewModel.uploadRecipe(withCaption: name, definition: definition, ingredients: ingredients, degree: degree, time: time, preparation: preparation,image: (selectedImage ??  UIImage(named: "default-avatar"))!, times:times,temperatures:temperatures,difficulty:difficulty,categorie:categorie,hours:hours, minutes:minutes)
+                            viewModel.uploadRecipe(withCaption: name, definition: definition, ingredients: ingredients, degree: degree, time: time, preparation: preparation,image: (selectedImage ??  UIImage(named: "Recipe-avatar"))!, times:times,temperatures:temperatures,difficulty:difficulty,categorie:categorie,hours:hours, minutes:minutes)
                             
                         } label: {
                             Text("Save")

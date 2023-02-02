@@ -1,10 +1,7 @@
 //
 //  RecipeSetails.swift
 //  KitchenNeed
-//
 //  Created by Bouchedoub Ramzi on 27/12/2022.
-//
-
 import SwiftUI
 import Kingfisher
 import Firebase
@@ -27,7 +24,6 @@ struct RecipeDetailsView: View {
                                 .fontWeight(Font.Weight.heavy)
                                 .font(.system(size: 40))
                                 .foregroundColor(Color.cadcoler)
-
                     VStack{
                         if let user = recipe.user {
                             HStack{
@@ -53,7 +49,6 @@ struct RecipeDetailsView: View {
                                 .font(Font.system(size: 15))
                                 .fontWeight(Font.Weight.heavy)
                             HStack {
-                                
                                 Text("\(recipe.difficulty)")
                                     .font(Font.custom("HelveticaNeue-Medium", size: 13))
                                     .padding([.leading, .trailing], 10)
@@ -62,29 +57,13 @@ struct RecipeDetailsView: View {
                             }
                             .background(Color.AccentColor)
                             .cornerRadius(7)
-                            Text("Origin:")
-                                .font(Font.system(size: 15))
-                                .fontWeight(Font.Weight.heavy)
-                            HStack {
-                                
-                                Text("Algerie")
-                                    .font(Font.custom("HelveticaNeue-Medium", size: 13))
-                                    .padding([.leading, .trailing], 10)
-                                    .padding([.top, .bottom], 5)
-                                    .foregroundColor(Color.cadcoler)
-                            }
-                            .background(Color.AccentColor)
-                            .cornerRadius(7)
-                            
                         }
                     }
                     .padding(.vertical , 10)
-                    
                     ZStack{
                         Capsule()
                             .frame(height: 50)
                             .foregroundColor(Color.AccentColor)
-                        
                         HStack{
                             HStack(spacing: 5){
                                 Image(systemName: "square.stack.3d.up")
@@ -97,10 +76,8 @@ struct RecipeDetailsView: View {
                                     Text("\(recipe.categorie)")
                                         .fontWeight(Font.Weight.heavy)
                                         .foregroundColor(Color.cadcoler)
-                                    
                                 }
                             }
-                            
                             Spacer()
                             HStack(spacing: 5){
                                 Image(systemName: "timer")
@@ -114,9 +91,6 @@ struct RecipeDetailsView: View {
                                         .fontWeight(Font.Weight.heavy)
                                         .foregroundColor(Color.cadcoler)
                                 }
-                                
-                                
-                                
                             }
                             Spacer()
                             HStack(spacing: 5){
@@ -130,65 +104,56 @@ struct RecipeDetailsView: View {
                                     Text("\(recipe.degree)\(recipe.temperatures)")
                                         .fontWeight(Font.Weight.heavy)
                                         .foregroundColor(Color.cadcoler)
-                                    
                                 }
                             }
-                            
-                            
                         }
-                        .padding(.horizontal , 20)
+                        .padding(.horizontal , 10)
                         .padding(.vertical , 10)
                     }
+                    if recipe.definition.isEmpty {
                         
-                    VStack(alignment: .leading , spacing: 10){
-                        Text("ingredients")
-                            .fontWeight(Font.Weight.heavy)
-                            .font(.title2)
-                            
-                            .foregroundColor(Color.cadcoler)
-                        
-                        Text("""
-                        It's important to note that becoming the richest person in the world is an extremely rare and difficult feat, and itmay not be the best or most fulfilling goal for everyone. It's important to set goals that align with your values and interests, and to focus on building a life that brings you happiness and fulfillment.
-                        """)
-                        .foregroundColor(Color.cadcoler)
-                        
+                    }else{
+                        VStack(alignment: .leading ,spacing: 10){
+                            Text("Definition")
+                                .fontWeight(Font.Weight.heavy)
+                                .font(.title2)
+                                .foregroundColor(Color.cadcoler)
+                            Text(recipe.definition)
+                                .foregroundColor(Color.cadcoler)
+                        }
+                         .padding(.vertical ,15)
                     }
-                    
                     VStack(alignment: .leading ,spacing: 10){
-                        Text("ingredients")
+                        Text("Ingredients")
                             .fontWeight(Font.Weight.heavy)
-                            .font(.title2)
+                            .font(.title3)
                             .foregroundColor(Color.cadcoler)
-                        
-                        Text("""
-                        It's important to note that becoming the richest person in the world is an extremely rare and difficult feat, and itmay not be the best or most fulfilling goal for everyone. It's important to set goals that align with your values and interests, and to focus on building a life that brings you happiness and fulfillment.
-                        """)
+                        Text(recipe.ingredients)
                         .foregroundColor(Color.cadcoler)
-                        
                     }
-
+                    .padding(.vertical ,15)
+                    VStack(alignment: .leading , spacing: 10){
+                        Text("Preparation")
+                            .fontWeight(Font.Weight.heavy)
+                            .font(.title3)
+                            .foregroundColor(Color.cadcoler)
+                        Text(recipe.preparation)
+                        .foregroundColor(Color.cadcoler)
+                    }
+                    .padding(.vertical ,15)
+                    
                     }
                 }
-                
                 .padding(
                     .horizontal)
                 .background(Color.white
                     .clipShape(SpecificCorners())
                     .padding(.top , -30)
                 )
-                
-                
             }
             .ignoresSafeArea(edges: .top)
-            
             .background(Color.white)
             Spacer()
-
         }
-            
-        
-        
     }
-    
-    
 }
