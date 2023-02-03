@@ -61,9 +61,11 @@ struct UpdateIProfile: View {
                     .font(.title2)
                 Text("type a new one above")
             }
-            
             Button{
-                viewModel.updateIProfil( name: viewModel.user.name, image: (selectedImage ??  UIImage(named: "default-avatar"))!)
+                viewModel.updateIProfil( name: viewModel.user.name)
+                if (selectedImage != nil){
+                    viewModel.updateIProfilImage( image: (selectedImage ??  UIImage(named: "default-avatar"))!)
+                }
                 viewModel2.fetchUser()
             } label: {
                 Text("Save")
@@ -79,7 +81,6 @@ struct UpdateIProfile: View {
         }
         .navigationTitle("EditProfile")
     }
-    
     func loadImage() {
             guard let selectedImage = selectedImage else { return }
             profileImage = Image(uiImage: selectedImage)

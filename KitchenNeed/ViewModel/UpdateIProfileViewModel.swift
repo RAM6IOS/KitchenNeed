@@ -16,7 +16,19 @@ class  UpdateIProfileViewModel: ObservableObject {
     init(user: User) {
         self.user = user
     }
-    func updateIProfil(name: String ,image:UIImage){
+    
+    func updateIProfilImage(image:UIImage){
+        guard let userId = self.user.id else { return }
+        ImageUploader.uploadImage(image: image) { profileImageUrl in
+             Firestore.firestore().collection("users").document(userId)
+                 .updateData(["profileImageUrl":profileImageUrl
+                             ]) { _ in
+               print("image update")
+                 }
+         }
+        
+    }
+    func updateIProfil(name: String ){
                     guard let userId = self.user.id else { return }
                     Firestore.firestore().collection("users").document( userId )
             .updateData(["name": self.user.name]) { _ in
@@ -43,14 +55,7 @@ class  UpdateIProfileViewModel: ObservableObject {
                             }*/
 
                         }
-        
-        ImageUploader.uploadImage(image: image) { profileImageUrl in
-             Firestore.firestore().collection("users").document(userId)
-                 .updateData(["profileImageUrl":profileImageUrl
-                             ]) { _ in
-               print("image update")
-                 }
-         }
+
         }
         }
         
