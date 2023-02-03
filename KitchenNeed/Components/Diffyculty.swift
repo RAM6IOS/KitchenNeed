@@ -8,13 +8,32 @@
 import SwiftUI
 
 struct Diffyculty: View {
+    var recipeitem:String
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack{
+            HStack(spacing: 5){
+                Image("chef")
+                    .resizable()
+                    .scaledToFill()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: 20, height: 20)
+                    .font(.system(size: 20))
+                Text("Diffyculty:")
+                    .font(Font.system(size: 15))
+                    .fontWeight(Font.Weight.heavy)
+                HStack {
+                    Text(recipeitem)
+                        .font(Font.custom("HelveticaNeue-Medium", size: 13))
+                        .padding([.leading, .trailing], 10)
+                        .padding([.top, .bottom], 5)
+                        .foregroundColor(Color.cadcoler)
+                }
+                .background(Color.AccentColor)
+                .cornerRadius(7)
+            }
+        }
+        .padding(.vertical , 10)
     }
 }
 
-struct Diffyculty_Previews: PreviewProvider {
-    static var previews: some View {
-        Diffyculty()
-    }
-}
+

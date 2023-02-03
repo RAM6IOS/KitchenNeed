@@ -8,13 +8,23 @@
 import SwiftUI
 
 struct ExtractedView: View {
+    var nameicons:String
+    var recipeitem:String
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        HStack(spacing: 5){
+            Image(systemName: nameicons)
+                .frame(width: 30, height: 30)
+                .font(.system(size: 20))
+                .background(Color.fontcoler)
+                .foregroundColor(.white)
+                .clipShape(Circle())
+            VStack{
+                Text("\(recipeitem)")
+                    .fontWeight(Font.Weight.heavy)
+                    .foregroundColor(Color.cadcoler)
+            }
+        }
     }
 }
 
-struct ExtractedView_Previews: PreviewProvider {
-    static var previews: some View {
-        ExtractedView()
-    }
-}
+

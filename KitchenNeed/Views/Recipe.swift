@@ -19,26 +19,6 @@ struct Recipe: View {
                         } label: {
                             VStack(alignment: .leading, spacing: 0) {
                                 RecipeCard(recipet: recipe)
-                                /*if let user = recipe.user {
-                                    HStack{
-                                        Image( "cook")
-                                            .resizable()
-                                            .scaledToFill()
-                                            .aspectRatio(contentMode: .fill)
-                                            .frame(width: 30, height: 30)
-                                            .font(.system(size: 20))
-                                            KFImage(URL(string: user.profileImageUrl ))
-                                                .resizable()
-                                                .scaledToFill()
-                                                .clipShape(Circle())
-                                                .frame(width: 30, height: 30)
-                                        Text(user.name)
-                                            .foregroundColor(Color.cadcoler)
-                                            .fontWeight(Font.Weight.heavy)
-                                    }
-                                    .padding(.horizontal,11)
-                                    .padding(.bottom ,8)
-                                }*/
                             }
                             .background(Color.white)
                             .cornerRadius(15)

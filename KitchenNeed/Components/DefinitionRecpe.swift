@@ -8,13 +8,19 @@
 import SwiftUI
 
 struct DefinitionRecpe: View {
+    var recipeitem:String
+    var titel:String
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack(alignment: .leading ,spacing: 10){
+            Text(titel)
+                .fontWeight(Font.Weight.heavy)
+                .font(.title2)
+                .foregroundColor(Color.cadcoler)
+            Text(recipeitem)
+                .foregroundColor(Color.cadcoler)
+        }
+         .padding(.vertical ,15)
     }
 }
 
-struct DefinitionRecpe_Previews: PreviewProvider {
-    static var previews: some View {
-        DefinitionRecpe()
-    }
-}
+
