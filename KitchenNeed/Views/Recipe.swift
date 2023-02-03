@@ -11,38 +11,15 @@ struct Recipe: View {
             VStack{
                 Searchbar(viewModel: viewModel)
                 .padding(.horizontal, 10)
-                ScrollView(.horizontal, showsIndicators: false) {
-                            HStack() {
-                                ForEach(viewModel.categories, id: \.self) { item in
-                                Text(item)
-                                    .padding(7)
-                                    .padding(.horizontal)
-                                    .background(
-                                            Rectangle()
-                                            .cornerRadius(8)
-                                            .foregroundColor(Color.AccentColor)
-                                         .opacity(1/4)
-                                                )
-                                    .onTapGesture {
-                                        if item == "all" {
-                                            viewModel.searchText2 = ""
-                                        } else {
-                                            viewModel.searchText2 = item
-                                        }
-                                        print("tttt\( viewModel.searchText2)")
-                                }
-                            }
-                            }
-                        }
+                Categoriesbar(viewModel: viewModel)
                 ScrollView {
                     ForEach(viewModel.searchableRecipe){ recipe in
                         NavigationLink {
                             RecipeDetailsView(recipe: recipe)
-                            //RecipeDetailsProfile(recipe: recipe)
                         } label: {
                             VStack(alignment: .leading, spacing: 0) {
                                 RecipeCard(recipet: recipe)
-                                if let user = recipe.user {
+                                /*if let user = recipe.user {
                                     HStack{
                                         Image( "cook")
                                             .resizable()
@@ -58,12 +35,10 @@ struct Recipe: View {
                                         Text(user.name)
                                             .foregroundColor(Color.cadcoler)
                                             .fontWeight(Font.Weight.heavy)
-                                        
                                     }
                                     .padding(.horizontal,11)
                                     .padding(.bottom ,8)
-                                }
-                               
+                                }*/
                             }
                             .background(Color.white)
                             .cornerRadius(15)

@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct Searchbar: View {
-   // @State var searchText: String
     @ObservedObject var viewModel : RecipeViewModel
     var body: some View {
         HStack{
