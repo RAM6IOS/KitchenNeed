@@ -8,10 +8,11 @@
 import SwiftUI
 
 struct Searchbar: View {
-    @State var searchText: String
+   // @State var searchText: String
+    @ObservedObject var viewModel : RecipeViewModel
     var body: some View {
         HStack{
-            TextField("Search ...", text: $searchText)
+            TextField("Search ...", text: $viewModel.searchText)
                 .padding(7)
                 .padding(.horizontal, 25)
                 .background(Color(.systemGray6))

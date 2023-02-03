@@ -45,7 +45,7 @@
             continueAfterRunningActions = "No"
             filePath = "KitchenNeed/Views/Recipe.swift"
             startingColumnNumber = "33"
-            endingColumnNumber = "37"
+            endingColumnNumber = "33"
             startingLineNumber = "17"
             endingLineNumber = "17"
             landmarkName = "body"

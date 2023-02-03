@@ -5,12 +5,12 @@
 import SwiftUI
 import Kingfisher
 struct Recipe: View {
-    @ObservedObject var viewModel = RecipeViewModel()
-    
+    @StateObject var viewModel = RecipeViewModel()
     var body: some View {
         NavigationView{
             VStack{
-                Searchbar(searchText: viewModel.searchText)
+                Searchbar(viewModel: viewModel)
+                .padding(.horizontal, 10)
                 ScrollView(.horizontal, showsIndicators: false) {
                             HStack() {
                                 ForEach(viewModel.categories, id: \.self) { item in
