@@ -13,11 +13,6 @@ struct EditProduct: View {
     @Environment(\.presentationMode) var presentationMode
     @State private var selectedImage: UIImage?
     @State private var profileImage: Image?
-    @State private var showingImagePicker = false
-    var difficultyLevel = ["Easy" , "Moderate" ,"Challenging" ,"Professional"]
-    var categories: [String] = ["Breakfast", "Lunch", "Dinner", "Dessert" , "Appetisers" , "Soups" ,"Salads" ,"Breads" ,"Baked" , "Sweet" ,"Pizza" ,"Poultry" ,"Meat" ,"Seafood","Rice" ,"Pasta" ,"Sides" ,"Sandwiches" ,"drinks" ,"Ice Cream"]
-    @State private var temperatures = ""
-    var temperaturesSymbol = ["F" , "C"]
     init( recipet: Recipet){
         self.viewModel2 = EditProductiVewModel(recipe: recipet)
     }
@@ -26,7 +21,7 @@ struct EditProduct: View {
             VStack{
                 Form{
                     Button {
-                        showingImagePicker.toggle()
+                        viewModel2.showingImagePicker.toggle()
                     } label: {
                         if let profileImage = profileImage {
                             profileImage
@@ -45,10 +40,8 @@ struct EditProduct: View {
                                 .cornerRadius(10)
                                 .padding(.horizontal,10)
                         }
-                        
-                        
                     }
-                    .sheet(isPresented: $showingImagePicker , onDismiss: loadImage) {
+                    .sheet(isPresented: $viewModel2.showingImagePicker , onDismiss: loadImage) {
                         ImagePicker(selectedImage: $selectedImage)
                     }
                     Section("Recipe Name"){
@@ -56,9 +49,8 @@ struct EditProduct: View {
                     }
                     Section("Difficulty Level"){
                         Picker(selection: $viewModel2.recipe.definition, label: Text("")) {
-                            ForEach(difficultyLevel, id: \.self) { typ in
+                            ForEach(viewModel2.difficultyLevel, id: \.self) { typ in
                                 Text(typ).tag(typ)
-                                
                             }
                                 }
                                .frame(width: 350)
@@ -69,12 +61,10 @@ struct EditProduct: View {
                     }
                     Section("Recipe Category"){
                         Picker(selection: $viewModel2.recipe.categorie, label: Text("Categorie")) {
-                            ForEach(categories, id: \.self) { typ in
+                            ForEach(viewModel2.categories, id: \.self) { typ in
                                 Text(typ).tag(typ)
-                                
                             }
                                 }
-                                
                     }
                     Section("Cooking Time"){
                         HStack {
@@ -95,8 +85,8 @@ struct EditProduct: View {
                     Section("Cooking Temperature"){
                         HStack{
                             TextField("temperature" ,text:$viewModel2.recipe.degree)
-                            Picker("", selection: $temperatures) {
-                                ForEach(temperaturesSymbol, id: \.self) { typ in
+                            Picker("", selection: $viewModel2.temperatures) {
+                                ForEach(viewModel2.temperaturesSymbol, id: \.self) { typ in
                                     HStack( spacing: 10){
                                         Text(typ)
                                         
@@ -105,7 +95,6 @@ struct EditProduct: View {
                             }
                         }
                     }
-
                     Section("Definition"){
                         TextEditor(text: $viewModel2.recipe.definition)
                             .lineSpacing(20)
@@ -126,7 +115,6 @@ struct EditProduct: View {
                             .disableAutocorrection(true)
                             .padding()
                     }
-                    
                     Button{
                         viewModel2.EditProducti()
                         if (selectedImage != nil) {
@@ -142,7 +130,6 @@ struct EditProduct: View {
                     .background(Color.AccentColor)
                     .cornerRadius(10)
                 }
-                
             }
             .navigationTitle("Edit Product")
             .toolbar {
