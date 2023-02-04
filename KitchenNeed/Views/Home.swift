@@ -5,7 +5,7 @@ import SwiftUI
 import PartialSheet
 import Kingfisher
 struct Home: View {
-    @State private var isSheetPresented = false
+    @State  var isSheetPresented = false
     @EnvironmentObject var viewModel: AuthViewModel
     var body: some View {
         if let user = viewModel.currentUser {
