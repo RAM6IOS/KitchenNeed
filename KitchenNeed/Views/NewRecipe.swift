@@ -1,44 +1,21 @@
 //
 //  NewRecipe.swift
 //  KitchenNeed
-//
 //  Created by Bouchedoub Ramzi on 23/12/2022.
-//
-
 import SwiftUI
 import Firebase
 import FirebaseFirestore
-
-
 struct NewRecipe: View {
     @State private var selectedImage: UIImage?
     @State private var profileImage: Image?
-    @State private var showingImagePicker = false
-    @State private var name = ""
-    @State private var definition = ""
-    @State private var ingredients = ""
-    @State private var preparation  = ""
-    @State private var time = ""
-    @State private var degree = ""
-    @State private var times = ""
-    var timesSymbol = ["h" ,"m"]
-    @State private var temperatures = ""
-    var temperaturesSymbol = ["F" , "C"]
-    @State var difficulty = "Easy"
-    var difficultyLevel = ["Easy" , "Moderate" ,"Challenging" ,"Professional"]
-    @State private var categorie = ""
-    let categories: [String] = ["Breakfast", "Lunch", "Dinner", "Dessert" , "Appetisers" , "Soups" ,"Salads" ,"Breads" ,"Baked" , "Sweet" ,"Pizza" ,"Poultry" ,"Meat" ,"Seafood","Rice" ,"Pasta" ,"Sides" ,"Sandwiches" ,"drinks" ,"Ice Cream"]
-    @State var hours: Int = 0
-    @State var minutes: Int = 0
     @ObservedObject var viewModel = NewRecipeViewModel()
     var body: some View {
         NavigationView{
-     
                 VStack() {
                     if #available(iOS 16.0, *) {
                         Form{
                             Button {
-                                showingImagePicker.toggle()
+                                viewModel.showingImagePicker.toggle()
                             } label: {
                                 if let profileImage = profileImage {
                                     profileImage
@@ -59,19 +36,17 @@ struct NewRecipe: View {
                                     .padding(.horizontal,10)
                                 }
                             }
-                            .sheet(isPresented: $showingImagePicker , onDismiss: loadImage) {
+                            .sheet(isPresented: $viewModel.showingImagePicker , onDismiss: loadImage) {
                                 ImagePicker(selectedImage: $selectedImage)
                             }
                         
                             Section("Recipe Name"){
-                                
-                                TextField("Name" ,text:$name)
+                                TextField("Name" ,text:$viewModel.name)
                             }
                             Section("Difficulty Level"){
-                                Picker(selection: $difficulty, label: Text("")) {
-                                    ForEach(difficultyLevel, id: \.self) { typ in
+                                Picker(selection: $viewModel.difficulty, label: Text("")) {
+                                    ForEach(viewModel.difficultyLevel, id: \.self) { typ in
                                         Text(typ).tag(typ)
-                                        
                                     }
                                         }
                                        .frame(width: 350)
@@ -80,23 +55,21 @@ struct NewRecipe: View {
                                         .pickerStyle(SegmentedPickerStyle())
                             }
                             Section("Recipe Category"){
-                                Picker(selection: $categorie, label: Text("Categorie")) {
-                                    ForEach(categories, id: \.self) { typ in
+                                Picker(selection: $viewModel.categorie, label: Text("Categorie")) {
+                                    ForEach(viewModel.categories, id: \.self) { typ in
                                         Text(typ).tag(typ)
-                                        
                                     }
                                         }
-                                        
                             }
                             Section("Cooking Time"){
                                 HStack {
-                                    Picker("", selection: $hours){
+                                    Picker("", selection: $viewModel.hours){
                                         ForEach(0..<24, id: \.self) { i in
                                             Text("\(i) hours").tag(i)
                                         }
                                     }.pickerStyle(WheelPickerStyle())
                                         .frame(width: 140)
-                                    Picker("", selection: $minutes){
+                                    Picker("", selection: $viewModel.minutes){
                                         ForEach(0..<60, id: \.self) { i in
                                             Text("\(i) min").tag(i)
                                         }
@@ -106,47 +79,23 @@ struct NewRecipe: View {
                             }
                             Section("Cooking Temperature"){
                                 HStack{
-                                    TextField("temperature" ,text:$degree)
-                                    Picker("", selection: $temperatures) {
-                                        ForEach(temperaturesSymbol, id: \.self) { typ in
+                                    TextField("temperature" ,text:$viewModel.degree)
+                                    Picker("", selection: $viewModel.temperatures) {
+                                        ForEach(viewModel.temperaturesSymbol, id: \.self) { typ in
                                             HStack( spacing: 10){
                                                 Text(typ)
-                                                
                                             }
                                         }
                                     }
                                 }
                             }
-                            
-                                 
-                            Section("Definition"){
-                                TextEditor(text: $definition)
-                                    .lineSpacing(20)
-                                    .autocapitalization(.words)
-                                    .frame(height: 100)
-                                    .disableAutocorrection(true)
-                                    .padding()
-                            }
-                            Section("Ingredients"){
-                                TextEditor(text: $ingredients)
-                                    .frame(minHeight: 100)
-                            }
-                            Section("Preparation"){
-                                TextEditor(text: $preparation)
-                                    .lineSpacing(20)
-                                    .autocapitalization(.words)
-                                    .frame(height: 100)
-                                    .disableAutocorrection(true)
-                                    .padding()
-                            }
-                            
-                            
-                            
+                            TextEditorRecipe(TextEdi: $viewModel.definition, section: "Definition")
+                            TextEditorRecipe(TextEdi: $viewModel.ingredients, section: "Ingredients" )
+                            TextEditorRecipe(TextEdi: $viewModel.preparation ,section: "Preparation")
                         }
                         .background(Color.AccentColor)
                         Button{
-                            viewModel.uploadRecipe(withCaption: name, definition: definition, ingredients: ingredients, degree: degree, time: time, preparation: preparation,image: (selectedImage ??  UIImage(named: "Recipe-avatar"))!, times:times,temperatures:temperatures,difficulty:difficulty,categorie:categorie,hours:hours, minutes:minutes)
-                            
+                            viewModel.uploadRecipe(withCaption: viewModel.name, definition: viewModel.definition, ingredients: viewModel.ingredients, degree: viewModel.degree, time: viewModel.time, preparation: viewModel.preparation,image: (selectedImage ??  UIImage(named: "Recipe-avatar"))!, times:viewModel.times,temperatures:viewModel.temperatures,difficulty:viewModel.difficulty,categorie:viewModel.categorie,hours:viewModel.hours, minutes:viewModel.minutes)
                         } label: {
                             Text("Save")
                                 .bold()
@@ -156,18 +105,9 @@ struct NewRecipe: View {
                         }
                         .background(Color.AccentColor)
                         .cornerRadius(10)
-                        
-                    } else {
-                        // Fallback on earlier versions
-                    }
-                   
-                    
+                    } else {}
                 }
-                
-          
            .navigationBarTitle("New Recipe")
-               
-                
             }
         }
     func loadImage() {
@@ -175,10 +115,3 @@ struct NewRecipe: View {
             profileImage = Image(uiImage: selectedImage)
         }
     }
-
-
-struct NewRecipe_Previews: PreviewProvider {
-    static var previews: some View {
-        NewRecipe()
-    }
-}
