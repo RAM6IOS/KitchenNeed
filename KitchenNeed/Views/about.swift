@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import MessageUI
 
 struct about: View {
     var body: some View {
@@ -31,5 +32,9 @@ struct about: View {
             Spacer()
         }
     }
+    
+    
 }
+
+
 

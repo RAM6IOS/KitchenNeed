@@ -34,29 +34,6 @@ struct SignupView: View {
                     .fontWeight(.heavy)
                     .padding(.bottom , 10)
                     .padding(.top , 10)
-               /* Button {
-                    viewModel.showingImagePicker.toggle()
-                            } label: {
-                    if let profileImage = profileImage {
-                                        profileImage
-                                          .resizable()
-                                          .scaledToFill()
-                                          .frame(width: 100, height: 100)
-                                          .clipShape(RoundedRectangle(cornerRadius: 25, style: .continuous))
-                                                      .padding(.top, 44)
-                                                } else {
-                                                    Image("default-avatar")
-                                                        .resizable()
-                                                        .scaledToFill()
-                                                        .frame(width: 100, height: 100 )
-                                                        .clipShape(RoundedRectangle(cornerRadius: 25, style: .continuous))
-                                                                    .padding(.top, 44)
-                                                        
-                                                }
-                            }
-                            .sheet(isPresented: $viewModel.showingImagePicker , onDismiss: loadImage) {
-                                            ImagePicker(selectedImage: $selectedImage)
-                                        }*/
                 VStack{
                     VStack{
                         TextFieldview(name: $email, systemname: "envelope", nameField: "Email")

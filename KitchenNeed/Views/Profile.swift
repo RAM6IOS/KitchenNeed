@@ -15,6 +15,7 @@ struct Profile: View {
     @State private var selectedImage: UIImage?
      @State private var profileImage: Image?
     @State private var showingImagePicker = false
+    @State private var isMailViewShowing = false
     init(user:User){
         self.viewModel = fetchRecipeViewModel(user: user)
     }
@@ -33,6 +34,7 @@ struct Profile: View {
                         .foregroundColor(Color.cadcoler)
                         .font(.title)
                         .fontWeight(Font.Weight.heavy)
+                    
                     VStack(alignment: .leading){
                         Text("My Recipes")
                             .foregroundColor(Color.cadcoler)

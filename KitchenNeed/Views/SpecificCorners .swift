@@ -6,9 +6,7 @@
 //
 
 import SwiftUI
-
 struct SpecificCorners: Shape {
-   
     func path(in rect: CGRect)-> Path {
         let  path = UIBezierPath(roundedRect: rect, byRoundingCorners: [.topLeft ,.topRight] , cornerRadii: CGSize(width: 35, height: 35))
         
@@ -16,7 +14,6 @@ struct SpecificCorners: Shape {
     }
 
 }
-
 struct SpecificCorners_Previews: PreviewProvider {
     static var previews: some View {
         SpecificCorners()

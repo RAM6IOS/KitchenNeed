@@ -57,7 +57,6 @@ struct EditProduct: View {
                                 .background(Color.yellow)
                                 .cornerRadius(10)
                                 .pickerStyle(SegmentedPickerStyle())
-                       
                     }
                     Section("Recipe Category"){
                         Picker(selection: $viewModel2.recipe.categorie, label: Text("Categorie")) {

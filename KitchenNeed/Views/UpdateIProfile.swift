@@ -36,7 +36,6 @@ struct UpdateIProfile: View {
                                                     .frame(width: 100, height: 100 )
                                                     .clipShape(RoundedRectangle(cornerRadius: 25, style: .continuous))
                                                                 .padding(.top, 44)
-                                                    
                                             }
                         }
                         .sheet(isPresented: $showingImagePicker , onDismiss: loadImage) {

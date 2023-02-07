@@ -3,7 +3,7 @@
 //  KitchenNeed
 import SwiftUI
 struct ContentView: View {
-    @State var ShowOnboarding = false
+    @AppStorage("ShowOnboarding") var ShowOnboarding = true
     @State var ShowHome = true
     @EnvironmentObject var viewModel: AuthViewModel
     var body: some View {

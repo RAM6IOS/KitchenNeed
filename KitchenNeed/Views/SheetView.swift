@@ -78,9 +78,6 @@ struct SheetView: View {
                 
             }
     }
-
-
-
 struct SheetView_Previews: PreviewProvider {
     static var previews: some View {
         SheetView()

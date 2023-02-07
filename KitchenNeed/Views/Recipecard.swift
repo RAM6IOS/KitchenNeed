@@ -22,7 +22,6 @@ struct Recipecard: View {
                     .fontWeight(.medium)
                     .foregroundColor(Color.white)
                     .padding(12)
-                
             }
             .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
         }

@@ -29,7 +29,7 @@ struct UpdateEmail: View {
                 .padding(.horizontal, 30)
                 .padding(.top ,10)
             HStack(alignment: .bottom){
-                Image(systemName: "envelope")
+                Image(systemName: "lock")
                     .padding(.leading , 30)
                 
                 TextField("password", text:$password)

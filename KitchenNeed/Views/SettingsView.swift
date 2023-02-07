@@ -3,13 +3,16 @@
 //  KitchenNeed
 //
 //  Created by Bouchedoub Ramzi on 7/1/2023.
-//
 
 import SwiftUI
-
+import MessageUI
+import UIKit
 struct SettingsView: View {
     @Environment(\.presentationMode) var presentationMode
     @EnvironmentObject var viewModel: AuthViewModel
+    @State private var result: Result<MFMailComposeResult, Error>? = nil
+    @State private var isMailViewShowing = false
+    @State var name = ""
     var body: some View {
         NavigationView{
             VStack{
@@ -104,8 +107,5 @@ struct SettingsView: View {
     }
 
 
-struct SettingsView_Previews: PreviewProvider {
-    static var previews: some View {
-        SettingsView()
-    }
-}
+
+

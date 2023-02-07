@@ -16,6 +16,7 @@
 		2D276A5B29892BDE0062E7E1 /* UpdatePassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D276A5A29892BDE0062E7E1 /* UpdatePassword.swift */; };
 		2D276A5D2989579B0062E7E1 /* UpdatePasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D276A5C2989579A0062E7E1 /* UpdatePasswordViewModel.swift */; };
 		2D34FE032986FB9F001AD842 /* UpdateEmailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D34FE022986FB9F001AD842 /* UpdateEmailViewModel.swift */; };
+		2D3549E6299028FC00596B66 /* AddEmailSupport .swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3549E5299028FC00596B66 /* AddEmailSupport .swift */; };
 		2D3709012884ABFE0044EF45 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D3709002884ABFE0044EF45 /* Preview Assets.xcassets */; };
 		2D371F2928C26F6600FEA74C /* IntroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D371F2828C26F6600FEA74C /* IntroView.swift */; };
 		2D42354328C1285500600266 /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D42354228C1285500600266 /* SignupView.swift */; };
@@ -81,6 +82,7 @@
 		2D276A5A29892BDE0062E7E1 /* UpdatePassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdatePassword.swift; sourceTree = "<group>"; };
 		2D276A5C2989579A0062E7E1 /* UpdatePasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdatePasswordViewModel.swift; sourceTree = "<group>"; };
 		2D34FE022986FB9F001AD842 /* UpdateEmailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateEmailViewModel.swift; sourceTree = "<group>"; };
+		2D3549E5299028FC00596B66 /* AddEmailSupport .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddEmailSupport .swift"; sourceTree = "<group>"; };
 		2D3708F62884ABF90044EF45 /* KitchenNeed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KitchenNeed.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D3709002884ABFE0044EF45 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2D371F2828C26F6600FEA74C /* IntroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroView.swift; sourceTree = "<group>"; };
@@ -297,6 +299,7 @@
 				2DD586C829869974007AC457 /* UpdateEmail.swift */,
 				2D276A5A29892BDE0062E7E1 /* UpdatePassword.swift */,
 				2DB125B3298AD29400569D23 /* UpdateIProfile.swift */,
+				2D3549E5299028FC00596B66 /* AddEmailSupport .swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -389,6 +392,7 @@
 				2D61870A2969881400F7881F /* SettingsView.swift in Sources */,
 				63CD666F2886DA85003CDE86 /* ContentView.swift in Sources */,
 				2D4542E928B7863C0030DF73 /* Prospect.swift in Sources */,
+				2D3549E6299028FC00596B66 /* AddEmailSupport .swift in Sources */,
 				2D62BEF3298D1B2200C9ED5D /* Categoriesbar.swift in Sources */,
 				63CD666C2886DA85003CDE86 /* Profile.swift in Sources */,
 				63CD666E2886DA85003CDE86 /* SheetView.swift in Sources */,
