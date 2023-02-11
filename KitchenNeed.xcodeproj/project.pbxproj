@@ -43,6 +43,8 @@
 		2D773C52297172BA00A86E5C /* EditProductiVewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D773C51297172BA00A86E5C /* EditProductiVewModel.swift */; };
 		2D886FAB29706BA4004AB700 /* RecipeDetailsProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D886FAA29706BA4004AB700 /* RecipeDetailsProfile.swift */; };
 		2D88B5CC295621F6008F47A5 /* NewRecipeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D88B5CB295621F6008F47A5 /* NewRecipeViewModel.swift */; };
+		2D969DD92998051B0052995F /* contacting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D969DD82998051B0052995F /* contacting.swift */; };
+		2D969DDB299806160052995F /* MailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D969DDA299806160052995F /* MailView.swift */; };
 		2DA2287A294CA888001F88C0 /* UploadProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA22879294CA888001F88C0 /* UploadProductViewModel.swift */; };
 		2DA2287C294CE664001F88C0 /* fetchProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA2287B294CE664001F88C0 /* fetchProduct.swift */; };
 		2DA22880294DB7FB001F88C0 /* ExploreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA2287F294DB7FB001F88C0 /* ExploreViewModel.swift */; };
@@ -110,6 +112,8 @@
 		2D773C51297172BA00A86E5C /* EditProductiVewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProductiVewModel.swift; sourceTree = "<group>"; };
 		2D886FAA29706BA4004AB700 /* RecipeDetailsProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailsProfile.swift; sourceTree = "<group>"; };
 		2D88B5CB295621F6008F47A5 /* NewRecipeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewRecipeViewModel.swift; sourceTree = "<group>"; };
+		2D969DD82998051B0052995F /* contacting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = contacting.swift; sourceTree = "<group>"; };
+		2D969DDA299806160052995F /* MailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailView.swift; sourceTree = "<group>"; };
 		2D9BE78E2982990C00519B57 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		2DA22879294CA888001F88C0 /* UploadProductViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadProductViewModel.swift; sourceTree = "<group>"; };
 		2DA2287B294CE664001F88C0 /* fetchProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fetchProduct.swift; sourceTree = "<group>"; };
@@ -224,6 +228,7 @@
 				2D276A5C2989579A0062E7E1 /* UpdatePasswordViewModel.swift */,
 				2DB125B7298AD99F00569D23 /* UpdateIProfileViewModel.swift */,
 				2D62BEFE298D69A000C9ED5D /* delete.swift */,
+				2D969DDA299806160052995F /* MailView.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -269,6 +274,7 @@
 				2D4542E828B7863C0030DF73 /* Prospect.swift */,
 				2DEF0ABA2947B13400D19D8E /* User.swift */,
 				2DE850F829584E740012ABAB /* Recipet.swift */,
+				2D969DD82998051B0052995F /* contacting.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -393,6 +399,7 @@
 				63CD666F2886DA85003CDE86 /* ContentView.swift in Sources */,
 				2D4542E928B7863C0030DF73 /* Prospect.swift in Sources */,
 				2D3549E6299028FC00596B66 /* AddEmailSupport .swift in Sources */,
+				2D969DDB299806160052995F /* MailView.swift in Sources */,
 				2D62BEF3298D1B2200C9ED5D /* Categoriesbar.swift in Sources */,
 				63CD666C2886DA85003CDE86 /* Profile.swift in Sources */,
 				63CD666E2886DA85003CDE86 /* SheetView.swift in Sources */,
@@ -442,6 +449,7 @@
 				2D05B6F1297C521F00B9C68B /* Recipecard.swift in Sources */,
 				2DE850F729584A620012ABAB /* RecipeViewModel.swift in Sources */,
 				2DFD509F28BE88F700CE8FD2 /* Onboarding.swift in Sources */,
+				2D969DD92998051B0052995F /* contacting.swift in Sources */,
 				2D62BF01298D7F2000C9ED5D /* ImageCared.swift in Sources */,
 				2D4A353C2980701F00CB2665 /* RecipeCard.swift in Sources */,
 			);

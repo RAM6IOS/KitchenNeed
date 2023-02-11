@@ -10,9 +10,9 @@ import UIKit
 struct SettingsView: View {
     @Environment(\.presentationMode) var presentationMode
     @EnvironmentObject var viewModel: AuthViewModel
-    @State private var result: Result<MFMailComposeResult, Error>? = nil
-    @State private var isMailViewShowing = false
     @State var name = ""
+    @State private var sendEmail = false
+    let constants = Contacting.shared
     var body: some View {
         NavigationView{
             VStack{
@@ -58,6 +58,20 @@ struct SettingsView: View {
                             .clipShape(RoundedRectangle(cornerRadius: 25, style: .continuous))
                         Link("Privacy Policy", destination: URL(string: "https://akdili.vercel.app/")!)
                             .foregroundColor(.black)
+                    }
+                    HStack{
+                        Image(systemName: "paperplane.fill")
+                        Button{
+                            sendEmail.toggle()
+                        } label: {
+                            HStack{
+                                Text("Contact")
+                                    .foregroundColor(.black)
+                            }
+                        }
+                        .sheet(isPresented: $sendEmail) {
+                            MailView(content: constants.contentPreText, to: constants.to,subject: constants.subject)
+                        }
                     }
                     HStack{
                         Image(systemName: "rectangle.portrait.and.arrow.right")
