@@ -43,52 +43,10 @@ struct NewRecipe: View {
                             Section("Recipe Name"){
                                 TextField("Name" ,text:$viewModel.name)
                             }
-                            Section("Difficulty Level"){
-                                Picker(selection: $viewModel.difficulty, label: Text("")) {
-                                    ForEach(viewModel.difficultyLevel, id: \.self) { typ in
-                                        Text(typ).tag(typ)
-                                    }
-                                        }
-                                       .frame(width: 350)
-                                        .background(Color.yellow)
-                                        .cornerRadius(10)
-                                        .pickerStyle(SegmentedPickerStyle())
-                            }
-                            Section("Recipe Category"){
-                                Picker(selection: $viewModel.categorie, label: Text("Categorie")) {
-                                    ForEach(viewModel.categories, id: \.self) { typ in
-                                        Text(typ).tag(typ)
-                                    }
-                                        }
-                            }
-                            Section("Cooking Time"){
-                                HStack {
-                                    Picker("", selection: $viewModel.hours){
-                                        ForEach(0..<24, id: \.self) { i in
-                                            Text("\(i) hours").tag(i)
-                                        }
-                                    }.pickerStyle(WheelPickerStyle())
-                                        .frame(width: 140)
-                                    Picker("", selection: $viewModel.minutes){
-                                        ForEach(0..<60, id: \.self) { i in
-                                            Text("\(i) min").tag(i)
-                                        }
-                                    }.pickerStyle(WheelPickerStyle())
-                                        .frame(width: 140)
-                                }
-                            }
-                            Section("Cooking Temperature"){
-                                HStack{
-                                    TextField("temperature" ,text:$viewModel.degree)
-                                    Picker("", selection: $viewModel.temperatures) {
-                                        ForEach(viewModel.temperaturesSymbol, id: \.self) { typ in
-                                            HStack( spacing: 10){
-                                                Text(typ)
-                                            }
-                                        }
-                                    }
-                                }
-                            }
+                            DifficultyLevel(difficulty: $viewModel.difficulty, difficultyLevel: viewModel.difficultyLevel)
+                            PickersEdit(selections: $viewModel.categorie, categor: viewModel.categories)
+                            CookingTime(hours: $viewModel.hours, minutes: $viewModel.minutes)
+                            CookingTemperature(degree: $viewModel.degree, temperatures: $viewModel.temperatures, temperaturesSymbol: viewModel.temperaturesSymbol)
                             TextEditorRecipe(TextEdi: $viewModel.definition, section: "Definition")
                             TextEditorRecipe(TextEdi: $viewModel.ingredients, section: "Ingredients" )
                             TextEditorRecipe(TextEdi: $viewModel.preparation ,section: "Preparation")

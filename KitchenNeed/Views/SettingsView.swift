@@ -92,7 +92,7 @@ struct SettingsView: View {
                             viewModel.delete()
                         } label: {
                             HStack{
-                                Text("Logout")
+                                Text("Delete")
                                     .foregroundColor(.black)
                             }
                         }
@@ -119,7 +119,3 @@ struct SettingsView: View {
         }
         }
     }
-
-
-
-

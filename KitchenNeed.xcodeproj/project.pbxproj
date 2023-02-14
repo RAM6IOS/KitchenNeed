@@ -239,6 +239,14 @@
 			path = component;
 			sourceTree = "<group>";
 		};
+		2D7A52DC299BFA4B00F0C683 /* NewRecipe */ = {
+			isa = PBXGroup;
+			children = (
+				2D710C3B2956162D00F3E9EA /* NewRecipe.swift */,
+			);
+			path = NewRecipe;
+			sourceTree = "<group>";
+		};
 		2DE2CFD02887077600FBFE62 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -310,6 +318,7 @@
 		63CD66632886DA85003CDE86 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				2D7A52DC299BFA4B00F0C683 /* NewRecipe */,
 				2D7A52D4299BA34E00F0C683 /* EditProduct */,
 				63CD66722886DB15003CDE86 /* Home.swift */,
 				63CD66662886DA85003CDE86 /* Profile.swift */,
@@ -323,7 +332,6 @@
 				2D6D466128D0B12900557B0A /* GetStarted.swift */,
 				2D49ACC528D20851002A8045 /* LogIn.swift */,
 				2D710C39295615A500F3E9EA /* Recipe.swift */,
-				2D710C3B2956162D00F3E9EA /* NewRecipe.swift */,
 				2DE850FA295B6ECB0012ABAB /* RecipeSetails.swift */,
 				2DAB9F4C295F48BD00C04D3E /* SpecificCorners .swift */,
 				2D6187092969881400F7881F /* SettingsView.swift */,
