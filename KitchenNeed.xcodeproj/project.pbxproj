@@ -41,6 +41,10 @@
 		2D710C3C2956162D00F3E9EA /* NewRecipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D710C3B2956162D00F3E9EA /* NewRecipe.swift */; };
 		2D773C502971570100A86E5C /* EditProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D773C4F2971570100A86E5C /* EditProduct.swift */; };
 		2D773C52297172BA00A86E5C /* EditProductiVewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D773C51297172BA00A86E5C /* EditProductiVewModel.swift */; };
+		2D7A52D3299B9FDB00F0C683 /* PickerCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7A52D2299B9FDB00F0C683 /* PickerCategory.swift */; };
+		2D7A52D7299BA99600F0C683 /* CookingTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7A52D6299BA99600F0C683 /* CookingTime.swift */; };
+		2D7A52D9299BAAD300F0C683 /* CookingTemperature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7A52D8299BAAD300F0C683 /* CookingTemperature.swift */; };
+		2D7A52DB299BAC9B00F0C683 /* DifficultyLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7A52DA299BAC9B00F0C683 /* DifficultyLevel.swift */; };
 		2D886FAB29706BA4004AB700 /* RecipeDetailsProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D886FAA29706BA4004AB700 /* RecipeDetailsProfile.swift */; };
 		2D88B5CC295621F6008F47A5 /* NewRecipeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D88B5CB295621F6008F47A5 /* NewRecipeViewModel.swift */; };
 		2D969DD92998051B0052995F /* contacting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D969DD82998051B0052995F /* contacting.swift */; };
@@ -110,6 +114,10 @@
 		2D710C3B2956162D00F3E9EA /* NewRecipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewRecipe.swift; sourceTree = "<group>"; };
 		2D773C4F2971570100A86E5C /* EditProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProduct.swift; sourceTree = "<group>"; };
 		2D773C51297172BA00A86E5C /* EditProductiVewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProductiVewModel.swift; sourceTree = "<group>"; };
+		2D7A52D2299B9FDB00F0C683 /* PickerCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerCategory.swift; sourceTree = "<group>"; };
+		2D7A52D6299BA99600F0C683 /* CookingTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CookingTime.swift; sourceTree = "<group>"; };
+		2D7A52D8299BAAD300F0C683 /* CookingTemperature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CookingTemperature.swift; sourceTree = "<group>"; };
+		2D7A52DA299BAC9B00F0C683 /* DifficultyLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DifficultyLevel.swift; sourceTree = "<group>"; };
 		2D886FAA29706BA4004AB700 /* RecipeDetailsProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailsProfile.swift; sourceTree = "<group>"; };
 		2D88B5CB295621F6008F47A5 /* NewRecipeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewRecipeViewModel.swift; sourceTree = "<group>"; };
 		2D969DD82998051B0052995F /* contacting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = contacting.swift; sourceTree = "<group>"; };
@@ -211,6 +219,26 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		2D7A52D4299BA34E00F0C683 /* EditProduct */ = {
+			isa = PBXGroup;
+			children = (
+				2D7A52D5299BA4AF00F0C683 /* component */,
+				2D773C4F2971570100A86E5C /* EditProduct.swift */,
+			);
+			path = EditProduct;
+			sourceTree = "<group>";
+		};
+		2D7A52D5299BA4AF00F0C683 /* component */ = {
+			isa = PBXGroup;
+			children = (
+				2D7A52D2299B9FDB00F0C683 /* PickerCategory.swift */,
+				2D7A52D6299BA99600F0C683 /* CookingTime.swift */,
+				2D7A52D8299BAAD300F0C683 /* CookingTemperature.swift */,
+				2D7A52DA299BAC9B00F0C683 /* DifficultyLevel.swift */,
+			);
+			path = component;
+			sourceTree = "<group>";
+		};
 		2DE2CFD02887077600FBFE62 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -282,6 +310,7 @@
 		63CD66632886DA85003CDE86 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				2D7A52D4299BA34E00F0C683 /* EditProduct */,
 				63CD66722886DB15003CDE86 /* Home.swift */,
 				63CD66662886DA85003CDE86 /* Profile.swift */,
 				63CD66682886DA85003CDE86 /* SheetView.swift */,
@@ -299,7 +328,6 @@
 				2DAB9F4C295F48BD00C04D3E /* SpecificCorners .swift */,
 				2D6187092969881400F7881F /* SettingsView.swift */,
 				2D886FAA29706BA4004AB700 /* RecipeDetailsProfile.swift */,
-				2D773C4F2971570100A86E5C /* EditProduct.swift */,
 				2D69A966297B09390004BA47 /* about.swift */,
 				2D05B6F0297C521E00B9C68B /* Recipecard.swift */,
 				2DD586C829869974007AC457 /* UpdateEmail.swift */,
@@ -400,6 +428,7 @@
 				2D4542E928B7863C0030DF73 /* Prospect.swift in Sources */,
 				2D3549E6299028FC00596B66 /* AddEmailSupport .swift in Sources */,
 				2D969DDB299806160052995F /* MailView.swift in Sources */,
+				2D7A52D7299BA99600F0C683 /* CookingTime.swift in Sources */,
 				2D62BEF3298D1B2200C9ED5D /* Categoriesbar.swift in Sources */,
 				63CD666C2886DA85003CDE86 /* Profile.swift in Sources */,
 				63CD666E2886DA85003CDE86 /* SheetView.swift in Sources */,
@@ -410,6 +439,7 @@
 				2DEB8D00297DAE22001E7BED /* Buttonshow.swift in Sources */,
 				2D42354328C1285500600266 /* SignupView.swift in Sources */,
 				2D710C3C2956162D00F3E9EA /* NewRecipe.swift in Sources */,
+				2D7A52D3299B9FDB00F0C683 /* PickerCategory.swift in Sources */,
 				2D6D466228D0B12900557B0A /* GetStarted.swift in Sources */,
 				2DB125B8298AD99F00569D23 /* UpdateIProfileViewModel.swift in Sources */,
 				2DA2287C294CE664001F88C0 /* fetchProduct.swift in Sources */,
@@ -421,6 +451,7 @@
 				2DEF0ABB2947B13400D19D8E /* User.swift in Sources */,
 				2D48C792288FF8D400981FAE /* Color.swift in Sources */,
 				2DEB8CFD297D9D42001E7BED /* TextFieldview.swift in Sources */,
+				2D7A52DB299BAC9B00F0C683 /* DifficultyLevel.swift in Sources */,
 				63CD66622886DA68003CDE86 /* Product.swift in Sources */,
 				2DD586C929869974007AC457 /* UpdateEmail.swift in Sources */,
 				2D276A5B29892BDE0062E7E1 /* UpdatePassword.swift in Sources */,
@@ -448,6 +479,7 @@
 				2D4A353A29806E7F00CB2665 /* Searchbar.swift in Sources */,
 				2D05B6F1297C521F00B9C68B /* Recipecard.swift in Sources */,
 				2DE850F729584A620012ABAB /* RecipeViewModel.swift in Sources */,
+				2D7A52D9299BAAD300F0C683 /* CookingTemperature.swift in Sources */,
 				2DFD509F28BE88F700CE8FD2 /* Onboarding.swift in Sources */,
 				2D969DD92998051B0052995F /* contacting.swift in Sources */,
 				2D62BF01298D7F2000C9ED5D /* ImageCared.swift in Sources */,
@@ -509,7 +541,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -564,7 +596,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -594,7 +626,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -631,7 +663,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

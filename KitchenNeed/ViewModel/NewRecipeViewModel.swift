@@ -15,7 +15,7 @@ class NewRecipeViewModel :ObservableObject {
    @Published var degree = ""
    @Published var times = ""
     @Published var timesSymbol = ["h" ,"m"]
-    @Published  var temperatures = ""
+    @Published  var temperatures = "F"
     @Published var temperaturesSymbol = ["F" , "C"]
     @Published var difficulty = "Easy"
    @Published var difficultyLevel = ["Easy" , "Moderate" ,"Challenging" ,"Professional"]

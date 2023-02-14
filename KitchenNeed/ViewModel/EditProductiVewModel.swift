@@ -10,7 +10,7 @@ class  EditProductiVewModel: ObservableObject {
     var difficultyLevel = ["Easy" , "Moderate" ,"Challenging" ,"Professional"]
     var categories: [String] = ["Breakfast", "Lunch", "Dinner", "Dessert" , "Appetisers" , "Soups" ,"Salads" ,"Breads" ,"Baked" , "Sweet" ,"Pizza" ,"Poultry" ,"Meat" ,"Seafood","Rice" ,"Pasta" ,"Sides" ,"Sandwiches" ,"drinks" ,"Ice Cream"]
     @Published var temperatures = ""
-    var temperaturesSymbol = ["F" , "C"]
+    var temperaturesSymbol: [String] = ["F" , "C"]
     @Published var recipe: Recipet
     init(recipe: Recipet) {
         self.recipe = recipe
@@ -36,6 +36,7 @@ class  EditProductiVewModel: ObservableObject {
                              "categorie":self.recipe.categorie,
                              "time":self.recipe.time,
                              "hours":self.recipe.hours,
+                             "temperatures":self.recipe.temperatures,
                              "minutes":self.recipe.minutes,
                              "degree":self.recipe.degree
                             ]) { _ in
