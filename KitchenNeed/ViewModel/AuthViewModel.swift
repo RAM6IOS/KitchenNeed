@@ -7,6 +7,7 @@ import FirebaseAuth
 import SwiftUI
 import FirebaseFirestore
 import Firebase
+import FirebaseStorage
 
 
 class AuthViewModel: ObservableObject {
@@ -42,7 +43,6 @@ class AuthViewModel: ObservableObject {
             print("success")
             guard let user = result?.user else { return }
             self.userSession = user
-            print(self.userSession)
             let userData = ["email": email,
                                         "name": name,
                                         "uid": user.uid]
@@ -50,24 +50,22 @@ class AuthViewModel: ObservableObject {
                             .document(user.uid)
                             .setData(userData) { _ in
                             }
-            //self.uploadProfileImage(image)
-           // print(userData)
-           
+            self.uploadProfileImage(image: image)
         }
     
     }
-    func uploadProfileImage(name:String) {
+    func uploadProfileImage(image:UIImage) {
             guard let uid = userSession?.uid else { return }
-            //ImageUploader.uploadImage(image: image) { profileImageUrl in
+            ImageUploader.uploadImage(image: image) { profileImageUrl in
                 Firestore.firestore().collection("users")
                     .document(uid)
                     .updateData([
-                                 "name": name
+                        "profileImageUrl":profileImageUrl
                                 ]) { _ in
-                        //self.fetchUser()
+                        self.fetchUser()
                         print("User Session")
                     }
-            //}
+            }
         }
     func fetchUser() {
             guard let uid = self.userSession?.uid else { return }
@@ -88,18 +86,13 @@ class AuthViewModel: ObservableObject {
             userSession = nil
             try? Auth.auth().signOut()
         }
-    
     func delete() {
         userSession = nil
         Auth.auth().currentUser?.delete{ error in
           if let error = error {
-            // An error occurred while trying to delete the user
             print(error)
           } else {
-            // User deleted successfully
-             
           }
-            
         }
         }
     

@@ -4,16 +4,19 @@
 import SwiftUI
 import PartialSheet
 import Kingfisher
+import Firebase
+import FirebaseAuth
 struct Home: View {
     @State  var isSheetPresented = false
     @EnvironmentObject var viewModel: AuthViewModel
     var body: some View {
-        if let user = viewModel.currentUser {
             NavigationView{
                 ZStack{
                             VStack{
                                 ScrollView{
-                                    CardView(user: user)
+                                    if let user = viewModel.currentUser {
+                                        CardView(user: user)
+                                    }
                                 }
                     }
                     .listStyle(GroupedListStyle())
@@ -27,18 +30,20 @@ struct Home: View {
                             }
                         }
                         ToolbarItem( placement: .navigationBarLeading) {
-                            KFImage(URL(string: user.profileImageUrl))
-                                .resizable()
-                                .scaledToFill()
-                                .clipShape(Circle())
-                                .frame(width: 30, height: 30)
+                            if let user = viewModel.currentUser {
+                                KFImage(URL(string: user.profileImageUrl))
+                                    .resizable()
+                                    .scaledToFill()
+                                    .clipShape(Circle())
+                                    .frame(width: 30, height: 30)
+                            }
                         }
                     }
                     .navigationBarTitleDisplayMode(.inline)
                     .sheet(isPresented: $isSheetPresented){
                         SheetView()
                     }
-                }
+                
             }
         }
             }

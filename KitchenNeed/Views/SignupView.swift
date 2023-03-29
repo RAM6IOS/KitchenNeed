@@ -60,11 +60,9 @@ struct SignupView: View {
                             HStack(alignment: .bottom){
                                 Image(systemName: "lock")
                                     .padding(.leading , 30)
-                                
                                 SecureField("Password", text: $password)
                                     .padding(.top, 20)
                                     .foregroundColor(.blue)
-                                
                                 Image(systemName: "eye.slash")
                                     .padding(.leading , 30)
                                     .onTapGesture {
@@ -85,11 +83,10 @@ struct SignupView: View {
                                                password: password,
                                                 name: name,
                                                 image: (selectedImage ??  UIImage(named: "default-avatar"))!)
-                            if $viewModel.userSession != nil {
-                                password = ""
+                          if  viewModel.userSession != nil {
                                 email = ""
                                 name = ""
-                                
+                               password = ""
                             }
                         }
                     } label: {

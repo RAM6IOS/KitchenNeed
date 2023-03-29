@@ -16,9 +16,9 @@
 		2D276A5B29892BDE0062E7E1 /* UpdatePassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D276A5A29892BDE0062E7E1 /* UpdatePassword.swift */; };
 		2D276A5D2989579B0062E7E1 /* UpdatePasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D276A5C2989579A0062E7E1 /* UpdatePasswordViewModel.swift */; };
 		2D34FE032986FB9F001AD842 /* UpdateEmailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D34FE022986FB9F001AD842 /* UpdateEmailViewModel.swift */; };
-		2D3549E6299028FC00596B66 /* AddEmailSupport .swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3549E5299028FC00596B66 /* AddEmailSupport .swift */; };
 		2D3709012884ABFE0044EF45 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D3709002884ABFE0044EF45 /* Preview Assets.xcassets */; };
 		2D371F2928C26F6600FEA74C /* IntroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D371F2828C26F6600FEA74C /* IntroView.swift */; };
+		2D40F89229D47891007987B4 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D40F89129D47891007987B4 /* Storyboard.storyboard */; };
 		2D42354328C1285500600266 /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D42354228C1285500600266 /* SignupView.swift */; };
 		2D4542E928B7863C0030DF73 /* Prospect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4542E828B7863C0030DF73 /* Prospect.swift */; };
 		2D45F8CB298E6094005A5332 /*  TextEditorRecipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D45F8CA298E6094005A5332 /*  TextEditorRecipe.swift */; };
@@ -70,7 +70,6 @@
 		2DEF0AB82947954E00D19D8E /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DEF0AB72947954E00D19D8E /* AuthViewModel.swift */; };
 		2DEF0ABB2947B13400D19D8E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DEF0ABA2947B13400D19D8E /* User.swift */; };
 		2DFD509F28BE88F700CE8FD2 /* Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DFD509E28BE88F700CE8FD2 /* Onboarding.swift */; };
-		2DFD50A328BEA44500CE8FD2 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2DFD50A228BEA44500CE8FD2 /* Launch Screen.storyboard */; };
 		63CD665E2886D9D6003CDE86 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63CD665C2886D9D5003CDE86 /* Assets.xcassets */; };
 		63CD665F2886D9D6003CDE86 /* KitchenNeedApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CD665D2886D9D5003CDE86 /* KitchenNeedApp.swift */; };
 		63CD66622886DA68003CDE86 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CD66612886DA68003CDE86 /* Product.swift */; };
@@ -88,10 +87,10 @@
 		2D276A5A29892BDE0062E7E1 /* UpdatePassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdatePassword.swift; sourceTree = "<group>"; };
 		2D276A5C2989579A0062E7E1 /* UpdatePasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdatePasswordViewModel.swift; sourceTree = "<group>"; };
 		2D34FE022986FB9F001AD842 /* UpdateEmailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateEmailViewModel.swift; sourceTree = "<group>"; };
-		2D3549E5299028FC00596B66 /* AddEmailSupport .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddEmailSupport .swift"; sourceTree = "<group>"; };
 		2D3708F62884ABF90044EF45 /* KitchenNeed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KitchenNeed.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D3709002884ABFE0044EF45 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2D371F2828C26F6600FEA74C /* IntroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroView.swift; sourceTree = "<group>"; };
+		2D40F89129D47891007987B4 /* Storyboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		2D42354228C1285500600266 /* SignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
 		2D4542E828B7863C0030DF73 /* Prospect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prospect.swift; sourceTree = "<group>"; };
 		2D45F8CA298E6094005A5332 /*  TextEditorRecipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " TextEditorRecipe.swift"; sourceTree = "<group>"; };
@@ -141,7 +140,6 @@
 		2DEF0AB92947A80500D19D8E /* KitchenNeed.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = KitchenNeed.entitlements; sourceTree = "<group>"; };
 		2DEF0ABA2947B13400D19D8E /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		2DFD509E28BE88F700CE8FD2 /* Onboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding.swift; sourceTree = "<group>"; };
-		2DFD50A228BEA44500CE8FD2 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		63CD665C2886D9D5003CDE86 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		63CD665D2886D9D5003CDE86 /* KitchenNeedApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KitchenNeedApp.swift; sourceTree = "<group>"; };
 		63CD66612886DA68003CDE86 /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
@@ -326,7 +324,6 @@
 				63CD66692886DA85003CDE86 /* ContentView.swift */,
 				2D2544D328B4DFD400C40D18 /* CardView.swift */,
 				2DFD509E28BE88F700CE8FD2 /* Onboarding.swift */,
-				2DFD50A228BEA44500CE8FD2 /* Launch Screen.storyboard */,
 				2D42354228C1285500600266 /* SignupView.swift */,
 				2D371F2828C26F6600FEA74C /* IntroView.swift */,
 				2D6D466128D0B12900557B0A /* GetStarted.swift */,
@@ -341,7 +338,7 @@
 				2DD586C829869974007AC457 /* UpdateEmail.swift */,
 				2D276A5A29892BDE0062E7E1 /* UpdatePassword.swift */,
 				2DB125B3298AD29400569D23 /* UpdateIProfile.swift */,
-				2D3549E5299028FC00596B66 /* AddEmailSupport .swift */,
+				2D40F89129D47891007987B4 /* Storyboard.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -417,8 +414,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2DFD50A328BEA44500CE8FD2 /* Launch Screen.storyboard in Resources */,
 				2D18BE8E29465CE5008FBE3B /* GoogleService-Info.plist in Resources */,
+				2D40F89229D47891007987B4 /* Storyboard.storyboard in Resources */,
 				63CD665E2886D9D6003CDE86 /* Assets.xcassets in Resources */,
 				2D3709012884ABFE0044EF45 /* Preview Assets.xcassets in Resources */,
 			);
@@ -434,7 +431,6 @@
 				2D61870A2969881400F7881F /* SettingsView.swift in Sources */,
 				63CD666F2886DA85003CDE86 /* ContentView.swift in Sources */,
 				2D4542E928B7863C0030DF73 /* Prospect.swift in Sources */,
-				2D3549E6299028FC00596B66 /* AddEmailSupport .swift in Sources */,
 				2D969DDB299806160052995F /* MailView.swift in Sources */,
 				2D7A52D7299BA99600F0C683 /* CookingTime.swift in Sources */,
 				2D62BEF3298D1B2200C9ED5D /* Categoriesbar.swift in Sources */,
@@ -624,7 +620,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"KitchenNeed/Preview Content\"";
-				DEVELOPMENT_TEAM = 2H8H3AS73K;
+				DEVELOPMENT_TEAM = 6DWNZ84LB2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = KitchenNeed/Info.plist;
@@ -661,7 +657,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"KitchenNeed/Preview Content\"";
-				DEVELOPMENT_TEAM = 2H8H3AS73K;
+				DEVELOPMENT_TEAM = 6DWNZ84LB2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = KitchenNeed/Info.plist;

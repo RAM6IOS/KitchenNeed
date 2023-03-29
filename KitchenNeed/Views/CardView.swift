@@ -8,30 +8,9 @@ struct CardView: View {
     @ObservedObject var viewModel : ProductViewModel
     init(user:User ){
         self.viewModel = ProductViewModel(user: user)
-           
     }
     var body: some View {
         ScrollView{
-            if viewModel.product.isEmpty{
-                Spacer()
-                    .frame( height: 100)
-                Text("Your dont have ingredients on your shopping list")
-                    .font(
-                    .system(size: 25)
-                    .weight(.heavy)
-                        )
-                    .padding(.vertical , 20)
-                Image("shopping-list")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 200, height: 200)
-                Text("When you add ingredients to your shopping list you'll see them here!Happy shopping")
-                    .font(
-                    .system(size: 15)
-                    .weight(.heavy)
-                        )
-                    .padding(.vertical , 20)
-            }else{
                 ForEach(viewModel.product){ product  in
                     VStack{
                         HStack{
@@ -97,5 +76,5 @@ struct CardView: View {
             }
         }
     }
-}
+
 

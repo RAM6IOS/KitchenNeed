@@ -6,6 +6,7 @@ import SwiftUI
 import Kingfisher
 struct Recipe: View {
     @StateObject var viewModel = RecipeViewModel()
+    @EnvironmentObject var viewModel2: AuthViewModel
     var body: some View {
         NavigationView{
             VStack{
