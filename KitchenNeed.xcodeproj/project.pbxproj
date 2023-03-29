@@ -45,6 +45,8 @@
 		2D7A52D7299BA99600F0C683 /* CookingTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7A52D6299BA99600F0C683 /* CookingTime.swift */; };
 		2D7A52D9299BAAD300F0C683 /* CookingTemperature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7A52D8299BAAD300F0C683 /* CookingTemperature.swift */; };
 		2D7A52DB299BAC9B00F0C683 /* DifficultyLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7A52DA299BAC9B00F0C683 /* DifficultyLevel.swift */; };
+		2D86F43029D4A683003E2AF5 /* ResetPassword .swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D86F42F29D4A683003E2AF5 /* ResetPassword .swift */; };
+		2D86F43229D4A76C003E2AF5 /* ResetPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D86F43129D4A76C003E2AF5 /* ResetPassword.swift */; };
 		2D886FAB29706BA4004AB700 /* RecipeDetailsProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D886FAA29706BA4004AB700 /* RecipeDetailsProfile.swift */; };
 		2D88B5CC295621F6008F47A5 /* NewRecipeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D88B5CB295621F6008F47A5 /* NewRecipeViewModel.swift */; };
 		2D969DD92998051B0052995F /* contacting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D969DD82998051B0052995F /* contacting.swift */; };
@@ -117,6 +119,8 @@
 		2D7A52D6299BA99600F0C683 /* CookingTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CookingTime.swift; sourceTree = "<group>"; };
 		2D7A52D8299BAAD300F0C683 /* CookingTemperature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CookingTemperature.swift; sourceTree = "<group>"; };
 		2D7A52DA299BAC9B00F0C683 /* DifficultyLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DifficultyLevel.swift; sourceTree = "<group>"; };
+		2D86F42F29D4A683003E2AF5 /* ResetPassword .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ResetPassword .swift"; sourceTree = "<group>"; };
+		2D86F43129D4A76C003E2AF5 /* ResetPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPassword.swift; sourceTree = "<group>"; };
 		2D886FAA29706BA4004AB700 /* RecipeDetailsProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailsProfile.swift; sourceTree = "<group>"; };
 		2D88B5CB295621F6008F47A5 /* NewRecipeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewRecipeViewModel.swift; sourceTree = "<group>"; };
 		2D969DD82998051B0052995F /* contacting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = contacting.swift; sourceTree = "<group>"; };
@@ -263,6 +267,7 @@
 				2DB125B7298AD99F00569D23 /* UpdateIProfileViewModel.swift */,
 				2D62BEFE298D69A000C9ED5D /* delete.swift */,
 				2D969DDA299806160052995F /* MailView.swift */,
+				2D86F42F29D4A683003E2AF5 /* ResetPassword .swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -339,6 +344,7 @@
 				2D276A5A29892BDE0062E7E1 /* UpdatePassword.swift */,
 				2DB125B3298AD29400569D23 /* UpdateIProfile.swift */,
 				2D40F89129D47891007987B4 /* Storyboard.storyboard */,
+				2D86F43129D4A76C003E2AF5 /* ResetPassword.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -428,6 +434,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D86F43229D4A76C003E2AF5 /* ResetPassword.swift in Sources */,
 				2D61870A2969881400F7881F /* SettingsView.swift in Sources */,
 				63CD666F2886DA85003CDE86 /* ContentView.swift in Sources */,
 				2D4542E928B7863C0030DF73 /* Prospect.swift in Sources */,
@@ -465,6 +472,7 @@
 				2D49ACC628D20851002A8045 /* LogIn.swift in Sources */,
 				2D62BEF5298D497500C9ED5D /* ExtractedView.swift in Sources */,
 				2D276A5D2989579B0062E7E1 /* UpdatePasswordViewModel.swift in Sources */,
+				2D86F43029D4A683003E2AF5 /* ResetPassword .swift in Sources */,
 				2D886FAB29706BA4004AB700 /* RecipeDetailsProfile.swift in Sources */,
 				2D62BEFB298D662E00C9ED5D /* UserRecip.swift in Sources */,
 				63CD66732886DB15003CDE86 /* Home.swift in Sources */,

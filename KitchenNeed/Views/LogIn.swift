@@ -10,6 +10,7 @@ struct LogIn: View {
     @Binding var ShowHome : Bool
     @Binding var showLgn : Bool
     @State var showpasword = false
+    @State var showforgotpassword = false
     var body: some View {
         VStack{
             Spacer()
@@ -57,6 +58,7 @@ struct LogIn: View {
                         Divider()
                             .padding(.horizontal, 30)
                             .padding(.top ,10)
+                        
                     } else{
                         HStack(alignment: .bottom){
                             Image(systemName: "lock")
@@ -78,6 +80,14 @@ struct LogIn: View {
                             .padding(.horizontal, 30)
                             .padding(.top ,10)
                     }
+                    Text("forgot password")
+                        .fontWeight(.semibold)
+                        .fontWeight(.heavy)
+                        .padding(.bottom , 10)
+                        .padding(.top , 10)
+                        .onTapGesture {
+                            showforgotpassword.toggle()
+                        }
                 }
                 .padding(.bottom , 20)
                 Button{
@@ -94,6 +104,10 @@ struct LogIn: View {
                         .cornerRadius(25)
                 }
                 Buttonshow(showLgn:$showLgn, teite1:"Don't have an account?", teite2: "Sign Up")
+                
+            }
+            .sheet(isPresented: $showforgotpassword) {
+                ResetPasswordView()
                 
             }
             Spacer()
