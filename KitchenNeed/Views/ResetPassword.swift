@@ -21,6 +21,7 @@ struct ResetPasswordView: View {
             
             Button{
                 viewModel.resetPassword(email: email)
+                print("Password reset email sent successfully!")
             }label: {
                 Text("ResetPassword")
                     .bold()

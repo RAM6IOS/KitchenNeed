@@ -18,7 +18,6 @@
 		2D34FE032986FB9F001AD842 /* UpdateEmailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D34FE022986FB9F001AD842 /* UpdateEmailViewModel.swift */; };
 		2D3709012884ABFE0044EF45 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D3709002884ABFE0044EF45 /* Preview Assets.xcassets */; };
 		2D371F2928C26F6600FEA74C /* IntroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D371F2828C26F6600FEA74C /* IntroView.swift */; };
-		2D40F89229D47891007987B4 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D40F89129D47891007987B4 /* Storyboard.storyboard */; };
 		2D42354328C1285500600266 /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D42354228C1285500600266 /* SignupView.swift */; };
 		2D4542E928B7863C0030DF73 /* Prospect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4542E828B7863C0030DF73 /* Prospect.swift */; };
 		2D45F8CB298E6094005A5332 /*  TextEditorRecipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D45F8CA298E6094005A5332 /*  TextEditorRecipe.swift */; };
@@ -71,6 +70,7 @@
 		2DEF0AB629478F7B00D19D8E /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 2DEF0AB529478F7B00D19D8E /* FirebaseFirestoreSwift */; };
 		2DEF0AB82947954E00D19D8E /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DEF0AB72947954E00D19D8E /* AuthViewModel.swift */; };
 		2DEF0ABB2947B13400D19D8E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DEF0ABA2947B13400D19D8E /* User.swift */; };
+		2DF86E8529D5AA0100EE7D89 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2DF86E8429D5AA0000EE7D89 /* Launch Screen.storyboard */; };
 		2DFD509F28BE88F700CE8FD2 /* Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DFD509E28BE88F700CE8FD2 /* Onboarding.swift */; };
 		63CD665E2886D9D6003CDE86 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63CD665C2886D9D5003CDE86 /* Assets.xcassets */; };
 		63CD665F2886D9D6003CDE86 /* KitchenNeedApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CD665D2886D9D5003CDE86 /* KitchenNeedApp.swift */; };
@@ -92,7 +92,6 @@
 		2D3708F62884ABF90044EF45 /* KitchenNeed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KitchenNeed.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D3709002884ABFE0044EF45 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2D371F2828C26F6600FEA74C /* IntroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroView.swift; sourceTree = "<group>"; };
-		2D40F89129D47891007987B4 /* Storyboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		2D42354228C1285500600266 /* SignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
 		2D4542E828B7863C0030DF73 /* Prospect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prospect.swift; sourceTree = "<group>"; };
 		2D45F8CA298E6094005A5332 /*  TextEditorRecipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " TextEditorRecipe.swift"; sourceTree = "<group>"; };
@@ -143,6 +142,7 @@
 		2DEF0AB72947954E00D19D8E /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		2DEF0AB92947A80500D19D8E /* KitchenNeed.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = KitchenNeed.entitlements; sourceTree = "<group>"; };
 		2DEF0ABA2947B13400D19D8E /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		2DF86E8429D5AA0000EE7D89 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		2DFD509E28BE88F700CE8FD2 /* Onboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding.swift; sourceTree = "<group>"; };
 		63CD665C2886D9D5003CDE86 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		63CD665D2886D9D5003CDE86 /* KitchenNeedApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KitchenNeedApp.swift; sourceTree = "<group>"; };
@@ -343,8 +343,8 @@
 				2DD586C829869974007AC457 /* UpdateEmail.swift */,
 				2D276A5A29892BDE0062E7E1 /* UpdatePassword.swift */,
 				2DB125B3298AD29400569D23 /* UpdateIProfile.swift */,
-				2D40F89129D47891007987B4 /* Storyboard.storyboard */,
 				2D86F43129D4A76C003E2AF5 /* ResetPassword.swift */,
+				2DF86E8429D5AA0000EE7D89 /* Launch Screen.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -421,8 +421,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D18BE8E29465CE5008FBE3B /* GoogleService-Info.plist in Resources */,
-				2D40F89229D47891007987B4 /* Storyboard.storyboard in Resources */,
 				63CD665E2886D9D6003CDE86 /* Assets.xcassets in Resources */,
+				2DF86E8529D5AA0100EE7D89 /* Launch Screen.storyboard in Resources */,
 				2D3709012884ABFE0044EF45 /* Preview Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -632,6 +632,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = KitchenNeed/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = KitchenNeed;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.food-and-drink";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -669,6 +670,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = KitchenNeed/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = KitchenNeed;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.food-and-drink";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

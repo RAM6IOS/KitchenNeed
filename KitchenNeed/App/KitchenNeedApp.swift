@@ -30,6 +30,7 @@ struct KitchenNeedApp: App {
         WindowGroup {
             ContentView()
                 .environmentObject(viewModel)
+                .navigationBarHidden(true)
                 
         }
     }
